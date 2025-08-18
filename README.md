@@ -1,2 +1,0 @@
-# SSKTOUR
-Projeto de TCC
