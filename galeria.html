@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
-    <link rel="shortcut icon" href="./assets/imagens/icon.png" type="image/svg+xml">
+    <link rel="shortcut icon" href="./assets/imagens/1padrao/icon.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/outros.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,27 +62,25 @@
     <main>
         <article>
 
-            <!-- Reviews Section -->
+            <!-- Reviews -->
             <section class="reviews-section">
                 <div class="container">
-                    <p class="section-subtitle">Reviews</p>
-                    <h2 class="h2 section-title">Veja a opinião de outras pessoas</h2>
-                    <p class="section-text">
-                        Conheça as experiências reais daqueles que escolheram a SSK Tour para programar suas viagens.
-                    </p>
+                    <h2 class="h2 section-title">Reviews recentes</h2>
+                    <p class="section-text">Depoimentos verdadeiros de quem viajou com a SSK Tour e guardou para sempre
+                        momentos que mudaram a vida.</p>
 
-                    <div class="reviews-grid" id="reviewsGrid">
-                        <!-- Review 1 -->
-                        <div class="review-card">
+                    <div class="reviews-grid">
+                        <article class="review-card">
                             <div class="review-header">
                                 <div class="reviewer-info">
-                                    <img src="./assets/imagens/exemplo.png" alt="Maria Silva" class="reviewer-avatar">
-                                    <div class="reviewer-details">
-                                        <h3 class="reviewer-name">Maria Silva</h3>
-                                        <p class="reviewer-location">São Paulo, SP</p>
+                                    <img class="reviewer-avatar" src="./assets/imagens/galeria/pessoas/Carla.png"
+                                        alt="Foto perfil" loading="lazy">
+                                    <div>
+                                        <p class="reviewer-name">Carla Mingonni da Silva</p>
+                                        <p class="reviewer-location">Ilha Bela, SP</p>
                                     </div>
                                 </div>
-                                <div class="review-rating">
+                                <div class="review-rating" aria-label="Avaliação 5 de 5">
                                     <ion-icon name="star"></ion-icon>
                                     <ion-icon name="star"></ion-icon>
                                     <ion-icon name="star"></ion-icon>
@@ -90,57 +88,25 @@
                                     <ion-icon name="star"></ion-icon>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <h4 class="hotel-name">Bê Hotel - São Paulo</h4>
-                                <p class="review-text">
-                                    "Excelente experiência! Como cadeirante, sempre tenho preocupações com
-                                    acessibilidade, mas o Bê Hotel superou todas as minhas expectativas. Rampas bem
-                                    posicionadas, elevadores espaçosos e equipe muito atenciosa. Recomendo muito!"
-                                </p>
-                                <div class="review-date">Janeiro 2025</div>
-                            </div>
-                        </div>
+                            <p class="hotel-name">Ilha das Cabras</p>
+                            <p class="review-text">Fui para a Ilha das Cabras com a SSK Tour e foi incrível! A ilha é um
+                                paraíso de águas cristalinas e natureza preservada. O hotel era confortável, com ótimo
+                                atendimento e acessível, o que fez toda a diferença para quem precisa de cuidados
+                                especiais.</p>
+                            <p class="review-date">Março 2025</p>
+                        </article>
 
-                        <!-- Review 2 -->
-                        <div class="review-card">
+                        <article class="review-card">
                             <div class="review-header">
                                 <div class="reviewer-info">
-                                    <img src="./assets/imagens/exemplo.png" alt="João Santos" class="reviewer-avatar">
-                                    <div class="reviewer-details">
-                                        <h3 class="reviewer-name">João Santos</h3>
-                                        <p class="reviewer-location">Rio de Janeiro, RJ</p>
+                                    <img class="reviewer-avatar" src="./assets/imagens/galeria/pessoas/Valdemir.png"
+                                        alt="Foto perfil" loading="lazy">
+                                    <div>
+                                        <p class="reviewer-name">Valdemir dos Santos</p>
+                                        <p class="reviewer-location">Ubatuba, SP</p>
                                     </div>
                                 </div>
-                                <div class="review-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <h4 class="hotel-name">Hotel Acessível - Rio</h4>
-                                <p class="review-text">
-                                    "Primeira vez viajando com minha mãe que tem mobilidade reduzida. A SSK Tour cuidou
-                                    de tudo, desde a reserva até os passeios. O hotel tinha banheiros adaptados
-                                    perfeitos e a localização era ideal para visitar os pontos turísticos."
-                                </p>
-                                <div class="review-date">Dezembro 2024</div>
-                            </div>
-                        </div>
-
-                        <!-- Review 3 -->
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <img src="./assets/imagens/exemplo.png" alt="Ana Costa" class="reviewer-avatar">
-                                    <div class="reviewer-details">
-                                        <h3 class="reviewer-name">Ana Costa</h3>
-                                        <p class="reviewer-location">Belo Horizonte, MG</p>
-                                    </div>
-                                </div>
-                                <div class="review-rating">
+                                <div class="review-rating" aria-label="Avaliação 4 de 5">
                                     <ion-icon name="star"></ion-icon>
                                     <ion-icon name="star"></ion-icon>
                                     <ion-icon name="star"></ion-icon>
@@ -148,24 +114,64 @@
                                     <ion-icon name="star-outline"></ion-icon>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <h4 class="hotel-name">Pousada Acessível - Minas</h4>
-                                <p class="review-text">
-                                    "Viagem incrível! Como pessoa com deficiência visual, sempre tive receio de viajar
-                                    sozinha. A equipe da SSK Tour foi excepcional, me orientando em cada momento. O
-                                    hotel tinha piso tátil e sinalização em braile. Voltarei com certeza!"
-                                </p>
-                                <div class="review-date">Novembro 2024</div>
+                            <p class="hotel-name">Praia das Toninhas</p>
+                            <p class="review-text">Viajei para a Praia das Toninhas com minha esposa e tivemos momentos
+                                incríveis. A praia é linda, com águas calmas e um clima tranquilo, ideal para relaxar e
+                                aproveitar a companhia um do outro. Passamos dias agradáveis caminhando pela orla,
+                                curtindo a natureza e descansando longe da agitação da cidade.</p>
+                            <p class="review-date">Janeiro 2025</p>
+                        </article>
+
+                        <article class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img class="reviewer-avatar" src="./assets/imagens/galeria/pessoas/Suzana.png"
+                                        alt="Foto perfil" loading="lazy">
+                                    <div>
+                                        <p class="reviewer-name">Suzana Lopez da Costa</p>
+                                        <p class="reviewer-location">São Paulo, SP</p>
+                                    </div>
+                                </div>
+                                <div class="review-rating" aria-label="Avaliação 5 de 5">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
                             </div>
-                        </div>
+                            <p class="hotel-name">Museu Catavento</p>
+                            <p class="review-text">Visitar o Museu Catavento com meu filho cadeirante foi incrível. O
+                                museu e o hotel eram totalmente acessíveis, o que tornou a experiência confortável e
+                                tranquila para nós dois. Recomendo muito para famílias que precisam de inclusão..</p>
+                            <p class="review-date">Agosto, 2025</p>
+                        </article>
+
+                        <article class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img class="reviewer-avatar" src="./assets/imagens/galeria/pessoas/Roberto.png"
+                                        alt="Foto perfil" loading="lazy">
+                                    <div>
+                                        <p class="reviewer-name">Roberto Garcia Ramos</p>
+                                        <p class="reviewer-location">Foz do Iguaçu, PR</p>
+                                    </div>
+                                </div>
+                                <div class="review-rating" aria-label="Avaliação 4 de 5">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <p class="hotel-name">Cataratas do Iguaçu</p>
+                            <p class="review-text">Paisagens impressionantes e organização impecável. Ótimas opções de
+                                acessibilidade ao longo do percurso.</p>
+                            <p class="review-date">Out 2024</p>
+                        </article>
                     </div>
 
-                    <!-- Loading indicator -->
-                    <div class="loading-indicator" id="loadingIndicator" style="display: none;">
-                        <div class="loading-spinner"></div>
-                        <p>Carregando mais reviews...</p>
-                    </div>
-                </div>
             </section>
 
             <!-- Photo Gallery Section -->
@@ -189,10 +195,11 @@
                     <div class="gallery-grid">
                         <!-- Foto 1 -->
                         <div class="gallery-item" data-category="praia">
-                            <img src="./assets/imagens/exemplo.png" alt="Praia de Copacabana" loading="lazy">
+                            <img src="./assets/imagens/galeria/cataratasSilvana.png" alt="Cataratas Iguaçu"
+                                loading="lazy">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
-                                    <h3>Praia de Copacabana</h3>
+                                    <h3>Cataratas do Iguaçu</h3>
                                     <p>Rio de Janeiro, RJ</p>
                                     <span class="photographer">Por: Maria Silva</span>
                                 </div>
@@ -423,204 +430,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- Script para filtros da galeria e infinite scroll -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            // Filtros da galeria
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                            item.style.animation = 'fadeInUp 0.6s ease-out';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Infinite Scroll para Reviews
-            const reviewsGrid = document.getElementById('reviewsGrid');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            let currentPage = 1;
-            let isLoading = false;
-            let hasMoreReviews = true;
-
-            // Array com todos os reviews disponíveis
-            const allReviews = [
-                {
-                    name: "Carlos Lima",
-                    location: "Salvador, BA",
-                    hotel: "Resort Acessível - Bahia",
-                    text: "Experiência maravilhosa! Viajei com minha família e meu pai que usa cadeira de rodas. O resort tinha acesso à praia adaptado, piscina com rampa e atividades inclusivas. A SSK Tour fez toda a diferença na nossa viagem.",
-                    date: "Outubro 2024",
-                    rating: 5
-                },
-                {
-                    name: "Fernanda Oliveira",
-                    location: "Curitiba, PR",
-                    hotel: "Hotel Boutique - Paraná",
-                    text: "Surpreendente! Como pessoa com deficiência auditiva, encontrei um hotel que realmente entende as necessidades. Tinha intérprete de libras disponível, alarmes visuais e equipe treinada. A SSK Tour garantiu uma experiência perfeita.",
-                    date: "Setembro 2024",
-                    rating: 5
-                },
-                {
-                    name: "Roberto Almeida",
-                    location: "Fortaleza, CE",
-                    hotel: "Hotel Praia - Ceará",
-                    text: "Viagem dos sonhos! Como idoso com mobilidade reduzida, sempre pensei que não conseguiria mais viajar. A SSK Tour me provou o contrário. Hotel com acessibilidade completa, passeios adaptados e equipe que realmente se importa.",
-                    date: "Agosto 2024",
-                    rating: 5
-                },
-                {
-                    name: "Patrícia Santos",
-                    location: "Brasília, DF",
-                    hotel: "Hotel Executivo - Distrito Federal",
-                    text: "Excelente atendimento! Como pessoa com deficiência física, sempre tive dificuldades para encontrar hotéis adequados. A SSK Tour encontrou a opção perfeita com rampas, elevadores e quartos adaptados.",
-                    date: "Julho 2024",
-                    rating: 5
-                },
-                {
-                    name: "Lucas Mendes",
-                    location: "Recife, PE",
-                    hotel: "Pousada Histórica - Pernambuco",
-                    text: "Incrível experiência! Viajei com minha avó que tem mobilidade reduzida. A pousada era linda, histórica e totalmente acessível. A equipe da SSK Tour foi muito atenciosa em todos os detalhes.",
-                    date: "Junho 2024",
-                    rating: 4
-                },
-                {
-                    name: "Camila Ferreira",
-                    location: "Porto Alegre, RS",
-                    hotel: "Hotel Serra Gaúcha - Rio Grande do Sul",
-                    text: "Viagem perfeita! Como pessoa com deficiência visual, encontrei um hotel que realmente entende as necessidades. Tinha piso tátil, sinalização em braile e equipe treinada. Recomendo muito!",
-                    date: "Maio 2024",
-                    rating: 5
-                },
-                {
-                    name: "Rafael Costa",
-                    location: "Vitória, ES",
-                    hotel: "Resort Praia - Espírito Santo",
-                    text: "Experiência única! Viajei com minha família e meu irmão que usa cadeira de rodas. O resort tinha acesso à praia adaptado, piscina com rampa e atividades inclusivas. A SSK Tour superou todas as expectativas.",
-                    date: "Abril 2024",
-                    rating: 5
-                },
-                {
-                    name: "Juliana Silva",
-                    location: "Goiânia, GO",
-                    hotel: "Hotel Chapada - Goiás",
-                    text: "Surpreendente! Como pessoa com deficiência auditiva, encontrei um hotel que realmente entende as necessidades. Tinha intérprete de libras disponível, alarmes visuais e equipe treinada.",
-                    date: "Março 2024",
-                    rating: 4
-                },
-                {
-                    name: "Marcos Oliveira",
-                    location: "Maceió, AL",
-                    hotel: "Resort Alagoas - Alagoas",
-                    text: "Viagem dos sonhos! Como idoso com mobilidade reduzida, sempre pensei que não conseguiria mais viajar. A SSK Tour me provou o contrário. Hotel com acessibilidade completa e equipe que realmente se importa.",
-                    date: "Fevereiro 2024",
-                    rating: 5
-                },
-                {
-                    name: "Isabela Martins",
-                    location: "Teresina, PI",
-                    hotel: "Hotel Piauí - Piauí",
-                    text: "Excelente experiência! Como cadeirante, sempre tenho preocupações com acessibilidade, mas este hotel superou todas as minhas expectativas. Rampas bem posicionadas e equipe muito atenciosa.",
-                    date: "Janeiro 2024",
-                    rating: 5
-                }
-            ];
-
-            function createReviewCard(review) {
-                const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-
-                return `
-                     <div class="review-card">
-                         <div class="review-header">
-                             <div class="reviewer-info">
-                                 <img src="./assets/imagens/exemplo.png" alt="${review.name}" class="reviewer-avatar">
-                                 <div class="reviewer-details">
-                                     <h3 class="reviewer-name">${review.name}</h3>
-                                     <p class="reviewer-location">${review.location}</p>
-                                 </div>
-                             </div>
-                             <div class="review-rating">
-                                 ${stars.split('').map(star =>
-                    star === '★' ? '<ion-icon name="star"></ion-icon>' : '<ion-icon name="star-outline"></ion-icon>'
-                ).join('')}
-                             </div>
-                         </div>
-                         <div class="review-content">
-                             <h4 class="hotel-name">${review.hotel}</h4>
-                             <p class="review-text">"${review.text}"</p>
-                             <div class="review-date">${review.date}</div>
-                         </div>
-                     </div>
-                 `;
-            }
-
-            function loadMoreReviews() {
-                if (isLoading || !hasMoreReviews) return;
-
-                isLoading = true;
-                loadingIndicator.style.display = 'flex';
-
-                // Simular delay de carregamento
-                setTimeout(() => {
-                    const reviewsPerPage = 3;
-                    const startIndex = (currentPage - 1) * reviewsPerPage;
-                    const endIndex = startIndex + reviewsPerPage;
-                    const reviewsToShow = allReviews.slice(startIndex, endIndex);
-
-                    if (reviewsToShow.length === 0) {
-                        hasMoreReviews = false;
-                        loadingIndicator.style.display = 'none';
-                        isLoading = false;
-                        return;
-                    }
-
-                    reviewsToShow.forEach(review => {
-                        const reviewCard = createReviewCard(review);
-                        reviewsGrid.insertAdjacentHTML('beforeend', reviewCard);
-                    });
-
-                    currentPage++;
-                    isLoading = false;
-                    loadingIndicator.style.display = 'none';
-
-                    // Verificar se ainda há mais reviews
-                    if (endIndex >= allReviews.length) {
-                        hasMoreReviews = false;
-                    }
-                }, 1000);
-            }
-
-            // Detectar quando o usuário chega próximo ao final da seção
-            function handleScroll() {
-                if (isLoading || !hasMoreReviews) return;
-
-                const reviewsSection = document.querySelector('.reviews-section');
-                const sectionBottom = reviewsSection.offsetTop + reviewsSection.offsetHeight;
-                const scrollPosition = window.scrollY + window.innerHeight;
-
-                if (scrollPosition >= sectionBottom - 200) {
-                    loadMoreReviews();
-                }
-            }
-
-            // Adicionar event listener para scroll
-            window.addEventListener('scroll', handleScroll);
-        });
-    </script>
+    <script src="./assets/js/galeria.js"></script>
 </body>
 
 </html>
