@@ -1,4 +1,59 @@
 /* script do carrossel hotéis */
+
+/* Filtros para página de hospedagem */
+.filtros-section {
+    background: #f8f9fa;
+    padding: 40px 0;
+    margin-top: 120px; /* Espaçamento do header */
+    margin-bottom: 60px;
+}
+
+.filtros-wrapper {
+    text-align: center;
+}
+
+.filtros-cidade {
+    margin-bottom: 40px;
+}
+
+.filtros-cidade:last-child {
+    margin-bottom: 0;
+}
+
+.filtros-wrapper h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.filtros-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.filtro-cidade-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--bright-navy-blue);
+    background: white;
+    color: var(--bright-navy-blue);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filtro-cidade-btn:hover,
+.filtro-cidade-btn.active {
+    background: var(--bright-navy-blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
 .hotel-carousel-section {
       margin-bottom: 60px;
     }
@@ -161,5 +216,39 @@
 
       .hotel-carousel-section .carousel-btn ion-icon {
         font-size: 20px;
+      }
+
+      /* Responsividade para filtros */
+      .filtros-section {
+        margin-top: 100px; /* Espaçamento menor para tablets */
+      }
+
+      .filtros-buttons {
+        gap: 10px;
+      }
+
+      .filtro-cidade-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+      }
+
+      .filtros-wrapper h2 {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .filtros-section {
+        margin-top: 80px; /* Espaçamento ainda menor para mobile */
+      }
+
+      .filtros-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .filtro-cidade-btn {
+        width: 100%;
+        max-width: 200px;
       }
     }

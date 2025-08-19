@@ -1,0 +1,406 @@
+/* Estilos para páginas individuais dos pontos turísticos */
+
+.ponto-turistico-container {
+    padding-top: 0;
+}
+
+/* Foto do Ponto Turístico */
+.foto-ponto {
+    margin-top: 120px; /* Espaçamento do header */
+    margin-bottom: 60px;
+}
+
+.foto-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.foto-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.ponto-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ponto-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    padding: 0 0 80px 0;
+    background: #f8f9fa;
+}
+
+/* Informações do Ponto */
+.info-ponto {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.secao {
+    margin-bottom: 40px;
+}
+
+.secao:last-child {
+    margin-bottom: 0;
+}
+
+.secao h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.secao h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.secao p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+    line-height: 1.6;
+}
+
+.atividades-lista li:last-child {
+    border-bottom: none;
+}
+
+.atividades-lista strong {
+    color: #333;
+}
+
+/* Grid de Informações */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.info-item ion-icon {
+    font-size: 1.5rem;
+    color: var(--bright-navy-blue);
+    margin-top: 2px;
+}
+
+.info-item strong {
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.info-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Informações de Transporte */
+.transporte-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.transporte-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.transporte-item ion-icon {
+    font-size: 1.5rem;
+    color: var(--bright-navy-blue);
+    margin-top: 2px;
+}
+
+.transporte-item strong {
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.transporte-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Hotéis Próximos */
+.hoteis-proximos {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hoteis-proximos h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hoteis-descricao {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.hoteis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.hotel-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-imagem {
+    height: 180px;
+    overflow: hidden;
+}
+
+.hotel-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hotel-card:hover .hotel-imagem img {
+    transform: scale(1.1);
+}
+
+.hotel-info {
+    padding: 20px;
+}
+
+.hotel-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hotel-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.distancia {
+    font-size: 0.85rem;
+    color: var(--bright-navy-blue);
+    font-weight: 500;
+}
+
+.avaliacao {
+    font-size: 0.85rem;
+    color: #f39c12;
+    font-weight: 500;
+}
+
+.hotel-descricao {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.hotel-amenidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.amenidade {
+    background: #f0f2f5;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-ver-hotel {
+    display: inline-block;
+    background: var(--bright-navy-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-ver-hotel:hover {
+    background: var(--yale-blue);
+    transform: translateY(-2px);
+}
+
+.ver-todos-hoteis {
+    text-align: center;
+}
+
+.btn-ver-todos {
+    display: inline-block;
+    background: transparent;
+    color: var(--bright-navy-blue);
+    padding: 12px 30px;
+    border: 2px solid var(--bright-navy-blue);
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-ver-todos:hover {
+    background: var(--bright-navy-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .foto-ponto {
+        margin-top: 100px; /* Espaçamento menor para tablets */
+    }
+    
+    .foto-wrapper {
+        height: 300px;
+    }
+    
+    .ponto-title {
+        font-size: 2.5rem;
+    }
+    
+    .ponto-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .conteudo-principal {
+        padding: 0 0 60px 0;
+    }
+    
+    .info-ponto,
+    .hoteis-proximos {
+        padding: 30px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hoteis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .foto-ponto {
+        margin-top: 80px; /* Espaçamento ainda menor para mobile */
+    }
+    
+    .foto-wrapper {
+        height: 250px;
+    }
+    
+    .ponto-title {
+        font-size: 2rem;
+    }
+    
+    .ponto-subtitle {
+        font-size: 1rem;
+    }
+    
+    .foto-overlay {
+        padding: 30px 20px;
+    }
+    
+    .info-ponto,
+    .hoteis-proximos {
+        padding: 20px;
+    }
+    
+    .secao h2 {
+        font-size: 1.6rem;
+    }
+    
+    .secao h3 {
+        font-size: 1.2rem;
+    }
+}

@@ -215,8 +215,7 @@ body {
 
 .header-top .container {
   display: flex;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -236,11 +235,13 @@ body {
 }
 
 .header-top .logo {
-  margin-inline: auto;
+  display: flex;
+  align-items: center;
 }
 
 .header-top .logo img {
-  width: 237px;
+  width: 180px;
+  height: auto;
 }
 
 .header-btn-group {
@@ -621,9 +622,7 @@ body {
   overflow: hidden;
 }
 
-.gallery-item:nth-child(3) {
-  grid-area: 1 / 2 / 3 / 3;
-}
+/* Removido para corrigir o layout da galeria */
 
 .gallery-image img {
   width: 100%;
@@ -854,7 +853,7 @@ address {
   }
 
   .header-top .logo img {
-    max-width: unset;
+    width: 160px;
   }
 
   .header-bottom .container {
@@ -1041,10 +1040,13 @@ address {
 
   /* cta */
   .cta .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
   .cta-content {
     width: calc(100% - 225px);
@@ -1977,6 +1979,8 @@ address {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
+  align-items: start;
+  width: 100%;
 }
 
 .gallery-item {
@@ -1984,9 +1988,11 @@ address {
   border-radius: 20px;
   overflow: hidden;
   height: 280px;
+  width: 100%;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  break-inside: avoid;
 }
 
 .gallery-item::before {
@@ -2010,7 +2016,10 @@ address {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+  vertical-align: top;
 }
 
 .gallery-item:hover img {
@@ -2057,12 +2066,16 @@ address {
   font-weight: var(--fw-400);
 }
 
-/* Call to Action Section */
+/* Call to Action */
 .cta {
   background: var(--bright-navy-blue);
-  padding-block: calc(var(--section-padding) + 20px);
+  padding-block: 40px;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta::before {
@@ -2080,6 +2093,10 @@ address {
   position: relative;
   z-index: 2;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta .section-subtitle {
@@ -2090,32 +2107,36 @@ address {
 
 .cta .section-title {
   color: var(--white);
-  font-size: 48px;
+  font-size: 35px;
   margin-bottom: 20px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .cta .section-text {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 18px;
-  margin-bottom: 35px;
-  max-width: 600px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .cta .btn {
   background: var(--white);
   color: var(--bright-navy-blue);
-  padding: 15px 35px;
-  font-size: 16px;
+  padding: 12px 28px;
+  font-size: 15px;
   font-weight: var(--fw-700);
-  border-radius: 30px;
+  border-radius: 25px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   display: inline-block;
+  margin: 0 auto;
+  align-self: center;
 }
 
 .cta .btn:hover {
@@ -2191,8 +2212,9 @@ address {
   }
   
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    align-items: start;
   }
   
   .gallery-item {
@@ -2200,7 +2222,7 @@ address {
   }
   
   .cta .section-title {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 
@@ -2235,8 +2257,9 @@ address {
   }
   
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 15px;
+    align-items: start;
   }
   
   .gallery-item {
@@ -2252,16 +2275,16 @@ address {
   }
   
   .cta .section-title {
-    font-size: 32px;
+    font-size: 24px;
   }
   
   .cta .section-text {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .cta .btn {
-    padding: 12px 28px;
-    font-size: 15px;
+    padding: 8px 20px;
+    font-size: 13px;
   }
 }
 

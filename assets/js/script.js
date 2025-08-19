@@ -33,7 +33,7 @@ window.addEventListener("scroll", function () {
 });
 
 // Carrossel JavaScript - Múltiplos Carrosséis
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Função para criar um carrossel
   function createCarousel(carouselId, dotsId) {
     const carousel = document.getElementById(carouselId);
@@ -41,91 +41,91 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = carousel.closest('.carousel-container');
     const prevBtn = container.querySelector('.prev-btn');
     const nextBtn = container.querySelector('.next-btn');
-    
+
     if (!carousel) return null;
-    
+
     let currentSlide = 0;
     const totalSlides = carousel.children.length;
     let slidesPerView = getSlidesPerView();
-    
+
     function getSlidesPerView() {
       if (window.innerWidth <= 767) return 1;
       if (window.innerWidth <= 1023) return 2;
       return 3;
     }
-    
+
     function updateCarousel() {
       const slideWidth = 100 / slidesPerView;
       const translateX = -(currentSlide * slideWidth);
       carousel.style.transform = `translateX(${translateX}%)`;
-      
+
       // Atualizar dots
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
       });
-      
+
       // Atualizar estado dos botões
       if (prevBtn) {
         prevBtn.disabled = currentSlide === 0;
         prevBtn.classList.toggle('disabled', currentSlide === 0);
       }
-      
+
       if (nextBtn) {
         nextBtn.disabled = currentSlide >= totalSlides - slidesPerView;
         nextBtn.classList.toggle('disabled', currentSlide >= totalSlides - slidesPerView);
       }
     }
-    
+
     function nextSlide() {
       if (currentSlide < totalSlides - slidesPerView) {
         currentSlide++;
         updateCarousel();
       }
     }
-    
+
     function prevSlide() {
       if (currentSlide > 0) {
         currentSlide--;
         updateCarousel();
       }
     }
-    
+
     function goToSlide(slideIndex) {
       currentSlide = slideIndex;
       updateCarousel();
     }
-    
+
     // Event listeners para botões
     if (nextBtn) {
       nextBtn.addEventListener('click', nextSlide);
     }
-    
+
     if (prevBtn) {
       prevBtn.addEventListener('click', prevSlide);
     }
-    
+
     // Dots event listeners
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => goToSlide(index));
     });
-    
+
     // Touch/swipe support
     let startX = 0;
     let endX = 0;
-    
-    carousel.addEventListener('touchstart', function(e) {
+
+    carousel.addEventListener('touchstart', function (e) {
       startX = e.touches[0].clientX;
     });
-    
-    carousel.addEventListener('touchend', function(e) {
+
+    carousel.addEventListener('touchend', function (e) {
       endX = e.changedTouches[0].clientX;
       handleSwipe();
     });
-    
+
     function handleSwipe() {
       const swipeThreshold = 50;
       const diff = startX - endX;
-      
+
       if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
           nextSlide(); // Swipe left
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     }
-    
+
     // Responsive handling
     function handleResize() {
       const newSlidesPerView = getSlidesPerView();
@@ -144,12 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
       }
     }
-    
+
     window.addEventListener('resize', handleResize);
-    
+
     // Initialize carousel
     updateCarousel();
-    
+
     // Retornar funções para uso externo se necessário
     return {
       nextSlide,
@@ -158,32 +158,33 @@ document.addEventListener('DOMContentLoaded', function() {
       updateCarousel
     };
   }
-  
+
   // Inicializar todos os carrosséis
   const carousels = [
     { carouselId: 'spCarousel', dotsId: 'spDots' },
+    { carouselId: 'ubtbCarousel', dotsId: 'ubtbDots' },
     { carouselId: 'cjCarousel', dotsId: 'cjDots' }
   ];
-  
+
   const carouselInstances = {};
-  
+
   carousels.forEach(({ carouselId, dotsId }) => {
     const instance = createCarousel(carouselId, dotsId);
     if (instance) {
       carouselInstances[carouselId] = instance;
     }
   });
-  
+
   // Keyboard navigation global (funciona com o carrossel visível)
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     const activeElement = document.activeElement;
     const isInCarousel = activeElement.closest('.carousel-container');
-    
+
     if (isInCarousel) {
       const carouselContainer = activeElement.closest('.carousel-container');
       const carouselList = carouselContainer.querySelector('.carousel-list');
       const carouselId = carouselList.id;
-      
+
       if (carouselInstances[carouselId]) {
         if (e.key === 'ArrowLeft') {
           carouselInstances[carouselId].prevSlide();
@@ -193,16 +194,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
+
   // Prevenir propagação de clique nos cards para não interferir com o carrossel
   document.querySelectorAll('.clickable-card').forEach(card => {
-    card.addEventListener('click', function(e) {
+    card.addEventListener('click', function (e) {
       // Prevenir que o clique se propague para elementos pai
       e.stopPropagation();
-      
+
       // Aqui você pode adicionar a lógica para redirecionar para a página do hotel
       console.log('Hotel clicado:', this.querySelector('.card-title').textContent);
-      
+
       // Exemplo de redirecionamento (descomente e ajuste conforme necessário):
       // window.location.href = '/hotel-details.html?hotel=' + encodeURIComponent(this.querySelector('.card-title').textContent);
     });

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início</title>
-    <link rel="shortcut icon" href="./assets/imagens/1padrao/icon.png" type="image/svg+xml">
+    <link rel="shortcut icon" href="./assets/imagens/icon.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
         <div class="header-top">
             <div class="container">
                 <a href="#" class="logo">
-                    <img src="./assets/imagens/1padrao/logoBranco.png" alt="SSKTour logo">
+                    <img src="./assets/imagens/logoBranco.png" alt="SSKTour logo">
                 </a>
                 <div class="header-btn-group">
                     <button class="nav-open-btn" aria-label="Abrir Menu" data-nav-open-btn>
@@ -36,7 +36,7 @@
                 <nav class="navbar" data-navbar>
                     <div class="navbar-top">
                         <a href="#" class="logo">
-                            <img src="./assets/imagens/1padrao/logoAzul.png" alt="SSKTour logo">
+                            <img src="./assets/imagens/logoAzul.png" alt="SSKTour logo">
                         </a>
                         <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
                             <ion-icon name="close-outline"></ion-icon>
@@ -78,21 +78,25 @@
                 <div class="container">
                     <form action="" class="tour-search-form">
                         <div class="input-wrapper">
-                            <label for="destination" class="input-label">Cidades</label>
-                            <input type="text" name="destination" id="destination" required placeholder="Cidades"
+                            <label for="destination" class="input-label">Cidade</label>
+                            <input type="text" name="destination" id="destination" required placeholder="Cidade"
                                 class="input-field">
                         </div>
                         <div class="input-wrapper">
-                            <label for="people" class="input-label">Número de Pessoas</label>
-                            <input type="number" name="people" id="people" required placeholder="No. de Pessoas"
+                            <label for="people" class="input-label">Hotel</label>
+                            <input type="number" name="people" id="people" required placeholder="Hotel"
                                 class="input-field">
                         </div>
                         <div class="input-wrapper">
-                            <label for="checkin" class="input-label">Data de Checkin</label>
+                            <label for="checkin" class="input-label">Acessibilidade</label>
                             <input type="date" name="checkin" id="checkin" required class="input-field">
                         </div>
                         <div class="input-wrapper">
-                            <label for="checkout" class="input-label">Data de Checkout</label>
+                            <label for="checkout" class="input-label">Ponto turístico</label>
+                            <input type="date" name="checkout" id="checkout" required class="input-field">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="checkout" class="input-label">Deficiência</label>
                             <input type="date" name="checkout" id="checkout" required class="input-field">
                         </div>
                         <button type="submit" class="btn btn-secondary">Pesquisar</button>
@@ -341,7 +345,7 @@
             <div class="container">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="./assets/imagens/1padrao/logoBranco.png" alt="Tourly logo">
+                        <img src="./assets/imagens/logoBranco.png" alt="Tourly logo">
                     </a>
                     <p class="footer-text">
                         A SSK Tour é uma agência de turismo especializada em acessibilidade. Nosso compromisso é

@@ -1,0 +1,301 @@
+:root {
+    --azulJeans: hsl(208, 64%, 57%);
+    --azulBebe: hsl(203, 62%, 61%);
+    --bujao: hsl(191, 96%, 33%);
+    --tiffany: hsl(180, 96%, 38%);
+    --turquesa: hsl(174, 96%, 33%);
+
+    --bright-navy-blue: hsl(214, 73%, 36%);
+    --spanish-gray: hsl(0, 0%, 60%);
+    --black-coral: hsl(225, 8%, 42%);
+    --oxford-blue: hsl(208, 97%, 12%);
+    --yale-blue: hsl(214, 72%, 33%);
+    --blue-ncs: hsl(197, 100%, 36%);
+    --gunmetal: hsl(206, 34%, 20%);
+    --gainsboro: hsl(0, 0%, 88%);
+    --cultured: hsl(0, 0%, 98%);
+    --golden: hsl(40, 77%, 76%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --onyx: hsl(0, 0%, 25%);
+    --jet: hsl(0, 0%, 20%);
+}
+
+.destinos-container {
+    padding-top: 80px;
+}
+
+/* Filtros */
+.filtros-section {
+    background: #f8f9fa;
+    padding: 40px 0;
+    margin-bottom: 60px;
+}
+
+.filtros-wrapper {
+    text-align: center;
+}
+
+.filtros-cidade,
+.filtros-tipo {
+    margin-bottom: 40px;
+}
+
+.filtros-cidade:last-child,
+.filtros-tipo:last-child {
+    margin-bottom: 0;
+}
+
+.filtros-wrapper h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.filtros-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.filtro-btn,
+.filtro-cidade-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--bright-navy-blue);
+    background: white;
+    color: var(--bright-navy-blue);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filtro-cidade-btn {
+    border-color: var(--bright-navy-blue);
+    color: var(--bright-navy-blue);
+}
+
+.filtro-cidade-btn:hover,
+.filtro-cidade-btn.active {
+    background: var(--bright-navy-blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+    background: var(--bright-navy-blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Cidade Section */
+.cidade-section {
+    margin-bottom: 80px;
+}
+
+.cidade-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cidade-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cidade-descricao {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid de Pontos Turísticos */
+.pontos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Cards dos Pontos */
+.ponto-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ponto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ponto-imagem {
+    height: 250px;
+    overflow: hidden;
+}
+
+.ponto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ponto-card:hover .ponto-imagem img {
+    transform: scale(1.1);
+}
+
+.ponto-info {
+    padding: 25px;
+}
+
+.ponto-info h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ponto-tipo {
+    display: inline-block;
+    background: var(--bright-navy-blue);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ponto-descricao {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.ponto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #f0f2f5;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Estados dos filtros */
+.ponto-card.hidden {
+    display: none;
+}
+
+.ponto-card.visible {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animação para seções de cidade */
+.cidade-section {
+    transition: all 0.5s ease;
+}
+
+.cidade-section[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cidade-title {
+        font-size: 2rem;
+    }
+
+    .pontos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .filtros-buttons {
+        gap: 10px;
+    }
+
+    .filtro-btn,
+    .filtro-cidade-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .filtros-cidade,
+    .filtros-tipo {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .filtros-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ponto-info {
+        padding: 20px;
+    }
+
+    .ponto-imagem {
+        height: 200px;
+    }
+
+    .filtros-wrapper h3 {
+        font-size: 1.1rem;
+    }
+}

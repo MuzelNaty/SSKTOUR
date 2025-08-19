@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pontos turísticos</title>
+    <title>Destinos Turísticos - SSKTour</title>
     <link rel="shortcut icon" href="./assets/imagens/icon.png" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/outros.css">
+    <link rel="stylesheet" href="./assets/css/destinos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -60,311 +61,681 @@
     </header>
 
     <main>
-        <article>
-            <!-- são paulo -->
-            <section class="popular" id="destination">
+        <article class="destinos-container">
+
+            <!-- filtros -->
+            <section class="filtros-section">
                 <div class="container">
-                    <h2 class="h2 section-title">São Paulo</h2>
-                    <p class="section-text">
-                        Conheça os hotéis mais acessíveis da cidade de São Paulo
-                    </p>
-
-                    <div class="carousel-container">
-                        <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
-                            <ion-icon name="chevron-back-outline"></ion-icon>
-                        </button>
-
-                        <div class="carousel-wrapper">
-                            <ul class="popular-list carousel-list" id="spCarousel">
-                                <li class="carousel-item">
-                                    <a href="./sp/beHotel.html" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/beHotel/terraço.jpeg" alt="Hotel São Paulo"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <h3 class="h3 card-title">
-                                                Bê Hotel
-                                            </h3>
-                                            <p class="card-text">
-                                                O Bê Hotel é frequentemente elogiado por sua localização conveniente,
-                                                principalmente...
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Paulista" loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 3 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Paulista Plaza
-                                            </h3>
-                                            <p class="card-text">
-                                                Próximo à Avenida Paulista, com quartos adaptados para pessoas com
-                                                deficiência.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Jardins" loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 5 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Jardins Luxury
-                                            </h3>
-                                            <p class="card-text">
-                                                Localizado nos Jardins, oferece acessibilidade completa e serviços de
-                                                luxo.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Vila Madalena"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 3 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Vila Madalena
-                                            </h3>
-                                            <p class="card-text">
-                                                No coração da Vila Madalena, com ambiente descontraído e acessível.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Itaim Bibi"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 4 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Itaim Bibi
-                                            </h3>
-                                            <p class="card-text">
-                                                Na região nobre do Itaim Bibi, com excelente localização e
-                                                acessibilidade.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Pinheiros" loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 3 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Pinheiros
-                                            </h3>
-                                            <p class="card-text">
-                                                Em Pinheiros, próximo ao metrô e com quartos adaptados para todos.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
+                    <div class="filtros-wrapper">
+                        <div class="filtros-cidade">
+                            <h2 class="h2 section-title">Filtrar</h2>
+                            <div class="filtros-buttons">
+                                <button class="filtro-cidade-btn active" data-cidade="todas">Todas as Cidades</button>
+                                <button class="filtro-cidade-btn" data-cidade="barretos">Barretos</button>
+                                <button class="filtro-cidade-btn" data-cidade="campos-do-jordao">Campos do
+                                    Jordão</button>
+                                <button class="filtro-cidade-btn" data-cidade="guaruja">Guarujá</button>
+                                <button class="filtro-cidade-btn" data-cidade="ilhabela">Ilhabela</button>
+                                <button class="filtro-cidade-btn" data-cidade="olimpia">Olímpia</button>
+                                <button class="filtro-cidade-btn" data-cidade="sao-paulo">São Paulo</button>
+                                <button class="filtro-cidade-btn" data-cidade="ubatuba">Ubatuba</button>
+                            </div>
                         </div>
-
-                        <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
-                        </button>
-                    </div>
-
-                    <div class="carousel-dots" id="spDots">
-                        <button class="dot active" data-slide="0"></button>
-                        <button class="dot" data-slide="1"></button>
-                        <button class="dot" data-slide="2"></button>
-                        <button class="dot" data-slide="3"></button>
-                        <button class="dot" data-slide="4"></button>
-                        <button class="dot" data-slide="5"></button>
                     </div>
                 </div>
             </section>
 
-            <!-- Campos do Jordão -->
-            <section class="popular" id="destination">
+            <!-- barretos -->
+            <section class="cidade-section" id="barretos">
                 <div class="container">
-                    <h2 class="h2 section-title">Campos do Jordão</h2>
-                    <p class="section-text">
-                        Conheça os hotéis mais acessíveis da cidade de Campos do Jordão
-                    </p>
+                    <div class="cidade-header">
+                        <h2 class="h2 section-title">Barretos</h2>
+                        <p class="section-text">
+                            Conhecida por sua forte tradição sertaneja e por sediar a maior festa de peão da América
+                            Latina. A cidade combina cultura rural, hospitalidade e infraestrutura turística.
+                        </p>
+                    </div>
+                    <div class="pontos-grid">
 
-                    <div class="carousel-container">
-                        <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
-                            <ion-icon name="chevron-back-outline"></ion-icon>
-                        </button>
-
-                        <div class="carousel-wrapper">
-                            <ul class="popular-list carousel-list" id="cjCarousel">
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Campos do Jordão"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 4 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Serra da Mantiqueira
-                                            </h3>
-                                            <p class="card-text">
-                                                Localizado no centro de Campos do Jordão, com vista para a Serra da
-                                                Mantiqueira.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Vila Capivari"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 3 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Vila Capivari
-                                            </h3>
-                                            <p class="card-text">
-                                                Próximo ao centro turístico de Capivari, com ambiente familiar e
-                                                acessível.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Abernéssia"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 5 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Abernéssia Luxury
-                                            </h3>
-                                            <p class="card-text">
-                                                Na região nobre de Abernéssia, oferece acessibilidade completa e spa.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Jaguaribe" loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 3 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Jaguaribe
-                                            </h3>
-                                            <p class="card-text">
-                                                No bairro Jaguaribe, com ambiente rústico e quartos adaptados.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel Vila Inglesa"
-                                                loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 4 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel Vila Inglesa
-                                            </h3>
-                                            <p class="card-text">
-                                                Na charmosa Vila Inglesa, com arquitetura europeia e acessibilidade.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="carousel-item">
-                                    <a href="#" class="popular-card clickable-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/imagens/hotell.jpg" alt="Hotel São Bento" loading="lazy">
-                                        </figure>
-                                        <div class="card-content">
-                                            <p class="card-subtitle">
-                                                Hotel 3 Estrelas
-                                            </p>
-                                            <h3 class="h3 card-title">
-                                                Hotel São Bento
-                                            </h3>
-                                            <p class="card-text">
-                                                No bairro São Bento, próximo ao teleférico e com vista panorâmica.
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/brts/barretosCountry.jpg" alt="barretos country">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Barretos Country</h3>
+                                <p class="ponto-tipo">Parque Aquático</p>
+                                <p class="ponto-descricao">Conta com diversas piscinas, toboáguas, rio lento,
+                                    fazendinha, playgrounds aquáticos e áreas de lazer em meio à natureza.</p>
+                            </div>
                         </div>
 
-                        <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
-                        </button>
-                    </div>
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/brts/catedral.jpg" alt="catedral do divino">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Catedral do Divino Espírito</h3>
+                                <p class="ponto-tipo">Catedral</p>
+                                <p class="ponto-descricao">Um dos principais pontos turísticos e religiosos da cidade,
+                                    arquitetura imponente e belos vitrais.</p>
+                            </div>
+                        </div>
 
-                    <div class="carousel-dots" id="cjDots">
-                        <button class="dot active" data-slide="0"></button>
-                        <button class="dot" data-slide="1"></button>
-                        <button class="dot" data-slide="2"></button>
-                        <button class="dot" data-slide="3"></button>
-                        <button class="dot" data-slide="4"></button>
-                        <button class="dot" data-slide="5"></button>
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/brts/memorialPeao.jpeg" alt="memorial">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Memorial do Peão</h3>
+                                <p class="ponto-tipo">Memorial</p>
+                                <p class="ponto-descricao">Espaço dedicado à preservação da história e cultura do rodeio
+                                    brasileiro, reúne fotos e troféus que homenageiam os peões
+                                    e a tradição sertaneja.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
+            <!-- campos do jordão -->
+            <section class="cidade-section" id="campos-do-jordao">
+                <div class="container">
+                    <div class="cidade-header">
+                        <h2 class="h2 section-title">Campos do Jordão</h2>
+                        <p class="section-text">
+                            Conhecida como a “Suíça Brasileira”, a cidade encanta com sua arquitetura europeia, clima
+                            ameno e belas paisagens.
+                        </p>
+                    </div>
+                    <div class="pontos-grid">
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/cdj/amantikir.jpg" alt="parque">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Parque Amantikir</h3>
+                                <p class="ponto-tipo">Parque</p>
+                                <p class="ponto-descricao">Reúne mais de 700 espécies de plantas em cenários
+                                    deslumbrantes, perfeito para caminhadas tranquilas em meio à natureza.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/cdj/ducha.jpg" alt="catedral do divino">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Ducha de Prata</h3>
+                                <p class="ponto-tipo">Cachoeira</p>
+                                <p class="ponto-descricao">Pequenas quedas d’água artificiais em meio à mata,
+                                    oferece passarelas, lojinhas de artesanato e espaços para fotos.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/cdj/museu.jpg" alt="museu">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Museu Felícia Leirner</h3>
+                                <p class="ponto-tipo">Museu</p>
+                                <p class="ponto-descricao">Abriga mais de 80 esculturas da artista Felícia Leirner,
+                                    dispostas em meio aos jardins e ao belo cenário da Serra da Mantiqueira.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- guarujá -->
+            <section class="cidade-section" id="guaruja">
+                <div class="container">
+                    <div class="cidade-header">
+                        <h2 class="h2 section-title">Guarujá</h2>
+                        <p class="section-text">
+                            Conhecida como a "Pérola do Atlântico", a cidade oferece belas praias, infraestrutura
+                            turística completa e fácil acesso a partir da capital.
+                        </p>
+                    </div>
+                    <div class="pontos-grid">
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/grj/enseada.jpg" alt="praia enseada">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia da Enseada</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Suas águas calmas e boa infraestrutura atraem muitas famílias
+                                    todos os anos, esportistas e turistas em busca de lazer e tranquilidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/grj/acqua.jpg" alt="aquario">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Acqua Mundo</h3>
+                                <p class="ponto-tipo">Aquário</p>
+                                <p class="ponto-descricao">Com dezenas de espécies marinhas, como tubarões, pinguins e
+                                    raias, oferece uma experiência educativa e divertida para todas as idades.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/grj/branca.jpg" alt="praia branca">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia Branca</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">É um refúgio de natureza preservada, com acesso por trilha ou
+                                    barco, mar claro, areia fofa e vegetação nativa no entorno.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ilhabela -->
+            <section class="cidade-section" id="ilhabela">
+                <div class="container">
+                    <div class="cidade-header">
+                        <h2 class="h2 section-title">Ilhabela</h2>
+                        <p class="section-text">
+                            Paraíso natural cercado por mar azul e mata atlântica preservada, com dezenas de praias,
+                            cachoeiras e trilhas, ideal para ecoturismo, esportes náuticos e descanso.
+                        </p>
+                    </div>
+                    <div class="pontos-grid">
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/ilb/baía.jpg" alt="baia cast">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Baía de Castelhanos</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Cercada por montanhas e mata atlântica, abriga a famosa Praia
+                                    de Castelhanos, com mar aberto e visual selvagem.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/ilb/bonete.jpeg" alt="praia do bonete">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia do Bonete</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Com mar agitado, é o cenário perfeito para quem busca
+                                    natureza selvagem, surf e tranquilidade longe do turismo convencional.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/ilb/cabras.jpg" alt="ilha das cabras">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Ilha das Cabras</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Pequena ilha localizada próxima à praia do Perequê, famosa
+                                    por suas águas cristalinas e excelente para a prática de mergulho e snorkel.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- olímpia -->
+            <section class="cidade-section" id="olimpia">
+                <div class="container">
+                    <div class="cidade-header">
+                        <h2 class="h2 section-title">Olímpia</h2>
+                        <p class="section-text">
+                            Conhecida como a capital nacional do turismo de águas termais, atrai visitantes com seus
+                            modernos parques aquáticos e oferece infraestrutura completa para lazer e entretenimento em
+                            família.
+                        </p>
+                    </div>
+                    <div class="pontos-grid">
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/olp/hotbeach.jpg" alt="parque hot beach">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Hot Beach Park</h3>
+                                <p class="ponto-tipo">Parque Aquático</p>
+                                <p class="ponto-descricao">Um dos maiores e mais modernos parques aquáticos do Brasil,
+                                    com atrações para todas as idades oferece diversão garantida para toda a família.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/olp/vale.jpg" alt="parque dinossauro">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Vale dos Dinossauros</h3>
+                                <p class="ponto-tipo">Parque</p>
+                                <p class="ponto-descricao">Com réplicas em tamanho real de dinossauros, o parque é
+                                    perfeito para quem quer se divertir em meio à história pré-histórica.</p>
+                            </div>
+                        </div>
+
+                        <div class="ponto-card">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/destino/olp/museucera.jpeg" alt="museu cera">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Museu de Cera</h3>
+                                <p class="ponto-tipo">Museu</p>
+                                <p class="ponto-descricao">Oferece uma experiência interativa de réplicas realistas de
+                                    celebridades, personagens históricos e figuras do mundo do entretenimento.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- São Paulo -->
+            <section class="cidade-section" id="sao-paulo">
+                <div class="container">
+                    <div class="cidade-header">
+                        <h2 class="h2 section-title">São Paulo</h2>
+                        <p class="section-text">
+                            A maior cidade do Brasil e um dos principais centros financeiros e culturais da
+                            América Latina, com uma mistura vibrante de história, gastronomia e modernidade.
+                        </p>
+                    </div>
+                    <div class="pontos-grid">
+
+                        <!-- Parque Ibirapuera -->
+                        <div class="ponto-card" data-tipo="parque">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/ibirapuera.jpg" alt="Parque Ibirapuera">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Parque Ibirapuera</h3>
+                                <p class="ponto-tipo">Parque</p>
+                                <p class="ponto-descricao">Um dos principais parques urbanos de São Paulo, com lagos,
+                                    museus e áreas de lazer.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Lazer</span>
+                                    <span class="tag">Natureza</span>
+                                    <span class="tag">Cultura</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Museu Felícia Leirner -->
+                        <div class="ponto-card" data-tipo="museu">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/museuFelicia.jpg" alt="Museu Felícia Leirner">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Museu Felícia Leirner</h3>
+                                <p class="ponto-tipo">Museu</p>
+                                <p class="ponto-descricao">Museu de arte contemporânea com esculturas ao ar livre em
+                                    meio à natureza.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Arte</span>
+                                    <span class="tag">Cultura</span>
+                                    <span class="tag">História</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Palácio Boa Vista -->
+                        <div class="ponto-card" data-tipo="cultura">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/palacioBoavista.jpg" alt="Palácio Boa Vista">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Palácio Boa Vista</h3>
+                                <p class="ponto-tipo">Cultura</p>
+                                <p class="ponto-descricao">Residência oficial do governador de São Paulo, com
+                                    arquitetura neocolonial e jardins.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">História</span>
+                                    <span class="tag">Arquitetura</span>
+                                    <span class="tag">Política</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Memorial do Peão -->
+                        <div class="ponto-card" data-tipo="cultura">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/memorialPeao.jpg" alt="Memorial do Peão">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Memorial do Peão</h3>
+                                <p class="ponto-tipo">Cultura</p>
+                                <p class="ponto-descricao">Museu dedicado à cultura sertaneja e ao rodeio, com
+                                    exposições interativas.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Cultura</span>
+                                    <span class="tag">Sertanejo</span>
+                                    <span class="tag">História</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Barretos Country -->
+                        <div class="ponto-card" data-tipo="diversao">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/barretosCountry.jpg" alt="Barretos Country">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Barretos Country</h3>
+                                <p class="ponto-tipo">Diversão</p>
+                                <p class="ponto-descricao">Maior rodeio do mundo, com shows, exposições e eventos
+                                    culturais.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Eventos</span>
+                                    <span class="tag">Cultura</span>
+                                    <span class="tag">Entretenimento</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hot Beach -->
+                        <div class="ponto-card" data-tipo="diversao">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/hotBeach.png" alt="Hot Beach">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Hot Beach</h3>
+                                <p class="ponto-tipo">Diversão</p>
+                                <p class="ponto-descricao">Parque aquático com praia artificial, piscinas e atrações
+                                    para toda a família.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Água</span>
+                                    <span class="tag">Lazer</span>
+                                    <span class="tag">Família</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ubatuba -->
+            <section class="cidade-section" id="ubatuba">
+                <div class="container">
+                    <div class="cidade-header">
+                        <h2 class="cidade-title">Ubatuba</h2>
+                        <p class="cidade-descricao">Paraíso das praias com mais de 100 praias, cachoeiras e natureza
+                            preservada</p>
+                    </div>
+
+                    <div class="pontos-grid">
+                        <!-- Praia do Gonzaga -->
+                        <div class="ponto-card" data-tipo="praia">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/praiaGonzaga.jpg" alt="Praia do Gonzaga">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia do Gonzaga</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Uma das praias mais famosas de Ubatuba, com águas calmas e
+                                    infraestrutura completa.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Mar</span>
+                                    <span class="tag">Lazer</span>
+                                    <span class="tag">Família</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Praia do Bonete -->
+                        <div class="ponto-card" data-tipo="praia">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/praiaBonete.jpeg" alt="Praia do Bonete">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia do Bonete</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Praia selvagem acessível apenas por trilha ou barco, ideal
+                                    para surfistas.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Surf</span>
+                                    <span class="tag">Natureza</span>
+                                    <span class="tag">Aventura</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Praia Branca -->
+                        <div class="ponto-card" data-tipo="praia">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/praiaBranca.jpg" alt="Praia Branca">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia Branca</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Praia com areia branca e águas cristalinas, perfeita para
+                                    mergulho.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Mergulho</span>
+                                    <span class="tag">Natureza</span>
+                                    <span class="tag">Tranquilidade</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Praia da Enseada -->
+                        <div class="ponto-card" data-tipo="praia">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/praiaEnseada.jpg" alt="Praia da Enseada">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Praia da Enseada</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Praia urbana com calçadão, quiosques e águas calmas para toda
+                                    a família.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Família</span>
+                                    <span class="tag">Lazer</span>
+                                    <span class="tag">Infraestrutura</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Baía dos Castelhanos -->
+                        <div class="ponto-card" data-tipo="praia">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/baiaCastelhanos.jpg" alt="Baía dos Castelhanos">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Baía dos Castelhanos</h3>
+                                <p class="ponto-tipo">Praia</p>
+                                <p class="ponto-descricao">Baía paradisíaca com águas calmas e paisagem deslumbrante.
+                                </p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Paisagem</span>
+                                    <span class="tag">Tranquilidade</span>
+                                    <span class="tag">Natureza</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cachoeira do Gato -->
+                        <div class="ponto-card" data-tipo="cachoeira">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/cachoeiraGato.jpg" alt="Cachoeira do Gato">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Cachoeira do Gato</h3>
+                                <p class="ponto-tipo">Cachoeira</p>
+                                <p class="ponto-descricao">Cachoeira com piscinas naturais e trilhas na Mata Atlântica.
+                                </p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Natureza</span>
+                                    <span class="tag">Trilha</span>
+                                    <span class="tag">Aventura</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cachoeira da Toca -->
+                        <div class="ponto-card" data-tipo="cachoeira">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/cachoeiraToca.jpg" alt="Cachoeira da Toca">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Cachoeira da Toca</h3>
+                                <p class="ponto-tipo">Cachoeira</p>
+                                <p class="ponto-descricao">Cachoeira com queda d'água impressionante e área para banho.
+                                </p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Água</span>
+                                    <span class="tag">Natureza</span>
+                                    <span class="tag">Lazer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ducha de Prata -->
+                        <div class="ponto-card" data-tipo="cachoeira">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/duchaPrata.jpg" alt="Ducha de Prata">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Ducha de Prata</h3>
+                                <p class="ponto-tipo">Cachoeira</p>
+                                <p class="ponto-descricao">Cachoeira com duchas naturais e piscinas para relaxamento.
+                                </p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Relaxamento</span>
+                                    <span class="tag">Natureza</span>
+                                    <span class="tag">Bem-estar</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amantikir -->
+                        <div class="ponto-card" data-tipo="parque">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/amantikir.jpg" alt="Amantikir">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Amantikir</h3>
+                                <p class="ponto-tipo">Parque</p>
+                                <p class="ponto-descricao">Jardim temático com labirinto de bambu e paisagens inspiradas
+                                    no mundo todo.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Jardim</span>
+                                    <span class="tag">Lazer</span>
+                                    <span class="tag">Fotografia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aqua Mundo -->
+                        <div class="ponto-card" data-tipo="diversao">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/acquaMundo.png" alt="Aqua Mundo">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Aqua Mundo</h3>
+                                <p class="ponto-tipo">Diversão</p>
+                                <p class="ponto-descricao">Aquário com mais de 80 espécies marinhas e tanque de toque.
+                                </p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Educativo</span>
+                                    <span class="tag">Família</span>
+                                    <span class="tag">Marinho</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ilha das Cabras -->
+                        <div class="ponto-card" data-tipo="cultura">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/ilhaCabras.png" alt="Ilha das Cabras">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Ilha das Cabras</h3>
+                                <p class="ponto-tipo">Cultura</p>
+                                <p class="ponto-descricao">Ilha histórica com ruínas de fortificação colonial e trilhas
+                                    ecológicas.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">História</span>
+                                    <span class="tag">Trilha</span>
+                                    <span class="tag">Arqueologia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vila Capivari -->
+                        <div class="ponto-card" data-tipo="cultura">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/vilaCapivari.jpg" alt="Vila Capivari">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Vila Capivari</h3>
+                                <p class="ponto-tipo">Cultura</p>
+                                <p class="ponto-descricao">Centro histórico com casas coloniais, igreja e comércio
+                                    tradicional.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">História</span>
+                                    <span class="tag">Arquitetura</span>
+                                    <span class="tag">Comércio</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catedral Divino Espírito Santo -->
+                        <div class="ponto-card" data-tipo="religioso">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/catedralDivino.jpg"
+                                    alt="Catedral Divino Espírito Santo">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Catedral Divino Espírito Santo</h3>
+                                <p class="ponto-tipo">Religioso</p>
+                                <p class="ponto-descricao">Igreja histórica com arquitetura colonial e importância
+                                    religiosa para a região.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Religião</span>
+                                    <span class="tag">História</span>
+                                    <span class="tag">Arquitetura</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Centro Cultural Osório -->
+                        <div class="ponto-card" data-tipo="cultura">
+                            <div class="ponto-imagem">
+                                <img src="./assets/imagens/galeria/culturalOsorio.jpg" alt="Centro Cultural Osório">
+                            </div>
+                            <div class="ponto-info">
+                                <h3>Centro Cultural Osório</h3>
+                                <p class="ponto-tipo">Cultura</p>
+                                <p class="ponto-descricao">Centro cultural com exposições, teatro e atividades
+                                    artísticas.</p>
+                                <div class="ponto-tags">
+                                    <span class="tag">Arte</span>
+                                    <span class="tag">Teatro</span>
+                                    <span class="tag">Cultura</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 
@@ -374,7 +745,7 @@
             <div class="container">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="./assets/imagens/1padrao/logoBranco.png" alt="Tourly logo">
+                        <img src="./assets/imagens/logoBranco.png" alt="Tourly logo">
                     </a>
                     <p class="footer-text">
                         A SSK Tour é uma agência de turismo especializada em acessibilidade. Nosso compromisso é
@@ -437,6 +808,7 @@
     </a>
 
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/destinos.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
