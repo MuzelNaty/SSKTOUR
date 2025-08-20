@@ -78,26 +78,23 @@
                 <div class="container">
                     <form action="" class="tour-search-form">
                         <div class="input-wrapper">
-                            <label for="destination" class="input-label">Cidade</label>
-                            <input type="text" name="destination" id="destination" required placeholder="Cidade"
+                            <label for="cidade" class="input-label">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" required placeholder="Cidade"
                                 class="input-field">
                         </div>
                         <div class="input-wrapper">
-                            <label for="people" class="input-label">Hotel</label>
-                            <input type="number" name="people" id="people" required placeholder="Hotel"
+                            <label for="hotel" class="input-label">Hotel</label>
+                            <input type="text" name="hotel" id="hotel" required placeholder="Hotel" class="input-field">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="deficiencia" class="input-label">Deficiência</label>
+                            <input type="text" name="deficiencia" id="deficiencia" required placeholder="Deficiência"
                                 class="input-field">
                         </div>
                         <div class="input-wrapper">
-                            <label for="checkin" class="input-label">Acessibilidade</label>
-                            <input type="date" name="checkin" id="checkin" required class="input-field">
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="checkout" class="input-label">Ponto turístico</label>
-                            <input type="date" name="checkout" id="checkout" required class="input-field">
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="checkout" class="input-label">Deficiência</label>
-                            <input type="date" name="checkout" id="checkout" required class="input-field">
+                            <label for="ponto-turistico" class="input-label">Ponto turístico</label>
+                            <input type="text" name="ponto-turistico" id="ponto-turistico" required
+                                placeholder="Ponto turístico" class="input-field">
                         </div>
                         <button type="submit" class="btn btn-secondary">Pesquisar</button>
                     </form>
@@ -115,13 +112,12 @@
                         em cada detalhe da sua estadia.
                     </p>
                     <ul class="package-list">
-
                         <ul class="popular-list">
                             <li>
                                 <div class="popular-card">
                                     <figure class="card-img">
-                                        <img src="./assets/imagens/laghettoStilo/entrada.jpg" alt="San miguel, italy"
-                                            loading="lazy">
+                                        <img src="./assets/imagens/hosp/sp/laghettoStilo/entrada.jpg"
+                                            alt="San miguel, italy" loading="lazy">
                                     </figure>
                                     <div class="card-content">
                                         <div class="card-rating">
@@ -145,8 +141,8 @@
                             <li>
                                 <div class="popular-card">
                                     <figure class="card-img">
-                                        <img src="./assets/imagens/casaMaria/entrada.png" alt="San miguel, italy"
-                                            loading="lazy">
+                                        <img src="./assets/imagens/hosp/ubtb/casaMaria/entrada.png"
+                                            alt="San miguel, italy" loading="lazy">
                                     </figure>
                                     <div class="card-content">
                                         <div class="card-rating">
@@ -170,7 +166,7 @@
                             <li>
                                 <div class="popular-card">
                                     <figure class="card-img">
-                                        <img src="./assets/imagens/H3 hotel/entrada.jpg" alt="hotel"
+                                        <img src="./assets/imagens/hosp/sp/H3hotel/entrada.jpg" alt="hotel"
                                             loading="lazy">
                                     </figure>
                                     <div class="card-content">
@@ -215,17 +211,18 @@
                         <li>
                             <div class="popular-card">
                                 <figure class="card-img">
-                                    <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
+                                    <img src="./assets/imagens/destino/brts/barretosCountry.jpg" alt="San miguel, italy"
+                                        loading="lazy">
                                 </figure>
                                 <div class="card-content">
                                     <p class="card-subtitle">
-                                        <a href="#">Tipo de atração</a>
+                                        <a href="#">Parque Aquático</a>
                                     </p>
                                     <h3 class="h3 card-title">
-                                        <a href="#">Destino 1</a>
+                                        <a href="#">Barretos Country</a>
                                     </h3>
                                     <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Playground aquático e áreas de lazer em meio à natureza.
                                     </p>
                                 </div>
                             </div>
@@ -234,17 +231,18 @@
                         <li>
                             <div class="popular-card">
                                 <figure class="card-img">
-                                    <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
+                                    <img src="./assets/imagens/destino/cdj/ducha.jpg" alt="San miguel, italy"
+                                        loading="lazy">
                                 </figure>
                                 <div class="card-content">
                                     <p class="card-subtitle">
-                                        <a href="#">Tipo de atração</a>
+                                        <a href="#">Cachoeira</a>
                                     </p>
                                     <h3 class="h3 card-title">
-                                        <a href="#">Destino 2</a>
+                                        <a href="#">Ducha de Prata</a>
                                     </h3>
                                     <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Cachoeira com duchas naturais e piscinas para relaxamento.
                                     </p>
                                 </div>
                             </div>
@@ -253,17 +251,17 @@
                         <li>
                             <div class="popular-card">
                                 <figure class="card-img">
-                                    <img src="./assets/imagens/exemplo.png" alt="San miguel, italy" loading="lazy">
+                                    <img src="./assets/imagens/destino/olp/vale.jpg" alt="San miguel, italy" loading="lazy">
                                 </figure>
                                 <div class="card-content">
                                     <p class="card-subtitle">
-                                        <a href="#">Tipo de atração</a>
+                                        <a href="#">Parque</a>
                                     </p>
                                     <h3 class="h3 card-title">
-                                        <a href="#">Destino 3</a>
+                                        <a href="#">Vale Dinossauros</a>
                                     </h3>
                                     <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Perfeito para quem quer se divertir em meio à história pré-histórica.
                                     </p>
                                 </div>
                             </div>
@@ -289,27 +287,27 @@
                     <ul class="gallery-list">
                         <li class="gallery-item">
                             <figure class="gallery-image">
-                                <img src="./assets/imagens/exemplo.png" alt="Gallery image">
+                                <img src="./assets/imagens/galeria/acquaMundo.png" alt="Gallery image">
                             </figure>
                         </li>
                         <li class="gallery-item">
                             <figure class="gallery-image">
-                                <img src="./assets/imagens/exemplo.png" alt="Gallery image">
+                                <img src="./assets/imagens/galeria/ilhaCabras.png" alt="Gallery image">
                             </figure>
                         </li>
                         <li class="gallery-item">
                             <figure class="gallery-image">
-                                <img src="./assets/imagens/exemplo.png" alt="Gallery image">
+                                <img src="./assets/imagens/galeria/museuFelicia.jpg" alt="Gallery image">
                             </figure>
                         </li>
                         <li class="gallery-item">
                             <figure class="gallery-image">
-                                <img src="./assets/imagens/exemplo.png" alt="Gallery image">
+                                <img src="./assets/imagens/galeria/catedralDivino.jpg" alt="Gallery image">
                             </figure>
                         </li>
                         <li class="gallery-item">
                             <figure class="gallery-image">
-                                <img src="./assets/imagens/exemplo.png" alt="Gallery image">
+                                <img src="./assets/imagens/galeria/praiaEnseada.jpg" alt="Gallery image">
                             </figure>
                         </li>
                     </ul>
