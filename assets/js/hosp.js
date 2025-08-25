@@ -1,38 +1,29 @@
-// Funcionalidade de filtros para a página de hospedagem
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos do DOM
     const filtroCidadeBtns = document.querySelectorAll('.filtro-cidade-btn');
     const hotelCards = document.querySelectorAll('.carousel-item');
     
-    // Estado dos filtros
     let filtroCidadeAtivo = 'todas';
     
-    // Mapeamento de cidades para filtros
     const cidadeMapping = {
         'sao-paulo': ['sao-paulo'],
         'ubatuba': ['ubatuba'],
         'campos-do-jordao': ['campos-do-jordao'],
         'santos': ['santos']
     };
-    
-    // Função para aplicar filtros
+
     function aplicarFiltros() {
         const cidadeSections = document.querySelectorAll('.cidade-section');
         
-        // Primeiro, processar todos os cards de hotéis
         hotelCards.forEach(card => {
             const cidadeHotel = card.closest('.cidade-section').id;
             
             let mostrarPorCidade = true;
             
-            // Verificar filtro de cidade
             if (filtroCidadeAtivo !== 'todas') {
                 mostrarPorCidade = cidadeMapping[filtroCidadeAtivo] && 
                                  cidadeMapping[filtroCidadeAtivo].includes(cidadeHotel);
             }
             
-            // Mostrar card apenas se passar no filtro
             if (mostrarPorCidade) {
                 card.classList.remove('hidden');
                 card.classList.add('visible');
@@ -42,12 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Depois, verificar se cada seção de cidade tem cards visíveis
         cidadeSections.forEach(section => {
             const cardsNaSecao = section.querySelectorAll('.carousel-item');
             const cardsVisiveisNaSecao = section.querySelectorAll('.carousel-item:not(.hidden)');
             
-            // Se não há cards visíveis na seção, ocultar toda a seção
             if (cardsVisiveisNaSecao.length === 0) {
                 section.style.opacity = '0';
                 section.style.transform = 'translateY(-20px)';
@@ -63,17 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Atualizar contador de resultados
         atualizarContadorResultados();
     }
     
-    // Função para atualizar contador de resultados
     function atualizarContadorResultados() {
         const cardsVisiveis = document.querySelectorAll('.carousel-item:not(.hidden)');
         const contadorElement = document.querySelector('.contador-resultados');
         
         if (!contadorElement) {
-            // Criar elemento de contador se não existir
             const filtrosWrapper = document.querySelector('.filtros-wrapper');
             const contador = document.createElement('p');
             contador.className = 'contador-resultados';
@@ -85,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const contador = document.querySelector('.contador-resultados');
         let textoContador = `Mostrando ${cardsVisiveis.length} hotéis`;
         
-        // Adicionar informações sobre os filtros ativos
         if (filtroCidadeAtivo !== 'todas') {
             const cidadeNome = document.querySelector(`[data-cidade="${filtroCidadeAtivo}"]`).textContent;
             textoContador += ` (${cidadeNome})`;
@@ -94,27 +79,20 @@ document.addEventListener('DOMContentLoaded', function() {
         contador.textContent = textoContador;
     }
     
-    // Event listeners para os botões de filtro por cidade
     filtroCidadeBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remover classe active de todos os botões de cidade
             filtroCidadeBtns.forEach(b => b.classList.remove('active'));
             
-            // Adicionar classe active ao botão clicado
             this.classList.add('active');
             
-            // Atualizar filtro de cidade ativo
             filtroCidadeAtivo = this.getAttribute('data-cidade');
             
-            // Aplicar filtros
             aplicarFiltros();
         });
     });
     
-    // Inicializar com todos os filtros visíveis
     aplicarFiltros();
     
-    // Adicionar animação de entrada para os cards
     function animarCardsEntrada() {
         hotelCards.forEach((card, index) => {
             setTimeout(() => {
@@ -130,11 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Executar animação após um pequeno delay
     setTimeout(animarCardsEntrada, 300);
 });
 
-// Adicionar estilos CSS dinâmicos para funcionalidades extras
 const estilosAdicionais = `
     .carousel-item {
         position: relative;
@@ -176,12 +152,10 @@ const estilosAdicionais = `
     }
 `;
 
-// Injetar estilos adicionais
 const styleSheet = document.createElement('style');
 styleSheet.textContent = estilosAdicionais;
 document.head.appendChild(styleSheet);
 
-// Inicialização de carrosséis (Campos do Jordão, São Paulo, Santos, Ubatuba)
 document.addEventListener('DOMContentLoaded', function() {
     function initCarousel(container) {
         const wrapper = container.querySelector('.carousel-wrapper');
@@ -192,14 +166,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!wrapper || !list || !items.length || !prevBtn || !nextBtn) return;
 
-        // Descobrir container de dots pelo id do UL (ex: stCarousel -> stDots)
         let dotsContainer = null;
         if (list.id) {
             const guessedDotsId = list.id.replace('Carousel', 'Dots');
             dotsContainer = document.getElementById(guessedDotsId);
         }
 
-        // Helpers de página
         function getPageMetrics() {
             const pageWidth = wrapper.clientWidth;
             const totalWidth = list.scrollWidth;
@@ -207,10 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return { pageWidth, totalWidth, totalPages };
         }
 
-        // Estado
         let currentPage = 0;
 
-        // Criar/atualizar dots dinamicamente
         function buildDots() {
             if (!dotsContainer) return;
             const { totalPages } = getPageMetrics();
@@ -247,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
         function nextPage() { goToPage(currentPage + 1); }
         function prevPage() { goToPage(currentPage - 1); }
 
-        // Sync ao rolar manualmente (ex.: touch)
         let rafId = null;
         function onScroll() {
             if (rafId) cancelAnimationFrame(rafId);
@@ -263,18 +232,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Eventos
         nextBtn.addEventListener('click', (e) => { if (!nextBtn.classList.contains('disabled')) nextPage(); });
         prevBtn.addEventListener('click', (e) => { if (!prevBtn.classList.contains('disabled')) prevPage(); });
         wrapper.addEventListener('scroll', onScroll, { passive: true });
         window.addEventListener('resize', () => { buildDots(); updateButtons(); goToPage(currentPage); });
 
-        // Init
         buildDots();
         updateButtons();
         goToPage(0);
     }
 
-    // Inicializar todos os carrosséis presentes na página
     document.querySelectorAll('.carousel-container').forEach(initCarousel);
 });

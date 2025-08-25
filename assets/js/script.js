@@ -32,9 +32,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Carrossel JavaScript - Múltiplos Carrosséis
 document.addEventListener('DOMContentLoaded', function () {
-  // Função para criar um carrossel
   function createCarousel(carouselId, dotsId) {
     const carousel = document.getElementById(carouselId);
     const dots = document.querySelectorAll(`#${dotsId} .dot`);
@@ -59,12 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const translateX = -(currentSlide * slideWidth);
       carousel.style.transform = `translateX(${translateX}%)`;
 
-      // Atualizar dots
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
       });
 
-      // Atualizar estado dos botões
       if (prevBtn) {
         prevBtn.disabled = currentSlide === 0;
         prevBtn.classList.toggle('disabled', currentSlide === 0);
@@ -95,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
       updateCarousel();
     }
 
-    // Event listeners para botões
     if (nextBtn) {
       nextBtn.addEventListener('click', nextSlide);
     }
@@ -104,12 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
       prevBtn.addEventListener('click', prevSlide);
     }
 
-    // Dots event listeners
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => goToSlide(index));
     });
 
-    // Touch/swipe support
     let startX = 0;
     let endX = 0;
 
@@ -128,14 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
-          nextSlide(); // Swipe left
+          nextSlide();
         } else {
-          prevSlide(); // Swipe right
+          prevSlide();
         }
       }
     }
 
-    // Responsive handling
     function handleResize() {
       const newSlidesPerView = getSlidesPerView();
       if (newSlidesPerView !== slidesPerView) {
@@ -147,10 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('resize', handleResize);
 
-    // Initialize carousel
     updateCarousel();
 
-    // Retornar funções para uso externo se necessário
     return {
       nextSlide,
       prevSlide,
@@ -159,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
 
-  // Inicializar todos os carrosséis
   const carousels = [
     { carouselId: 'spCarousel', dotsId: 'spDots' },
     { carouselId: 'ubtbCarousel', dotsId: 'ubtbDots' },
@@ -175,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Keyboard navigation global (funciona com o carrossel visível)
   document.addEventListener('keydown', function (e) {
     const activeElement = document.activeElement;
     const isInCarousel = activeElement.closest('.carousel-container');
@@ -195,17 +183,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Prevenir propagação de clique nos cards para não interferir com o carrossel
   document.querySelectorAll('.clickable-card').forEach(card => {
     card.addEventListener('click', function (e) {
-      // Prevenir que o clique se propague para elementos pai
       e.stopPropagation();
 
-      // Aqui você pode adicionar a lógica para redirecionar para a página do hotel
       console.log('Hotel clicado:', this.querySelector('.card-title').textContent);
 
-      // Exemplo de redirecionamento (descomente e ajuste conforme necessário):
-      // window.location.href = '/hotel-details.html?hotel=' + encodeURIComponent(this.querySelector('.card-title').textContent);
     });
   });
 });
