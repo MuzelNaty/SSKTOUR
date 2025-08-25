@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mapeamento de cidades para filtros
     const cidadeMapping = {
         'sao-paulo': ['sao-paulo'],
-        'ubatuba': ['ubatuba']
+        'ubatuba': ['ubatuba'],
+        'campos-do-jordao': ['campos-do-jordao'],
+        'santos': ['santos']
     };
     
     // Função para aplicar filtros
