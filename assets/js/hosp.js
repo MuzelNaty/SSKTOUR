@@ -180,3 +180,101 @@ const estilosAdicionais = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = estilosAdicionais;
 document.head.appendChild(styleSheet);
+
+// Inicialização de carrosséis (Campos do Jordão, São Paulo, Santos, Ubatuba)
+document.addEventListener('DOMContentLoaded', function() {
+    function initCarousel(container) {
+        const wrapper = container.querySelector('.carousel-wrapper');
+        const list = container.querySelector('.carousel-list');
+        const items = list ? list.querySelectorAll('.carousel-item') : [];
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+
+        if (!wrapper || !list || !items.length || !prevBtn || !nextBtn) return;
+
+        // Descobrir container de dots pelo id do UL (ex: stCarousel -> stDots)
+        let dotsContainer = null;
+        if (list.id) {
+            const guessedDotsId = list.id.replace('Carousel', 'Dots');
+            dotsContainer = document.getElementById(guessedDotsId);
+        }
+
+        // Helpers de página
+        function getPageMetrics() {
+            const pageWidth = wrapper.clientWidth;
+            const totalWidth = list.scrollWidth;
+            const totalPages = Math.max(1, Math.ceil(totalWidth / pageWidth));
+            return { pageWidth, totalWidth, totalPages };
+        }
+
+        // Estado
+        let currentPage = 0;
+
+        // Criar/atualizar dots dinamicamente
+        function buildDots() {
+            if (!dotsContainer) return;
+            const { totalPages } = getPageMetrics();
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('data-slide', String(i));
+                dot.addEventListener('click', () => goToPage(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateButtons() {
+            const { totalPages } = getPageMetrics();
+            prevBtn.classList.toggle('disabled', currentPage <= 0);
+            nextBtn.classList.toggle('disabled', currentPage >= totalPages - 1);
+        }
+
+        function updateDots() {
+            if (!dotsContainer) return;
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentPage));
+        }
+
+        function goToPage(pageIndex) {
+            const { pageWidth, totalPages } = getPageMetrics();
+            currentPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
+            wrapper.scrollTo({ left: currentPage * pageWidth, behavior: 'smooth' });
+            updateButtons();
+            updateDots();
+        }
+
+        function nextPage() { goToPage(currentPage + 1); }
+        function prevPage() { goToPage(currentPage - 1); }
+
+        // Sync ao rolar manualmente (ex.: touch)
+        let rafId = null;
+        function onScroll() {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                const { pageWidth, totalPages } = getPageMetrics();
+                const approxPage = Math.round(wrapper.scrollLeft / Math.max(1, pageWidth));
+                const clamped = Math.max(0, Math.min(approxPage, totalPages - 1));
+                if (clamped !== currentPage) {
+                    currentPage = clamped;
+                    updateButtons();
+                    updateDots();
+                }
+            });
+        }
+
+        // Eventos
+        nextBtn.addEventListener('click', (e) => { if (!nextBtn.classList.contains('disabled')) nextPage(); });
+        prevBtn.addEventListener('click', (e) => { if (!prevBtn.classList.contains('disabled')) prevPage(); });
+        wrapper.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', () => { buildDots(); updateButtons(); goToPage(currentPage); });
+
+        // Init
+        buildDots();
+        updateButtons();
+        goToPage(0);
+    }
+
+    // Inicializar todos os carrosséis presentes na página
+    document.querySelectorAll('.carousel-container').forEach(initCarousel);
+});
