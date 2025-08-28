@@ -62,25 +62,70 @@
 
     <main>
         <article>
-            <!-- filtros -->
-            <section class="filtros-section">
+
+            <!-- barretos - completo -->
+            <section class="popular cidade-section" id="barretos">
                 <div class="container">
-                    <h2 class="h2 section-title">Filtrar</h2>
-                    <div class="filtros-wrapper">
-                        <div class="filtros-cidade">
-                            <div class="filtros-buttons">
-                                <button class="filtro-cidade-btn active" data-cidade="todas">Todas as Cidades</button>
-                                <button class="filtro-cidade-btn" data-cidade="campos-do-jordao">Campos do Jordão</button>
-                                <button class="filtro-cidade-btn" data-cidade="sao-paulo">São Paulo</button>
-                                <button class="filtro-cidade-btn" data-cidade="santos">Santos</button>
-                                <button class="filtro-cidade-btn" data-cidade="ubatuba">Ubatuba</button>
-                            </div>
+                    <h2 class="h2 section-title">Barretos</h2>
+                    <p class="section-text">
+                        Conheça os hotéis mais acessíveis da cidade de Barretos
+                    </p>
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <div class="carousel-wrapper">
+                            <ul class="popular-list carousel-list" id="btCarousel">
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/barretos/thermasPark.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/barretos/thermasPark/entrada.jpg"
+                                                alt="Hotel Barretos" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Barretos Thermas Flat
+                                            </h3>
+                                            <p class="card-text">
+                                                Anexo ao Parque do Peão de Barretos, um dos maiores e...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/barretos/ibisBarretos.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/barretos/ibisBarretos/entrada.jpg"
+                                                alt="Hotel Barretos" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Ibis Styles Barretos
+                                            </h3>
+                                            <p class="card-text">
+                                                O ibis Styles Barretos é um hotel vibrante, economico e moderno! Seja
+                                                para uma viagem a negocios...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
                         </div>
+                        <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" id="btDots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
                     </div>
                 </div>
             </section>
 
-            <!-- campos do jordão -->
+            <!-- campos do jordão - completo -->
             <section class="popular cidade-section" id="campos-do-jordao">
                 <div class="container">
                     <h2 class="h2 section-title">Campos do Jordão</h2>
@@ -200,8 +245,370 @@
                 </div>
             </section>
 
+            <!-- guaruja -->
+            <section class="popular cidade-section" id="guaruja">
+                <div class="container">
+                    <h2 class="h2 section-title">Guarujá</h2>
+                    <p class="section-text">
+                        Conheça os hotéis mais acessíveis da cidade de Guarujá
+                    </p>
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <div class="carousel-wrapper">
+                            <ul class="popular-list carousel-list" id="guaCarousel">
 
-            <!-- são paulo -->
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/delphin.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/delphin/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Delphin Beach
+                                            </h3>
+                                            <p class="card-text">
+                                                Fundado em 1964, o Delphin Beach Hotel está localizado em frente a bela
+                                                praia da Enseada...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/doral.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/doral/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Doral Guarujá
+                                            </h3>
+                                            <p class="card-text">
+                                                Localizado na deslumbrante praia de Guarujá, SP o Hotel Doral Guarujá é
+                                                o destino ideal para quem busca tranquilidade...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/enseada.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/enseada/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Enseada Beira Mar
+                                            </h3>
+                                            <p class="card-text">
+                                                Hotel Enseada Beira Mar fica à beira-mar no Guarujá. Praia da Enseada
+                                                fica a poucos passos de distância e...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/grand.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/grand/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Grand Hotel
+                                            </h3>
+                                            <p class="card-text">
+                                                Situado à beira-mar da Praia de Pitangueiras e a apenas 5 minutos a pé
+                                                da Praia da Enseada, o Grand Hotel Guarujá...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/jequitimar.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/jequitimar/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Jequitimar Guarujá Resort & SPA By Accor
+                                            </h3>
+                                            <p class="card-text">
+                                                Um resort em meio ao paraíso, cercado pelo mar e pela Mata Atlântica, em
+                                                um dos biomas mais preservados do...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/nacionalInn.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/nacionalInn/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Nacional Inn
+                                            </h3>
+                                            <p class="card-text">
+                                                O Hotel Nacional Inn Guarujá está localizado em uma região nobre do
+                                                Guarujá, a apenas uma quadra da Praia das Astúria...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/santaMaria.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/santaMaria/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Santa Maria
+                                            </h3>
+                                            <p class="card-text">
+                                                O Hotel Santamaria com uma localização privilegiada, a poucos metros da
+                                                deslumbrante Praia da Enseada,
+                                                oferecemos o equilíbrio perfeito entre conforto e conveniência...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/guaruja/pontaCorais.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/guaruja/pontaCorais/entrada.jpg"
+                                                alt="Hotel Guarujá" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Ponta dos Corais
+                                            </h3>
+                                            <p class="card-text">
+                                                Pousada Ponta dos Corais oferece acomodação com piscina ao ar livre,
+                                                estacionamento
+                                                privativo grátis e jardim no Guarujá. Praia de Pernambuco fica a 3
+                                                minutos a pé
+                                                de distância...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" id="guaDots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                        <button class="dot" data-slide="3"></button>
+                        <button class="dot" data-slide="4"></button>
+                        <button class="dot" data-slide="5"></button>
+                        <button class="dot" data-slide="6"></button>
+                        <button class="dot" data-slide="7"></button>
+                        <button class="dot" data-slide="8"></button>
+                        <button class="dot" data-slide="9"></button>
+                        <button class="dot" data-slide="10"></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- olimpia - completo -->
+            <section class="popular cidade-section" id="olimpia">
+                <div class="container">
+                    <h2 class="h2 section-title">Olímpia</h2>
+                    <p class="section-text">
+                        Conheça os hotéis mais acessíveis da cidade de Olímpia
+                    </p>
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <div class="carousel-wrapper">
+                            <ul class="popular-list carousel-list" id="olCarousel">
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/aguaViva.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/aguaViva/entrada.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Água Viva
+                                            </h3>
+                                            <p class="card-text">
+                                                Localizado a apenas 500 m das Thermas dos Laranjais, este hotel fica a 1
+                                                km do centro da cidade de...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/enjoy.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/enjoy/entrada.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Enjoy Olímpia Resort
+                                            </h3>
+                                            <p class="card-text">
+                                                O Enjoy Olímpia Park Resort e o Enjoy Solar das Águas Park Resort são
+                                                escolhas perfeitas para quem ...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/parkResort.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/parkResort/entrada.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Olímpia Park Resort
+                                            </h3>
+                                            <p class="card-text">
+                                                Localizado na principal avenida da cidade de Olímpia (SP) e colado no
+                                                Parque Aquático Thermas dos...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/parqueAguas.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/parqueAguas/área de lazer.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Parque das Águas
+                                            </h3>
+                                            <p class="card-text">
+                                                A Pousada Parque das Águas foi idealizado com a proposta de trazer o
+                                                conforto e aconchego do campo...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/pousadaFamilia.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/pousadaFamilia/área de lazer.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Pousada Família Alegria
+                                            </h3>
+                                            <p class="card-text">
+                                                Pousada Família Alegria Hospedaria conta com acomodação com...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/pousadaVila.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/pousadaVila/entrada.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Pousada Villa Itália
+                                            </h3>
+                                            <p class="card-text">
+                                                Pousada Villa Itália em Olímpia SP, uma pousada perto do parque aquatico
+                                                Thermas dos Laranjais...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/thermasPark.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/thermasPark/entrada.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Thermas Park Resort & SPA by Hot Beach
+                                            </h3>
+                                            <p class="card-text">
+                                                O Thermas Park Resort & Spa é um retiro de serenidade e luxo. Nossas...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/olimpia/tiffany.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/olimpia/tiffany/entrada.jpg"
+                                                alt="Hotel Olímpia" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Tiffany
+                                            </h3>
+                                            <p class="card-text">
+                                                Tiffany Hotel fornece acomodação com piscina ao ar livre, estacionamento
+                                                privativo grátis,...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" id="olDots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                        <button class="dot" data-slide="3"></button>
+                        <button class="dot" data-slide="4"></button>
+                        <button class="dot" data-slide="5"></button>
+                        <button class="dot" data-slide="6"></button>
+                        <button class="dot" data-slide="7"></button>
+                        <button class="dot" data-slide="8"></button>
+                        <button class="dot" data-slide="9"></button>
+                        <button class="dot" data-slide="10"></button>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- são paulo - completo -->
             <section class="popular cidade-section" id="sao-paulo">
                 <div class="container">
                     <h2 class="h2 section-title">São Paulo</h2>
@@ -564,7 +971,7 @@
                 </div>
             </section>
 
-            <!-- santos -->
+            <!-- santos - completo -->
             <section class="popular cidade-section" id="santos">
                 <div class="container">
                     <h2 class="h2 section-title">Santos</h2>
@@ -708,7 +1115,7 @@
                 </div>
             </section>
 
-            <!-- ubatuba -->
+            <!-- ubatuba - completo -->
             <section class="popular cidade-section" id="ubatuba">
                 <div class="container">
                     <h2 class="h2 section-title">Ubatuba</h2>
@@ -827,377 +1234,96 @@
                 </div>
             </section>
 
+            <!-- vinhedo - completo -->
+            <section class="popular cidade-section" id="vinhedo">
+                <div class="container">
+                    <h2 class="h2 section-title">Vinhedo</h2>
+                    <p class="section-text">
+                        Conheça os hotéis mais acessíveis da cidade de Vinhedo
+                    </p>
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <div class="carousel-wrapper">
+                            <ul class="popular-list carousel-list" id="vnhCarousel">
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/vinhedo/cyan.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/vinhedo/cyan/entrada.jpg"
+                                                alt="Hotel Vinhedo" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Cyan Resort by Atlantica
+                                            </h3>
+                                            <p class="card-text">
+                                                A combinação de uma infraestrutura impecável com gastronomia...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/vinhedo/intercity.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/vinhedo/intercity/entrada.jpg"
+                                                alt="Hotel Vinhedo" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Intercity
+                                            </h3>
+                                            <p class="card-text">
+                                                Hotel perto do Hopi Hari e do Wet'n Wild, a apenas 25 minutos dos
+                                                parques. Situado no pólo...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="carousel-item">
+                                    <a href="./hosp/vinhedo/vinhedoPlaza.html" class="popular-card clickable-card">
+                                        <figure class="card-img">
+                                            <img src="./assets/imagens/hosp/vinhedo/vinhedoPlaza/entrada.jpg"
+                                                alt="Hotel Vinhedo" loading="lazy">
+                                        </figure>
+                                        <div class="card-content">
+                                            <h3 class="h3 card-title">
+                                                Vinhedo Plaza
+                                            </h3>
+                                            <p class="card-text">
+                                                Conte com nossa excelente infraestrutura e aproveite cada segundo de sua
+                                                estada no Vinhedo...
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" id="vnhDots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                    </div>
+                </div>
+            </section>
+
         </article>
     </main>
 
 
 
-    <!-- olimpia -->
-    <section class="popular cidade-section" id="olimpia">
-        <div class="container">
-            <h2 class="h2 section-title">Olímpia</h2>
-            <p class="section-text">
-                Conheça os hotéis mais acessíveis da cidade de Olímpia
-            </p>
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <div class="carousel-wrapper">
-                    <ul class="popular-list carousel-list" id="olCarousel">
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/enjoy.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Enjoy Olimpia/entrada.jpg" alt="Hotel Olímpia"
-                                        loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Enjoy Olímpia Park Resort
-                                    </h3>
-                                    <p class="card-text">
-                                        O Enjoy Olímpia Park Resort e o Enjoy Solar das Águas Park Resort são escolhas
-                                        perfeitas
-                                        para quem procura conforto, diversão e praticidade em um só lugar...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/tiffany.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Tiffany Hotel/entrada.jpg" alt="Hotel Olímpia"
-                                        loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Tiffany
-                                    </h3>
-                                    <p class="card-text">
-                                        Tiffany Hotel fornece acomodação com piscina ao ar livre, estacionamento
-                                        privativo
-                                        grátis, jardim e lounge compartilhado em Olímpia...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/aguaViva.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Água Viva Hotel/entrada.jpg"
-                                        alt="Hotel Olímpia" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Água Viva
-                                    </h3>
-                                    <p class="card-text">
-                                        Localizado a apenas 500 m das Thermas dos Laranjais, este hotel fica a 1 km do centro da
-                                        cidade de Olímpia...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/pousadaVila.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Hotel Pousada Villa Itália/entrada.jpg"
-                                        alt="Hotel Olímpia" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Pousada Villa Itália 
-                                    </h3>
-                                    <p class="card-text">
-                                        Pousada Villa Itália em Olímpia SP, uma pousada perto do parque aquatico Thermas dos
-                                        Laranjais e Hotbeach...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/thermasPark.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Thermas Park Resort & SPA/entrada.jpg"
-                                        alt="Hotel Olímpia" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Thermas Park Resort & SPA by Hot Beach
-                                    </h3>
-                                    <p class="card-text">
-                                        O Thermas Park Resort & Spa é um retiro de serenidade e luxo. Nossas acomodações são
-                                        cuidadosamente projetadas...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/parqueAguas.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Hotel Pousada/área de lazer.jpg"
-                                        alt="Hotel Olímpia" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Pousada Parque das Águas
-                                    </h3>
-                                    <p class="card-text">
-                                        A Pousada Parque das Águas foi idealizado com a proposta de trazer o conforto e
-                                        aconchego do campo e da natureza, junto da facilidade e praticidade da cidades...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/parkResort.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Olímpia Park Resort/entrada.jpg"
-                                        alt="Hotel Olímpia" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Olímpia Park Resort
-                                    </h3>
-                                    <p class="card-text">
-                                        Localizado na principal avenida da cidade de Olímpia (SP) e colado no Parque Aquático
-                                        Thermas dos Laranjais, o Enjoy Olímpia Park Resort proporciona conforto, modernidade...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./ol-ht/pousadafamilia.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ol/Pousada Família Alegria/área de lazer.jpg"
-                                        alt="Hotel Olímpia" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Pousada Família Alegria
-                                    </h3>
-                                    <p class="card-text">
-                                        Pousada Família Alegria Hospedaria conta com acomodação com jardim, estacionamento
-                                        privativo grátis e lounge compartilhado em Olímpia...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
 
 
-                    </ul>
-                </div>
-                <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-            </div>
-            <div class="carousel-dots" id="stDots">
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
-                <button class="dot" data-slide="2"></button>
-                <button class="dot" data-slide="3"></button>
-                <button class="dot" data-slide="4"></button>
-                <button class="dot" data-slide="5"></button>
-                <button class="dot" data-slide="6"></button>
-                <button class="dot" data-slide="7"></button>
-                <button class="dot" data-slide="8"></button>
-                <button class="dot" data-slide="9"></button>
-                <button class="dot" data-slide="10"></button>
-            </div>
-        </div>
-    </section>
-    </article>
-    </main>
 
-    <!-- guaruja -->
-    <section class="popular cidade-section" id="guaruja">
-        <div class="container">
-            <h2 class="h2 section-title">Guarujá</h2>
-            <p class="section-text">
-                Conheça os hotéis mais acessíveis da cidade de Guarujá
-            </p>
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <div class="carousel-wrapper">
-                    <ul class="popular-list carousel-list" id="guaCarousel">
 
-                        <li class="carousel-item">
-                            <a href="./gua-ht/santaMaria.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Hotel SantaMaria/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Santa Maria
-                                    </h3>
-                                    <p class="card-text">
-                                        O Hotel Santamaria com uma localização privilegiada, a poucos metros da deslumbrante Praia da Enseada,
-                                        oferecemos o equilíbrio perfeito entre conforto e conveniência...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/doral.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Doral Guarujá/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Doral Guarujá
-                                    </h3>
-                                    <p class="card-text">
-                                         Localizado na deslumbrante praia de Guarujá, SP o Hotel Doral Guarujá é o destino ideal
-                                         para quem busca tranquilidade, conforto e sofisticação à beira mar...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/pontaCorais.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Ponta dos Corais/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Ponta dos Corais
-                                    </h3>
-                                    <p class="card-text">
-                                          Pousada Ponta dos Corais oferece acomodação com piscina ao ar livre, estacionamento
-                                          privativo grátis e jardim no Guarujá. Praia de Pernambuco fica a 3 minutos a pé de distância...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/jequitimar.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Hotel Jequitimar/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Jequitimar Guarujá Resort & SPA By Accor
-                                    </h3>
-                                    <p class="card-text">
-                                        Um resort em meio ao paraíso, cercado pelo mar e pela Mata Atlântica, em um dos biomas
-                                        mais preservados do estado de São Paulo...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/enseada.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Hotel Enseada/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Enseada Beira Mar
-                                    </h3>
-                                    <p class="card-text">
-                                        Hotel Enseada Beira Mar fica à beira-mar no Guarujá. Praia da Enseada fica a poucos
-                                        passos de distância e Terminal Rodoviário do Guarujá fica a 6,4 km...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/delphin.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Delphin Beach/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Delphin Beach
-                                    </h3>
-                                    <p class="card-text">
-                                        Fundado em 1964, o Delphin Beach Hotel está localizado em frente a bela praia da
-                                        Enseada...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/grand.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Grand Hotel/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Grand Hotel
-                                    </h3>
-                                    <p class="card-text">
-                                        Situado à beira-mar da Praia de Pitangueiras e a apenas 5 minutos a pé da Praia da
-                                        Enseada, o Grand Hotel Guarujá...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./gua-ht/nacionalInn.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/gua/Hotel Nacional Inn Guarujá/entrada.jpg"
-                                        alt="Hotel Guarujá" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Nacional Inn
-                                    </h3>
-                                    <p class="card-text">
-                                        O Hotel Nacional Inn Guarujá está localizado em uma região nobre do Guarujá, a apenas
-                                        uma quadra da Praia das Astúrias, onde há uma ótima estrutura para um dia na praia...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-            </div>
-            <div class="carousel-dots" id="stDots">
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
-                <button class="dot" data-slide="2"></button>
-                <button class="dot" data-slide="3"></button>
-                <button class="dot" data-slide="4"></button>
-                <button class="dot" data-slide="5"></button>
-                <button class="dot" data-slide="6"></button>
-                <button class="dot" data-slide="7"></button>
-                <button class="dot" data-slide="8"></button>
-                <button class="dot" data-slide="9"></button>
-                <button class="dot" data-slide="10"></button>
-            </div>
-        </div>
-    </section>
-    </article>
-    </main>
 
     <!-- ilhabela -->
     <section class="popular cidade-section" id="Ilhabela">
@@ -1224,7 +1350,7 @@
                                         Hotel Reserva
                                     </h3>
                                     <p class="card-text">
-                                        O Smart Hotel Reserva Ilhabela fica na entrada da Praia da Feiticeira. 
+                                        O Smart Hotel Reserva Ilhabela fica na entrada da Praia da Feiticeira.
                                         Suítes sustentáveis em uma das melhores praias de Ilhabela...
                                     </p>
                                 </div>
@@ -1234,15 +1360,16 @@
                         <li class="carousel-item">
                             <a href="./ib-ht/colonial.html" class="popular-card clickable-card">
                                 <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ib/Hotel Colonial/entrada.jpg"
-                                        alt="Hotel IlhaBela" loading="lazy">
+                                    <img src="./assets/imagens/hosp/ib/Hotel Colonial/entrada.jpg" alt="Hotel IlhaBela"
+                                        loading="lazy">
                                 </figure>
                                 <div class="card-content">
                                     <h3 class="h3 card-title">
                                         Hotel Colonial
                                     </h3>
                                     <p class="card-text">
-                                        O Colonial Hotel, situado em Ilhabela, surgiu de um grande sonho do seu fundador e
+                                        O Colonial Hotel, situado em Ilhabela, surgiu de um grande sonho do seu fundador
+                                        e
                                         idealizador Sr. Daniel Prata...
                                     </p>
                                 </div>
@@ -1252,15 +1379,16 @@
                         <li class="carousel-item">
                             <a href="./ib-ht/piuva.html" class="popular-card clickable-card">
                                 <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ib/Barra do Piuva/entrada.jpg"
-                                        alt="Hotel IlhaBela" loading="lazy">
+                                    <img src="./assets/imagens/hosp/ib/Barra do Piuva/entrada.jpg" alt="Hotel IlhaBela"
+                                        loading="lazy">
                                 </figure>
                                 <div class="card-content">
                                     <h3 class="h3 card-title">
                                         Barra do Piuva
                                     </h3>
                                     <p class="card-text">
-                                        Com uma localização idílica à beira-mar em Ilhabela e vista panorâmica para o mar, este
+                                        Com uma localização idílica à beira-mar em Ilhabela e vista panorâmica para o
+                                        mar, este
                                         hotel boutique dispõe de acomodações modernas com Wi-Fi de cortesia...
                                     </p>
                                 </div>
@@ -1278,7 +1406,8 @@
                                         Kalango Boutique
                                     </h3>
                                     <p class="card-text">
-                                        Encostado no Parque Estadual, é perfeito para quem quer desfrutar do contato com uma
+                                        Encostado no Parque Estadual, é perfeito para quem quer desfrutar do contato com
+                                        uma
                                         natureza, sem abrir mão do conforto que só um hotel boutique pode oferecer...
                                     </p>
                                 </div>
@@ -1296,8 +1425,10 @@
                                         Pousada Canoa Caiçara
                                     </h3>
                                     <p class="card-text">
-                                        A Pousada Canoa Caiçara vem sendo destacada pelas principais agências on-line tais como
-                                        Booking, Expedia, Hotel.com, TripAdvisor, com uma das maiores pontuações e melhores
+                                        A Pousada Canoa Caiçara vem sendo destacada pelas principais agências on-line
+                                        tais como
+                                        Booking, Expedia, Hotel.com, TripAdvisor, com uma das maiores pontuações e
+                                        melhores
                                         opções de hospedagem de sua categoria...
                                     </p>
                                 </div>
@@ -1307,15 +1438,16 @@
                         <li class="carousel-item">
                             <a href="./ib-ht/itapemar.html" class="popular-card clickable-card">
                                 <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/ib/Hotel Itapemar/entrada.jpg"
-                                        alt="Hotel IlhaBela" loading="lazy">
+                                    <img src="./assets/imagens/hosp/ib/Hotel Itapemar/entrada.jpg" alt="Hotel IlhaBela"
+                                        loading="lazy">
                                 </figure>
                                 <div class="card-content">
                                     <h3 class="h3 card-title">
                                         Itapemar
                                     </h3>
                                     <p class="card-text">
-                                        Este hotel oferece sofisticação e tranqüilidade em um ambiente tropical, a 800m de Ilha
+                                        Este hotel oferece sofisticação e tranqüilidade em um ambiente tropical, a 800m
+                                        de Ilha
                                         Bela. Possui uma piscina, terraço, e um centro de spa e de bem-estar...
                                     </p>
                                 </div>
@@ -1333,7 +1465,8 @@
                                         Ilha Flat
                                     </h3>
                                     <p class="card-text">
-                                        O Ilha Flat Hotel irá despertar em você e sua família um sentimento especial de sedução através de seus exóticos jardins...
+                                        O Ilha Flat Hotel irá despertar em você e sua família um sentimento especial de
+                                        sedução através de seus exóticos jardins...
                                     </p>
                                 </div>
                             </a>
@@ -1350,19 +1483,21 @@
                                         Vista Bella Resort & SPA
                                     </h3>
                                     <p class="card-text">
-                                        Localizado no norte da ilha, o Hotel Vista Bella está a apenas 3,5 km do centro histórico de Ilhabela, facilitando o acesso às principais atrações culturais e gastronômicas da região...
+                                        Localizado no norte da ilha, o Hotel Vista Bella está a apenas 3,5 km do centro
+                                        histórico de Ilhabela, facilitando o acesso às principais atrações culturais e
+                                        gastronômicas da região...
                                     </p>
                                 </div>
                             </a>
                         </li>
-        
+
                     </ul>
                 </div>
                 <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </button>
             </div>
-            <div class="carousel-dots" id="stDots">
+            <div class="carousel-dots" id="ibDots">
                 <button class="dot active" data-slide="0"></button>
                 <button class="dot" data-slide="1"></button>
                 <button class="dot" data-slide="2"></button>
@@ -1380,151 +1515,14 @@
     </article>
     </main>
 
-    <!-- barretos -->
-    <section class="popular cidade-section" id="barretos">
-        <div class="container">
-            <h2 class="h2 section-title">Barretos</h2>
-            <p class="section-text">
-                Conheça os hotéis mais acessíveis da cidade de Barretos
-            </p>
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <div class="carousel-wrapper">
-                    <ul class="popular-list carousel-list" id="btCarousel">
 
-                        <li class="carousel-item">
-                            <a href="./bt-ht/thermasPark.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/barretos/Condominio Thermas Park/entrada.jpg"
-                                        alt="Hotel Barretos" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Barretos Thermas Park Flat
-                                    </h3>
-                                    <p class="card-text">
-                                        O Smart Hotel Reserva Ilhabela fica na entrada da Praia da Feiticeira. 
-                                        Suítes sustentáveis em uma das melhores praias de Ilhabela...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./bt-ht/ibisBarretos.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/barretos/Ibis Styles Barretos/entrada.jpg"
-                                        alt="Hotel Barretos" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Ibis Styles Barretos
-                                    </h3>
-                                    <p class="card-text">
-                                        O ibis Styles Barretos é um hotel vibrante, economico e moderno! Seja para uma viagem a negocios ou lazer, o hotel conta com quartos funcionais, modernos e aconchegantes...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-        
-                    </ul>
-                </div>
-                <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-            </div>
-            <div class="carousel-dots" id="stDots">
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
-            </div>
-        </div>
-    </section>
     </article>
     </main>
 
-    <!-- vinhedo -->
-    <section class="popular cidade-section" id="vinhedo">
-        <div class="container">
-            <h2 class="h2 section-title">Vinhedo</h2>
-            <p class="section-text">
-                Conheça os hotéis mais acessíveis da cidade de Vinhedo
-            </p>
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" aria-label="Hotéis anteriores">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <div class="carousel-wrapper">
-                    <ul class="popular-list carousel-list" id="vnhCarousel">
 
-                        <li class="carousel-item">
-                            <a href="./vnh-ht/intercity.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/vinhedo/Intercity Vinhedo/entrada.jpg"
-                                        alt="Hotel Vinhedo" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Intercity
-                                    </h3>
-                                    <p class="card-text">
-                                        Hotel perto do Hopi Hari e do Wet'n Wild, a apenas 25 minutos dos parques...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./vnh-ht/cyan.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/vinhedo/Cyan Resort/entrada.jpg"
-                                        alt="Hotel Vinhedo" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Cyan Resort by Atlantica
-                                    </h3>
-                                    <p class="card-text">
-                                        A combinação de uma infraestrutura impecável com gastronomia internacional, bares, restaurantes...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="carousel-item">
-                            <a href="./vnh-ht/vinhedoPlaza.html" class="popular-card clickable-card">
-                                <figure class="card-img">
-                                    <img src="./assets/imagens/hosp/vinhedo/Vinhedo Plaza/entrada.jpg"
-                                        alt="Hotel Vinhedo" loading="lazy">
-                                </figure>
-                                <div class="card-content">
-                                    <h3 class="h3 card-title">
-                                        Vinhedo Plaza
-                                    </h3>
-                                    <p class="card-text">
-                                        Conte com nossa excelente infraestrutura e aproveite cada segundo de sua estada no Vinhedo Plaza Hotel...
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-        
-                    </ul>
-                </div>
-                <button class="carousel-btn next-btn" aria-label="Próximos hotéis">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-            </div>
-            <div class="carousel-dots" id="stDots">
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
-                <button class="dot" data-slide="2"></button>
-            </div>
-        </div>
-    </section>
     </article>
     </main>
-    
+
 
     <!-- footer -->
     <footer class="footer">
