@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Criar indicadores
       for (let i = 0; i < totalItems; i++) {
         const dot = document.createElement('button');
         dot.className = 'dot';
@@ -34,12 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const offset = -currentIndex * 16.888;
         carousel.style.transform = `translateX(${offset}%)`;
 
-        // Atualizar indicadores
         dots.forEach((dot, index) => {
           dot.classList.toggle('active', index === currentIndex);
         });
 
-        // Atualizar botões
         prevBtn.classList.toggle('disabled', currentIndex === 0);
         nextBtn.classList.toggle('disabled', currentIndex === totalItems - 1);
       }
@@ -63,11 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
 
-      // Event listeners
       nextBtn.addEventListener('click', nextSlide);
       prevBtn.addEventListener('click', prevSlide);
 
-      // Navegação por teclado
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
           prevSlide();
@@ -76,8 +71,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Removido auto-play - as fotos só mudam quando clicar nas setas
-
-      // Inicializar
       updateCarousel();
     });

@@ -1,38 +1,29 @@
-// Funcionalidade de filtros para a página de hospedagem
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos do DOM
     const filtroCidadeBtns = document.querySelectorAll('.filtro-cidade-btn');
     const hotelCards = document.querySelectorAll('.carousel-item');
     
-    // Estado dos filtros
     let filtroCidadeAtivo = 'todas';
     
-    // Mapeamento de cidades para filtros
     const cidadeMapping = {
         'sao-paulo': ['sao-paulo'],
         'ubatuba': ['ubatuba'],
         'campos-do-jordao': ['campos-do-jordao'],
         'santos': ['santos']
     };
-    
-    // Função para aplicar filtros
+
     function aplicarFiltros() {
         const cidadeSections = document.querySelectorAll('.cidade-section');
         
-        // Primeiro, processar todos os cards de hotéis
         hotelCards.forEach(card => {
             const cidadeHotel = card.closest('.cidade-section').id;
             
             let mostrarPorCidade = true;
             
-            // Verificar filtro de cidade
             if (filtroCidadeAtivo !== 'todas') {
                 mostrarPorCidade = cidadeMapping[filtroCidadeAtivo] && 
                                  cidadeMapping[filtroCidadeAtivo].includes(cidadeHotel);
             }
             
-            // Mostrar card apenas se passar no filtro
             if (mostrarPorCidade) {
                 card.classList.remove('hidden');
                 card.classList.add('visible');
@@ -42,12 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Depois, verificar se cada seção de cidade tem cards visíveis
         cidadeSections.forEach(section => {
             const cardsNaSecao = section.querySelectorAll('.carousel-item');
             const cardsVisiveisNaSecao = section.querySelectorAll('.carousel-item:not(.hidden)');
             
-            // Se não há cards visíveis na seção, ocultar toda a seção
             if (cardsVisiveisNaSecao.length === 0) {
                 section.style.opacity = '0';
                 section.style.transform = 'translateY(-20px)';
@@ -63,17 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Atualizar contador de resultados
         atualizarContadorResultados();
     }
     
-    // Função para atualizar contador de resultados
     function atualizarContadorResultados() {
         const cardsVisiveis = document.querySelectorAll('.carousel-item:not(.hidden)');
         const contadorElement = document.querySelector('.contador-resultados');
         
         if (!contadorElement) {
-            // Criar elemento de contador se não existir
             const filtrosWrapper = document.querySelector('.filtros-wrapper');
             const contador = document.createElement('p');
             contador.className = 'contador-resultados';
@@ -85,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const contador = document.querySelector('.contador-resultados');
         let textoContador = `Mostrando ${cardsVisiveis.length} hotéis`;
         
-        // Adicionar informações sobre os filtros ativos
         if (filtroCidadeAtivo !== 'todas') {
             const cidadeNome = document.querySelector(`[data-cidade="${filtroCidadeAtivo}"]`).textContent;
             textoContador += ` (${cidadeNome})`;
@@ -94,27 +79,20 @@ document.addEventListener('DOMContentLoaded', function() {
         contador.textContent = textoContador;
     }
     
-    // Event listeners para os botões de filtro por cidade
     filtroCidadeBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remover classe active de todos os botões de cidade
             filtroCidadeBtns.forEach(b => b.classList.remove('active'));
             
-            // Adicionar classe active ao botão clicado
             this.classList.add('active');
             
-            // Atualizar filtro de cidade ativo
             filtroCidadeAtivo = this.getAttribute('data-cidade');
             
-            // Aplicar filtros
             aplicarFiltros();
         });
     });
     
-    // Inicializar com todos os filtros visíveis
     aplicarFiltros();
     
-    // Adicionar animação de entrada para os cards
     function animarCardsEntrada() {
         hotelCards.forEach((card, index) => {
             setTimeout(() => {
@@ -130,11 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Executar animação após um pequeno delay
     setTimeout(animarCardsEntrada, 300);
 });
 
-// Adicionar estilos CSS dinâmicos para funcionalidades extras
 const estilosAdicionais = `
     .carousel-item {
         position: relative;
@@ -176,7 +152,95 @@ const estilosAdicionais = `
     }
 `;
 
-// Injetar estilos adicionais
 const styleSheet = document.createElement('style');
 styleSheet.textContent = estilosAdicionais;
 document.head.appendChild(styleSheet);
+
+document.addEventListener('DOMContentLoaded', function() {
+    function initCarousel(container) {
+        const wrapper = container.querySelector('.carousel-wrapper');
+        const list = container.querySelector('.carousel-list');
+        const items = list ? list.querySelectorAll('.carousel-item') : [];
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+
+        if (!wrapper || !list || !items.length || !prevBtn || !nextBtn) return;
+
+        let dotsContainer = null;
+        if (list.id) {
+            const guessedDotsId = list.id.replace('Carousel', 'Dots');
+            dotsContainer = document.getElementById(guessedDotsId);
+        }
+
+        function getPageMetrics() {
+            const pageWidth = wrapper.clientWidth;
+            const totalWidth = list.scrollWidth;
+            const totalPages = Math.max(1, Math.ceil(totalWidth / pageWidth));
+            return { pageWidth, totalWidth, totalPages };
+        }
+
+        let currentPage = 0;
+
+        function buildDots() {
+            if (!dotsContainer) return;
+            const { totalPages } = getPageMetrics();
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('data-slide', String(i));
+                dot.addEventListener('click', () => goToPage(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateButtons() {
+            const { totalPages } = getPageMetrics();
+            prevBtn.classList.toggle('disabled', currentPage <= 0);
+            nextBtn.classList.toggle('disabled', currentPage >= totalPages - 1);
+        }
+
+        function updateDots() {
+            if (!dotsContainer) return;
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentPage));
+        }
+
+        function goToPage(pageIndex) {
+            const { pageWidth, totalPages } = getPageMetrics();
+            currentPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
+            wrapper.scrollTo({ left: currentPage * pageWidth, behavior: 'smooth' });
+            updateButtons();
+            updateDots();
+        }
+
+        function nextPage() { goToPage(currentPage + 1); }
+        function prevPage() { goToPage(currentPage - 1); }
+
+        let rafId = null;
+        function onScroll() {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                const { pageWidth, totalPages } = getPageMetrics();
+                const approxPage = Math.round(wrapper.scrollLeft / Math.max(1, pageWidth));
+                const clamped = Math.max(0, Math.min(approxPage, totalPages - 1));
+                if (clamped !== currentPage) {
+                    currentPage = clamped;
+                    updateButtons();
+                    updateDots();
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', (e) => { if (!nextBtn.classList.contains('disabled')) nextPage(); });
+        prevBtn.addEventListener('click', (e) => { if (!prevBtn.classList.contains('disabled')) prevPage(); });
+        wrapper.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', () => { buildDots(); updateButtons(); goToPage(currentPage); });
+
+        buildDots();
+        updateButtons();
+        goToPage(0);
+    }
+
+    document.querySelectorAll('.carousel-container').forEach(initCarousel);
+});
