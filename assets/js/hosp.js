@@ -1,114 +1,172 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const filtroCidadeBtns = document.querySelectorAll('.filtro-cidade-btn');
-    const hotelCards = document.querySelectorAll('.carousel-item');
-    
-    let filtroCidadeAtivo = 'todas';
-    
-    const cidadeMapping = {
-        'sao-paulo': ['sao-paulo'],
-        'ubatuba': ['ubatuba'],
-        'campos-do-jordao': ['campos-do-jordao'],
-        'santos': ['santos']
+    // ===== Compact Dropdown Filters (Cidade + Deficiência) =====
+    const filtros = {
+        cidade: 'todas',
+        deficiencia: 'todas'
     };
 
-    function aplicarFiltros() {
-        const cidadeSections = document.querySelectorAll('.cidade-section');
-        
-        hotelCards.forEach(card => {
-            const cidadeHotel = card.closest('.cidade-section').id;
-            
-            let mostrarPorCidade = true;
-            
-            if (filtroCidadeAtivo !== 'todas') {
-                mostrarPorCidade = cidadeMapping[filtroCidadeAtivo] && 
-                                 cidadeMapping[filtroCidadeAtivo].includes(cidadeHotel);
-            }
-            
-            if (mostrarPorCidade) {
-                card.classList.remove('hidden');
-                card.classList.add('visible');
-            } else {
-                card.classList.add('hidden');
-                card.classList.remove('visible');
-            }
-        });
-        
-        cidadeSections.forEach(section => {
-            const cardsNaSecao = section.querySelectorAll('.carousel-item');
-            const cardsVisiveisNaSecao = section.querySelectorAll('.carousel-item:not(.hidden)');
-            
-            if (cardsVisiveisNaSecao.length === 0) {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(-20px)';
-                setTimeout(() => {
-                    section.style.display = 'none';
-                }, 300);
-            } else {
-                section.style.display = 'block';
-                setTimeout(() => {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, 50);
-            }
-        });
-        
-        atualizarContadorResultados();
+    const cardsSelector = '.ponto-card';
+    const sectionSelector = '.cidade-section';
+
+    function toSlug(texto) {
+        return (texto || '')
+            .toString()
+            .normalize('NFD').replace(/\p{Diacritic}/gu, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .trim()
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
     }
-    
-    function atualizarContadorResultados() {
-        const cardsVisiveis = document.querySelectorAll('.carousel-item:not(.hidden)');
-        const contadorElement = document.querySelector('.contador-resultados');
-        
-        if (!contadorElement) {
-            const filtrosWrapper = document.querySelector('.filtros-wrapper');
-            const contador = document.createElement('p');
-            contador.className = 'contador-resultados';
-            contador.style.marginTop = '20px';
-            contador.style.color = '#666';
-            filtrosWrapper.appendChild(contador);
+
+    function coletarCidades() {
+        const cidades = new Map();
+        document.querySelectorAll(sectionSelector).forEach(sec => {
+            const titulo = sec.querySelector('h2')?.textContent?.trim();
+            if (titulo) cidades.set(toSlug(titulo), titulo);
+        });
+        return Array.from(cidades.entries()).map(([value, label]) => ({ value, label }));
+    }
+
+    // Lista base de deficiências; itens serão combinados com os presentes nos cards via data-deficiencias
+    function coletarDeficiencias() {
+        const base = ['auditiva', 'visual', 'fisica'];
+        const doDom = new Set();
+        document.querySelectorAll(cardsSelector).forEach(card => {
+            const raw = card.getAttribute('data-deficiencias');
+            if (!raw) return;
+            raw.split(',').map(s => s.trim().toLowerCase()).forEach(v => v && doDom.add(v));
+        });
+        const setAll = new Set([...base, ...Array.from(doDom)]);
+        return Array.from(setAll).sort().map(v => ({ value: v, label: v.charAt(0).toUpperCase() + v.slice(1) }));
+    }
+
+    function montarMenu(tipo, itens) {
+        const menu = document.querySelector(`[data-menu="${tipo}"]`);
+        if (!menu) return;
+        menu.innerHTML = '';
+        const todosItem = document.createElement('li');
+        todosItem.setAttribute('role', 'option');
+        todosItem.setAttribute('data-value', 'todas');
+        todosItem.textContent = 'Todas';
+        menu.appendChild(todosItem);
+        itens.forEach(({ value, label }) => {
+            const li = document.createElement('li');
+            li.setAttribute('role', 'option');
+            li.setAttribute('data-value', value);
+            li.textContent = label;
+            menu.appendChild(li);
+        });
+    }
+
+    function atualizarDropdownLabel(tipo) {
+        const valueSpan = document.querySelector(`[data-value-label="${tipo}"]`);
+        if (!valueSpan) return;
+        if (filtros[tipo] === 'todas') {
+            valueSpan.textContent = 'Todas';
+            return;
         }
-        
+        if (tipo === 'cidade') {
+            const cidades = coletarCidades();
+            const found = cidades.find(c => c.value === filtros.cidade);
+            valueSpan.textContent = found ? found.label : 'Todas';
+        } else {
+            valueSpan.textContent = filtros.deficiencia.charAt(0).toUpperCase() + filtros.deficiencia.slice(1);
+        }
+    }
+
+    function aplicarFiltrosCompactos() {
+        const cards = document.querySelectorAll(cardsSelector);
+        const secoes = document.querySelectorAll(sectionSelector);
+
+        let visiveis = 0;
+        cards.forEach(card => {
+            const secao = card.closest(sectionSelector);
+            const cidadeTitulo = secao?.querySelector('h2')?.textContent?.trim() || '';
+            const cidadeSlug = toSlug(cidadeTitulo);
+
+            const defAttr = (card.getAttribute('data-deficiencias') || '')
+                .split(',')
+                .map(s => s.trim().toLowerCase())
+                .filter(Boolean);
+
+            const passaCidade = filtros.cidade === 'todas' || filtros.cidade === cidadeSlug;
+            const passaDef = filtros.deficiencia === 'todas' || (defAttr.length > 0 && defAttr.includes(filtros.deficiencia));
+
+            const mostrar = passaCidade && passaDef;
+            card.style.display = mostrar ? '' : 'none';
+            if (mostrar) visiveis += 1;
+        });
+
+        secoes.forEach(sec => {
+            const temVisivel = Array.from(sec.querySelectorAll(cardsSelector)).some(c => c.style.display !== 'none');
+            sec.style.display = temVisivel ? '' : 'none';
+        });
+
         const contador = document.querySelector('.contador-resultados');
-        let textoContador = `Mostrando ${cardsVisiveis.length} hotéis`;
-        
-        if (filtroCidadeAtivo !== 'todas') {
-            const cidadeNome = document.querySelector(`[data-cidade="${filtroCidadeAtivo}"]`).textContent;
-            textoContador += ` (${cidadeNome})`;
+        if (contador) {
+            contador.textContent = `Mostrando ${visiveis} hotéis` +
+                (filtros.cidade !== 'todas' ? ` • Cidade: ${document.querySelector(`[data-value-label="cidade"]`)?.textContent || ''}` : '') +
+                (filtros.deficiencia !== 'todas' ? ` • Deficiência: ${document.querySelector(`[data-value-label="deficiencia"]`)?.textContent || ''}` : '');
         }
-        
-        contador.textContent = textoContador;
     }
-    
-    filtroCidadeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filtroCidadeBtns.forEach(b => b.classList.remove('active'));
-            
-            this.classList.add('active');
-            
-            filtroCidadeAtivo = this.getAttribute('data-cidade');
-            
-            aplicarFiltros();
+
+    function initDropdowns() {
+        montarMenu('cidade', coletarCidades());
+        montarMenu('deficiencia', coletarDeficiencias());
+        atualizarDropdownLabel('cidade');
+        atualizarDropdownLabel('deficiencia');
+
+        document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const parent = btn.closest('.dropdown');
+                const expanded = parent.classList.toggle('open');
+                btn.setAttribute('aria-expanded', String(expanded));
+            });
         });
-    });
-    
-    aplicarFiltros();
-    
-    function animarCardsEntrada() {
-        hotelCards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.6s ease';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100);
-            }, index * 50);
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown.open').forEach(d => {
+                d.classList.remove('open');
+                const t = d.querySelector('.dropdown-toggle');
+                if (t) t.setAttribute('aria-expanded', 'false');
+            });
         });
+
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.addEventListener('click', (e) => {
+                const item = e.target.closest('[data-value]');
+                if (!item) return;
+                const tipo = menu.getAttribute('data-menu');
+                const valor = item.getAttribute('data-value');
+                filtros[tipo] = valor || 'todas';
+                atualizarDropdownLabel(tipo);
+                aplicarFiltrosCompactos();
+            });
+        });
+
+        aplicarFiltrosCompactos();
     }
-    
-    setTimeout(animarCardsEntrada, 300);
+
+    // Injetar estilos mínimos para os filtros compactos
+    const filtrosCss = `
+    .filtros-compactos { padding-block: 20px; background: var(--cultured); }
+    .filtros-compactos .filtros-bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .filtros-compactos .dropdown { position: relative; }
+    .filtros-compactos .dropdown-toggle { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--gainsboro); border-radius: 10px; background: #fff; color: var(--oxford-blue); }
+    .filtros-compactos .dropdown-value { font-weight: 600; }
+    .filtros-compactos .dropdown-menu { position: absolute; top: calc(100% + 6px); left: 0; background: #fff; border: 1px solid var(--gainsboro); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); min-width: 220px; max-height: 260px; overflow: auto; padding: 6px; display: none; z-index: 30; }
+    .filtros-compactos .dropdown.open .dropdown-menu { display: block; }
+    .filtros-compactos .dropdown-menu li { padding: 10px 10px; border-radius: 8px; cursor: pointer; }
+    .filtros-compactos .dropdown-menu li:hover { background: var(--cultured); }
+    `;
+    const style = document.createElement('style');
+    style.textContent = filtrosCss;
+    document.head.appendChild(style);
+
+    // Inicializa filtros compactos
+    initDropdowns();
 });
 
 const estilosAdicionais = `
