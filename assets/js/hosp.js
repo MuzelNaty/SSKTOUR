@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== Compact Dropdown Filters (Cidade + Deficiência) =====
     const filtros = {
         cidade: 'todas',
         deficiencia: 'todas'
