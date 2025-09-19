@@ -15,6 +15,15 @@ CREATE TABLE Hotel (
     FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
 );
 
+CREATE TABLE PontoTuristico (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(200)
+    descricao TEXT,
+    cidade_id INT NOT NULL,
+    FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
+);
+
 CREATE TABLE Foto (
     id INT PRIMARY KEY AUTO_INCREMENT,
     hotel_id INT NOT NULL,
@@ -34,15 +43,6 @@ CREATE TABLE Hotel_Acessibilidade (
     PRIMARY KEY (hotel_id, acessibilidade_id),
     FOREIGN KEY (hotel_id) REFERENCES Hotel(id),
     FOREIGN KEY (acessibilidade_id) REFERENCES Acessibilidade(id)
-);
-
-CREATE TABLE PontoTuristico (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    endereco VARCHAR(200)
-    descricao TEXT,
-    cidade_id INT NOT NULL,
-    FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
 );
 
 CREATE TABLE Hotel_PontoTuristico (
