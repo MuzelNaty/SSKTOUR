@@ -1,12 +1,10 @@
-/* Estilos para páginas individuais dos pontos turísticos */
-
 .ponto-turistico-container {
     padding-top: 0;
 }
 
-/* Foto do Ponto Turístico */
 .foto-ponto {
-    margin-top: 120px; /* Espaçamento do header */
+    margin-top: 120px;
+    /* Espaçamento do header */
     margin-bottom: 60px;
 }
 
@@ -48,13 +46,11 @@
     margin: 0;
 }
 
-/* Conteúdo Principal */
 .conteudo-principal {
     padding: 0 0 80px 0;
     background: #f8f9fa;
 }
 
-/* Informações do Ponto */
 .info-ponto {
     background: white;
     padding: 40px;
@@ -149,7 +145,6 @@
     margin: 0;
 }
 
-/* Informações de Transporte */
 .transporte-info {
     display: flex;
     flex-direction: column;
@@ -334,37 +329,36 @@
     transform: translateY(-2px);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .foto-ponto {
-        margin-top: 100px; /* Espaçamento menor para tablets */
+        margin-top: 100px;
     }
-    
+
     .foto-wrapper {
         height: 300px;
     }
-    
+
     .ponto-title {
         font-size: 2.5rem;
     }
-    
+
     .ponto-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .conteudo-principal {
         padding: 0 0 60px 0;
     }
-    
+
     .info-ponto,
     .hoteis-proximos {
         padding: 30px;
     }
-    
+
     .info-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .hoteis-grid {
         grid-template-columns: 1fr;
     }
@@ -372,34 +366,34 @@
 
 @media (max-width: 480px) {
     .foto-ponto {
-        margin-top: 80px; /* Espaçamento ainda menor para mobile */
+        margin-top: 80px;
     }
-    
+
     .foto-wrapper {
         height: 250px;
     }
-    
+
     .ponto-title {
         font-size: 2rem;
     }
-    
+
     .ponto-subtitle {
         font-size: 1rem;
     }
-    
+
     .foto-overlay {
         padding: 30px 20px;
     }
-    
+
     .info-ponto,
     .hoteis-proximos {
         padding: 20px;
     }
-    
+
     .secao h2 {
         font-size: 1.6rem;
     }
-    
+
     .secao h3 {
         font-size: 1.2rem;
     }

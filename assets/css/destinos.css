@@ -206,7 +206,6 @@
     font-weight: 500;
 }
 
-/* Estados dos filtros */
 .ponto-card.hidden {
     display: none;
 }
@@ -216,7 +215,6 @@
     animation: fadeIn 0.5s ease;
 }
 
-/* Animação para seções de cidade */
 .cidade-section {
     transition: all 0.5s ease;
 }
@@ -238,7 +236,6 @@
     }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
