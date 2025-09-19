@@ -37,6 +37,11 @@ CREATE TABLE Acessibilidade (
     tipo VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE Deficiencia (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE Hotel_Acessibilidade (
     hotel_id INT,
     acessibilidade_id INT,
@@ -51,11 +56,6 @@ CREATE TABLE Hotel_PontoTuristico (
     PRIMARY KEY (hotel_id, ponto_turistico_id),
     FOREIGN KEY (hotel_id) REFERENCES Hotel(id),
     FOREIGN KEY (ponto_turistico_id) REFERENCES PontoTuristico(id)
-);
-
-CREATE TABLE Deficiencia (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Hotel_Deficiencia (
