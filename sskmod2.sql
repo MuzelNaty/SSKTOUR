@@ -1,7 +1,6 @@
-create database tuor;
+create database tour;
 
-use tuor;
-
+use tour;
 
 CREATE TABLE Cidade (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -12,6 +11,15 @@ CREATE TABLE Hotel (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     endereco VARCHAR(200),
+    cidade_id INT NOT NULL,
+    FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
+);
+
+CREATE TABLE PontoTuristico (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(200)
+    descricao TEXT,
     cidade_id INT NOT NULL,
     FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
 );
@@ -29,6 +37,11 @@ CREATE TABLE Acessibilidade (
     tipo VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE Deficiencia (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE Hotel_Acessibilidade (
     hotel_id INT,
     acessibilidade_id INT,
@@ -37,25 +50,12 @@ CREATE TABLE Hotel_Acessibilidade (
     FOREIGN KEY (acessibilidade_id) REFERENCES Acessibilidade(id)
 );
 
-CREATE TABLE PontoTuristico (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT,
-    cidade_id INT NOT NULL,
-    FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
-);
-
 CREATE TABLE Hotel_PontoTuristico (
     hotel_id INT,
     ponto_turistico_id INT,
     PRIMARY KEY (hotel_id, ponto_turistico_id),
     FOREIGN KEY (hotel_id) REFERENCES Hotel(id),
     FOREIGN KEY (ponto_turistico_id) REFERENCES PontoTuristico(id)
-);
-
-CREATE TABLE Deficiencia (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Hotel_Deficiencia (
@@ -139,5 +139,3 @@ WHERE
     AND (pt.nome = COALESCE(@ponto_turistico, pt.nome))
     AND (d.tipo = COALESCE(@deficiencia, d.tipo))
 ORDER BY h.nome;
-
-
