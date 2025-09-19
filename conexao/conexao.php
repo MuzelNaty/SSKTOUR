@@ -1,6 +1,6 @@
-<?php 
- class Conexao 
- {
+<?php
+class Conexao
+{
     private $host = 'localhost';
     private $dbname = 'tuor';
     private $user = 'root';
@@ -8,24 +8,19 @@
 
     public function conectar()
     {
-        try 
-        {
+        try {
             $conexao = new PDO(
                 "mysql:host=$this->host;dbname=$this->dbname",
                 "$this->user",
                 "$this->pass"
             );
             return $conexao;
-        }
-        catch (PDOException $e)
-        {
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
+}
 
-   
- }
-
- $conexao = new Conexao();
- $conexao->conectar();
+$conexao = new Conexao();
+$conexao->conectar();
 ?>
