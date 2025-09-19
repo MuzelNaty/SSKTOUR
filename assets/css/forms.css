@@ -29,7 +29,7 @@
 .form-subtitle {
     color: var(--black-coral);
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 10px;
 }
 
 .form-group {
