@@ -1,6 +1,6 @@
-create database tuor;
+create database tour;
 
-use tuor;
+use tour;
 
 CREATE TABLE Cidade (
     id INT PRIMARY KEY AUTO_INCREMENT,
