@@ -20,7 +20,7 @@
 
 .form-title {
     color: var(--oxford-blue);
-    font-size: var(--fs-2);
+    font-size: 45px;
     margin-bottom: 15px;
     font-family: var(--ff-montserrat);
     font-weight: var(--fw-800);
@@ -29,7 +29,7 @@
 .form-subtitle {
     color: var(--black-coral);
     font-size: 18px;
-    line-height: 10px;
+    line-height: 20px;
 }
 
 .form-group {
