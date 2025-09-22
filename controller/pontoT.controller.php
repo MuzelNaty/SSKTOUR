@@ -13,7 +13,7 @@ if ($acaop == 'inserir') {
 	$pontoT->__set('descricao', $_POST['descricao']);
 	
 	$conexao = new Conexao();
-	$pontoTService = new pontoTService($pontoT, $conexao);
+	$pontoTService = new PontoTService($pontoT, $conexao);
 	$pontoTService->inserir();
 }
 
@@ -21,7 +21,7 @@ if ($acaop == 'recuperar') {
 	$pontoT = new PontoT();
 	$conexao = new Conexao();
 
-	$pontoTService = new pontoTService($pontoT, $conexao);
+	$pontoTService = new PontoTService($pontoT, $conexao);
 	$pontoT = $pontoTService->recuperar();
 }
 
@@ -29,7 +29,7 @@ if ($acaop == 'recuperarpontoT') {
 	$pontoT = new PontoT();
 	$conexao = new Conexao();
 
-	$pontoTService = new pontoTService($pontoT, $conexao);
+	$pontoTService = new PontoTService($pontoT, $conexao);
 	$pontoT = $pontoTService->recuperarpontoT($idp);
 }
 
