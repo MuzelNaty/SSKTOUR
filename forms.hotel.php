@@ -73,20 +73,21 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="hotel.controller.php?acaoc=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" id="nome" name="nome" class="form-input">
+                                <input type="text" id="nome" name="nome" class="form-input" value="<?php if(isset($nome)){echo $nome;}else{ echo '';}; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="endereco" class="form-label">Endereço</label>
-                                <input type="endereco" id="endereco" name="endereco" class="form-input">
+                                <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">>
                             </div>
                         </div>
+                        <input type="hidden" name="idc" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
-                            Enviar
+                        <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
                         </button>
                     </form>
                 </div>
