@@ -2,7 +2,7 @@
 class Conexao
 {
     private $host = 'localhost';
-    private $dbname = 'tuor';
+    private $dbname = 'tour';
     private $user = 'root';
     private $pass = '';
 

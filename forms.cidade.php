@@ -1,3 +1,18 @@
+<?php 
+    if(isset($_GET['metodo']))
+    {
+        $metodo = $_GET['metodo'];
+        $idc = $_GET['idc'];
+        $acaoc = 'recuperarCidade'; 
+        require_once 'cidade.controller.php';
+        foreach ($cidade as $key => $cidade) 
+        {
+            $nome = $cidade->nome;
+            $id= $cidade->id;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -73,17 +88,17 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="cidade.controller.php?acaoc=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data"> 
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="nome" class="form-label" style="text-align: center;">Nome</label>
-                                <input type="text" id="nome" name="nome" class="form-input">
+                                <input type="text" id="nome" name="nome" class="form-input" value="<?php if(isset($nome)){echo $nome;}else{ echo '';}; ?>">
                             </div>
                         </div>
-                        
+                        <input type="hidden" name="idc" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
-                            Enviar
+                        <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
                         </button>
                     </form>
                 </div>

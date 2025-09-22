@@ -52,7 +52,7 @@ if ($acaoc == 'alterar') {
 	$conexao = new Conexao();
 	$cidadeService = new CidadeService($cidade, $conexao);
 	$cidadeService->alterar();
-	header('location:index.php');
+	//header('location:index.php');
 }
 
 if ($acaoc == 'sair') {

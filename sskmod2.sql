@@ -18,7 +18,7 @@ CREATE TABLE Hotel (
 CREATE TABLE PontoTuristico (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
-    endereco VARCHAR(200)
+    endereco VARCHAR(200),
     descricao TEXT,
     cidade_id INT NOT NULL,
     FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
