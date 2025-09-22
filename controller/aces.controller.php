@@ -24,7 +24,7 @@ if ($acaoa == 'recuperar') {
 	$aces = $acesService->recuperar();
 }
 
-if ($acaoa == 'recuperaraces') {
+if ($acaoa == 'recuperarAces') {
 	$aces = new Aces();
 	$conexao = new Conexao();
 

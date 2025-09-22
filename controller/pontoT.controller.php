@@ -25,7 +25,7 @@ if ($acaop == 'recuperar') {
 	$pontoT = $pontoTService->recuperar();
 }
 
-if ($acaop == 'recuperarpontoT') {
+if ($acaop == 'recuperarPontoT') {
 	$pontoT = new PontoT();
 	$conexao = new Conexao();
 
