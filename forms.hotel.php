@@ -100,7 +100,7 @@
                                 <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">>
                             </div>
                         </div>
-                        <input type="hidden" name="idc" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
+                        <input type="hidden" name="idh" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
                             <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
