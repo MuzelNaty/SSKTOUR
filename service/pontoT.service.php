@@ -29,11 +29,11 @@ class PontoTService
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function recuperarpontoT($idc)
+    public function recuperarPontoT($idp)
     {
         $query = 'select * from pontoT where id = ?';
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindValue(1, $idc);
+        $stmt->bindValue(1, $idp);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }

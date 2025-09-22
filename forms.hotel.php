@@ -5,7 +5,7 @@
         $idh = $_GET['idp'];
         $acaoh = 'recuperarHotel'; 
         require_once 'hotel.controller.php';
-        foreach ($pontoT as $key => $pontoT) 
+        foreach ($hotel as $key => $hotel) 
         {
             $nome = $hotel->nome;
             $endereco = $hotel->endereco;
@@ -97,7 +97,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="endereco" class="form-label">Endereço</label>
-                                <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">>
+                                <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">
                             </div>
                         </div>
                         <input type="hidden" name="idh" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
