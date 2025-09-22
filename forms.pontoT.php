@@ -1,3 +1,20 @@
+<?php 
+    if(isset($_GET['metodo']))
+    {
+        $metodo = $_GET['metodo'];
+        $idp = $_GET['idp'];
+        $acaop = 'recuperarPontoT'; 
+        require_once 'pontoT.controller.php';
+        foreach ($pontoT as $key => $pontoT) 
+        {
+            $nome = $pontoT->nome;
+            $endereco = $pontoT->endereco;
+            $descricao = $pontoT->descricao;
+            $id= $pontoT->id;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -73,37 +90,32 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="pontoT.controller.php?acaop=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" id="nome" name="nome" class="form-input">
+                                <input type="text" id="nome" name="nome" class="form-input" value="<?php if(isset($nome)){echo $nome;}else{echo '';};?>">
                             </div>
                             <div class="form-group">
                                 <label for="endereco" class="form-label">Endereço</label>
-                                <input type="text" id="endereco" name="endereco" class="form-input">
+                                <input type="text" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{echo '';};?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="mensagem" class="form-label">Descrição</label>
-                            <textarea id="mensagem" name="mensagem" class="form-textarea"
+                            <textarea id="mensagem" name="mensagem" class="form-textarea" class="form-input" value="<?php if(isset($descricao)){echo $descricao;}else{echo '';};?>"
                                 placeholder="Descreva como é o ponto turístico..."></textarea>
                         </div>
 
                         <button type="submit" class="form-submit" id="submitBtn">
-                            Enviar
+                            <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- voltar ao topo -->
-    <a href="#top" class="go-top" data-go-top>
-        <ion-icon name="chevron-up-outline"></ion-icon>
-    </a>
 
     <script src="./assets/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
