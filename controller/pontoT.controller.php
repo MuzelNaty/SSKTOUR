@@ -9,11 +9,12 @@ require_once "conexao/conexao.php";
 if ($acaop == 'inserir') {
 	$pontoT = new pontoT();
 	$pontoT->__set('nome', $_POST['nome']);
-
+	$pontoT->__set('endereco', $_POST['endereco']);
+	$pontoT->__set('descricao', $_POST['descricao']);
+	
 	$conexao = new Conexao();
 	$pontoTService = new pontoTService($pontoT, $conexao);
 	$pontoTService->inserir();
-
 }
 
 if ($acaop == 'recuperar') {
@@ -46,6 +47,8 @@ if ($acaop == 'excluir') {
 if ($acaop == 'alterar') {
 	$pontoT = new pontoT();
 	$pontoT->__set('nome', $_POST['nome']);
+	$pontoT->__set('endereco', $_POST['endereco']);
+	$pontoT->__set('descricao', $_POST['descricao']);
 	$pontoT->__set('id', $_POST['idp']);
 
 
