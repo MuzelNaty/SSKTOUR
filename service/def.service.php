@@ -1,56 +1,56 @@
 <?php
-class AcesService
+class DefService
 {
-    private $aces;
+    private $def;
     private $conexao;
 
-    public function __construct(Aces $aces, Conexao $conexao)
+    public function __construct(Def $def, Conexao $conexao)
     {
         $this->conexao = $conexao->conectar();
-        $this->aces = $aces;
+        $this->def = $def;
     }
 
     public function inserir()
     {
-        $query = "insert into aces (tipo) 
+        $query = "insert into def (tipo) 
             values (?);";
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindValue(1, $this->aces->__get('tipo'));
+        $stmt->bindValue(1, $this->def->__get('tipo'));
         $stmt->execute();
     }
 
     public function recuperar()
     {
-        $query = 'select * from aces';
+        $query = 'select * from def';
         $stmt = $this->conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function recuperaraces($ida)
+    public function recuperardef($idd)
     {
-        $query = 'select * from aces where id = ?';
+        $query = 'select * from def where id = ?';
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindValue(1, $ida);
+        $stmt->bindValue(1, $idd);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function excluir()
     {
-        $query = 'delete from aces where id = ?';
+        $query = 'delete from def where id = ?';
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindValue(1, $this->aces->__get('id'));
+        $stmt->bindValue(1, $this->def->__get('id'));
         $stmt->execute();
 
     }
 
     public function alterar()
     {
-        $query = "update aces set tipo=? where id = ?";
+        $query = "update def set tipo=? where id = ?";
         $stmt = $this->conexao->prepare($query);
-        $stmt->bindValue(1, $this->aces->__get('tipo'));
-        $stmt->bindValue(2, $this->aces->__get('id'));
+        $stmt->bindValue(1, $this->def->__get('tipo'));
+        $stmt->bindValue(2, $this->def->__get('id'));
         $stmt->execute();
     }
 }
