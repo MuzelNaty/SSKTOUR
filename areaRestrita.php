@@ -35,6 +35,7 @@
     <?php }?>
 </table>
 
+
 <table class="table">
     <h1>Ponto Turístico</h1>
     <thead>
@@ -61,6 +62,7 @@
     </tbody>
     <?php }?>
 </table>
+
 
 <table class="table">
     <h1>Acessibilidade</h1>
