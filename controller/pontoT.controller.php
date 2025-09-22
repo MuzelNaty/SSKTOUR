@@ -7,7 +7,7 @@ require_once "conexao/conexao.php";
 @$idp = isset($_GET['idp']) ? $_GET['idp'] : $idp;
 
 if ($acaop == 'inserir') {
-	$pontoT = new pontoT();
+	$pontoT = new PontoT();
 	$pontoT->__set('nome', $_POST['nome']);
 	$pontoT->__set('endereco', $_POST['endereco']);
 	$pontoT->__set('descricao', $_POST['descricao']);
@@ -18,7 +18,7 @@ if ($acaop == 'inserir') {
 }
 
 if ($acaop == 'recuperar') {
-	$pontoT = new pontoT();
+	$pontoT = new PontoT();
 	$conexao = new Conexao();
 
 	$pontoTService = new pontoTService($pontoT, $conexao);
@@ -26,7 +26,7 @@ if ($acaop == 'recuperar') {
 }
 
 if ($acaop == 'recuperarpontoT') {
-	$pontoT = new pontoT();
+	$pontoT = new PontoT();
 	$conexao = new Conexao();
 
 	$pontoTService = new pontoTService($pontoT, $conexao);
@@ -34,18 +34,16 @@ if ($acaop == 'recuperarpontoT') {
 }
 
 if ($acaop == 'excluir') {
-	$pontoT = new pontoT();
+	$pontoT = new PontoT();
 	$conexao = new Conexao();
 
 	$pontoT->__set('id', $_POST['idp']);
-
-
-	$pontoTService = new pontoTService($pontoT, $conexao);
+	$pontoTService = new PontoTService($pontoT, $conexao);
 	$pontoTService->excluir();
 }
 
 if ($acaop == 'alterar') {
-	$pontoT = new pontoT();
+	$pontoT = new PontoT();
 	$pontoT->__set('nome', $_POST['nome']);
 	$pontoT->__set('endereco', $_POST['endereco']);
 	$pontoT->__set('descricao', $_POST['descricao']);
@@ -53,7 +51,7 @@ if ($acaop == 'alterar') {
 
 
 	$conexao = new Conexao();
-	$pontoTService = new pontoTService($pontoT, $conexao);
+	$pontoTService = new PontoTService($pontoT, $conexao);
 	$pontoTService->alterar();
 	//header('location:index.php');
 }
