@@ -1,10 +1,8 @@
 <?php
-class Hotel
+class Aces
 {
     private $id;
-    private $nome;
-    private $endereco;
-    private $cidade_id;
+    private $tipo;
 
     public function __set($atribute, $value)
     {

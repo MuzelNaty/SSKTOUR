@@ -1,3 +1,18 @@
+<?php 
+    if(isset($_GET['metodo']))
+    {
+        $metodo = $_GET['metodo'];
+        $idd = $_GET['idd'];
+        $acaop = 'recuperarDef'; 
+        require_once 'def.controller.php';
+        foreach ($def as $key => $def) 
+        {
+            $tipo = $def->tipo;
+            $id= $def->id;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +31,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
- <!-- yeji -->
+
 <body>
     <!-- header -->
     <header class="header" data-header>
@@ -73,28 +88,23 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="def.controller.php?acaod=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="nome" class="form-label" style="text-align: center;">Tipo</label>
-                                <input type="text" id="nome" name="nome" class="form-input">
+                                <input type="text" id="nome" name="nome" class="form-input" value="<?php if(isset($nome)){echo $nome;}else{ echo '';}; ?>">
                             </div>
                         </div>
-                        
+                        <input type="hidden" name="idd" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
-                            Enviar
+                            <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- voltar ao topo -->
-    <a href="#top" class="go-top" data-go-top>
-        <ion-icon name="chevron-up-outline"></ion-icon>
-    </a>
 
     <script src="./assets/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

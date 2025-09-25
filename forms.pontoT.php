@@ -107,6 +107,7 @@
                             <textarea id="mensagem" name="mensagem" class="form-textarea" class="form-input" value="<?php if(isset($descricao)){echo $descricao;}else{echo '';};?>"
                                 placeholder="Descreva como é o ponto turístico..."></textarea>
                         </div>
+                        <input type="hidden" name="idp" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
                             <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>

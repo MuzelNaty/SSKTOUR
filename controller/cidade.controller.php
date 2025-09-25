@@ -13,7 +13,6 @@ if ($acaoc == 'inserir') {
 	$conexao = new Conexao();
 	$cidadeService = new CidadeService($cidade, $conexao);
 	$cidadeService->inserir();
-
 }
 
 if ($acaoc == 'recuperar') {
@@ -37,8 +36,6 @@ if ($acaoc == 'excluir') {
 	$conexao = new Conexao();
 
 	$cidade->__set('id', $_POST['idc']);
-
-
 	$cidadeService = new CidadeService($cidade, $conexao);
 	$cidadeService->excluir();
 }
@@ -47,7 +44,6 @@ if ($acaoc == 'alterar') {
 	$cidade = new Cidade();
 	$cidade->__set('nome', $_POST['nome']);
 	$cidade->__set('id', $_POST['idc']);
-
 
 	$conexao = new Conexao();
 	$cidadeService = new CidadeService($cidade, $conexao);

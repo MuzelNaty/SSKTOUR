@@ -67,14 +67,26 @@ CREATE TABLE Hotel_Deficiencia (
 );
 
 INSERT INTO Cidade (nome) VALUES
+('Barretos'),
+('Campos do Jordão'),
+('Guarujá'),
+('Ilhabela'),
+('Olímpia'),
+('Santos'),
 ('São Paulo'),
-('Rio de Janeiro'),
-('Salvador');
+('Ubatuba'),
+('Vinhedo');
 
 INSERT INTO Hotel (nome, endereco, cidade_id) VALUES
-('Hotel Estrela', 'Rua das Flores, 100', 1),      -- São Paulo
-('Hotel Mar Azul', 'Avenida Atlântica, 200', 2),  -- Rio de Janeiro
-('Hotel Sol Nascente', 'Praça da Bahia, 300', 3); -- Salvador
+('Ibis Styles Barretos', 'Rua Luiz Durigan, 1744', 1),                  -- Barretos
+('Castelo Nacional Inn', 'Rua Roberto Pistrak Nemirovsky, 148', 2),     -- Campos do Jordão
+('Delphin Beach', 'Avenida Miguel Estéfano, 1295', 3),                  -- Guarujá
+('Canoa Caiçara', 'Avenida Cel José Vicente de Faria Lima, 994', 4),    -- Ilhabela
+('Água Viva', 'Avenida Aurora Forti Neves, 350', 5),                    -- Olímpia
+('Atlântico', 'Rua Jorge Tibiriçá, 04', 6),                             -- Santos
+('Bê Hotel', 'Rua Monte Alegre, 45', 7),                                -- São Paulo
+('Aquarius Chalés', 'Rua Pintor Gômide, 257', 8),                       -- Ubatuba
+('Cyan Resort', 'Rodovia dos Bandeirantes', 9);                         -- Vinhedo
 
 INSERT INTO Acessibilidade (tipo) VALUES
 ('Rampa de acesso'),
@@ -82,10 +94,16 @@ INSERT INTO Acessibilidade (tipo) VALUES
 ('Banheiro acessível'),
 ('Sinalização em braile');
 
-INSERT INTO PontoTuristico (nome, descricao, cidade_id) VALUES
-('Parque Ibirapuera', 'Parque urbano com áreas verdes e lazer', 1),  -- São Paulo
-('Cristo Redentor', 'Estátua icônica no topo do Corcovado', 2),      -- Rio de Janeiro
-('Pelourinho', 'Centro histórico com arquitetura colonial', 3);      -- Salvador
+INSERT INTO PontoTuristico (nome, endereco, descricao, cidade_id) VALUES
+('Barretos Country Park', 'Rodovia Brigadeiro Faria Lima', 'O Barretos Country Park é um complexo turístico localizado na cidade de Barretos, no interior do estado de São Paulo, conhecido por sua temática sertaneja e estrutura voltada ao turismo familiar.', 1),                                       -- Barretos
+('Parque Amantikir', 'Rua Simplício Ribeiro de Toledo Neto, 2200', 'O Amantikir Garden, localizado em Campos do Jordão, São Paulo, é um dos mais belos e bem-cuidados jardins do Brasil, atraindo visitantes de todas as idades com seu projeto paisagístico inspirado em jardins do mundo inteiro.', 2),   -- Campos do Jordão
+('Acqua Mundo', 'Avenida Miguel Stéfano, 2001', 'O Acqua Mundo, localizado no Guarujá, é o maior aquário da América do Sul, dedicado à preservação e educação ambiental voltada para a vida marinha.', 3),                                                                                                  -- Guarujá
+('Baía de Castelhanos', 'Estrada Parque de Castelhanos, s/n', 'A Baía de Castelhanos, localizada na Ilha Bela, litoral norte do estado de São Paulo, é um dos destinos mais emblemáticos e preservados da região.', 4),                                                                                     -- Ilhabela
+('Hot Beach', 'Rua Edson Jesus de Abreu, 606, 350', 'O Hot Beach Olímpia é um dos principais complexos de lazer do interior paulista, localizado na cidade de Olímpia, São Paulo.', 5),                                                                                                                     -- Olímpia
+('Aquário Municipal', 'Praça Vereador Luiz La Scala, s/n', 'O Aquário Municipal de Santos, inaugurado em 2 de julho de 1945, é o mais antigo do Brasil e um dos pontos turísticos mais visitados da cidade.', 6),                                                                                           -- Santos
+('Allianz Parque', 'Avenida Francisco Matarazzo, 1705', 'O Allianz Parque, também conhecido como Arena Palmeiras, é um dos estádios mais modernos e versáteis da América Latina, localizado na zona oeste de São Paulo, no bairro da Água Branca.', 7),                                                     -- São Paulo
+('Praia Domingas', 'Rua Praia Domingas Dias, s/n', 'A Praia Domingas Dias é um dos tesouros escondidos de Ubatuba, no litoral norte de São Paulo.', 8),                                                                                                                                                     -- Ubatuba
+('Adega Família Ferragut', 'Avenida Rosa Zanetti Ferragut, 449', 'A Adega Família Ferragut é uma das mais tradicionais de Vinhedo, preservando a história da imigração italiana e a cultura do vinho na região.', 9);                                                                                       -- Vinhedo
 
 INSERT INTO Deficiencia (tipo) VALUES
 ('Auditiva'),

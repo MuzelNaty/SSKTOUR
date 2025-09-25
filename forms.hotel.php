@@ -1,3 +1,19 @@
+<?php 
+    if(isset($_GET['metodo']))
+    {
+        $metodo = $_GET['metodo'];
+        $idh = $_GET['idp'];
+        $acaoh = 'recuperarHotel'; 
+        require_once 'hotel.controller.php';
+        foreach ($hotel as $key => $hotel) 
+        {
+            $nome = $hotel->nome;
+            $endereco = $hotel->endereco;
+            $id= $hotel->id;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -84,21 +100,16 @@
                                 <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">
                             </div>
                         </div>
-                        <input type="hidden" name="idc" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
+                        <input type="hidden" name="idh" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
-                        <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
+                            <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- voltar ao topo -->
-    <a href="#top" class="go-top" data-go-top>
-        <ion-icon name="chevron-up-outline"></ion-icon>
-    </a>
 
     <script src="./assets/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
