@@ -36,6 +36,32 @@
 </table>
 
 <table class="table">
+    <h1>Cidades</h1>
+    <thead>
+        <tr>
+            <th scope="col">
+                Nome
+            </th>
+            <th scope="col">
+                Endereço
+            </th>
+            <th scope="col"> 
+            </th>
+        </tr>
+    </thead>
+    
+    <?php foreach($hotel as $key => $hotel){?>
+    <tbody>
+        <tr>
+            <td><?= $hotel->nome?></td>
+            <td><a href="forms.hotel.php?metodo=alterar&idc=<?= $hotel->id?>"> Alterar</a></td>
+            <td><a href="forms.hotel.php?metodo=excluir&idc=<?= $hotel->id?>"> Excluir</a></td>
+        </tr>
+    </tbody>
+    <?php }?>
+</table>
+
+<table class="table">
     <h1>Ponto Turístico</h1>
     <thead>
         <tr>

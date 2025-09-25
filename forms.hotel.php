@@ -81,7 +81,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="endereco" class="form-label">Endereço</label>
-                                <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">>
+                                <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">
                             </div>
                         </div>
                         <input type="hidden" name="idc" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
