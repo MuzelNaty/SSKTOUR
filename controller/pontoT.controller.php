@@ -10,7 +10,7 @@ if ($acaop == 'inserir') {
 	$pontoT = new PontoT();
 	$pontoT->__set('nome', $_POST['nome']);
 	$pontoT->__set('endereco', $_POST['endereco']);
-	$pontoT->__set('descricao', $_POST['descricao']);
+	$pontoT->__set('cidade_id', $_POST['idCidade']);
 	
 	$conexao = new Conexao();
 	$pontoTService = new PontoTService($pontoT, $conexao);
@@ -46,7 +46,7 @@ if ($acaop == 'alterar') {
 	$pontoT = new PontoT();
 	$pontoT->__set('nome', $_POST['nome']);
 	$pontoT->__set('endereco', $_POST['endereco']);
-	$pontoT->__set('descricao', $_POST['descricao']);
+	$pontoT->__set('cidade_id', $_POST['idCidade']);
 	$pontoT->__set('id', $_POST['idp']);
 
 

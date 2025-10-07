@@ -4,7 +4,7 @@ class PontoT
     private $id;
     private $nome;
     private $endereco;
-    private $descricao;
+    private $cidade_id;
 
     public function __set($atribute, $value)
     {

@@ -12,7 +12,7 @@ class DefService
 
     public function inserir()
     {
-        $query = "insert into def (tipo) 
+        $query = "insert into deficiencia (tipo) 
             values (?);";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->def->__get('tipo'));
@@ -21,7 +21,7 @@ class DefService
 
     public function recuperar()
     {
-        $query = 'select * from def';
+        $query = 'select * from deficiencia';
         $stmt = $this->conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -29,7 +29,7 @@ class DefService
 
     public function recuperardef($idd)
     {
-        $query = 'select * from def where id = ?';
+        $query = 'select * from deficiencia where id = ?';
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $idd);
         $stmt->execute();
@@ -38,7 +38,7 @@ class DefService
 
     public function excluir()
     {
-        $query = 'delete from def where id = ?';
+        $query = 'delete from deficiencia where id = ?';
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->def->__get('id'));
         $stmt->execute();
@@ -47,7 +47,7 @@ class DefService
 
     public function alterar()
     {
-        $query = "update def set tipo=? where id = ?";
+        $query = "update deficiencia set tipo=? where id = ?";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->def->__get('tipo'));
         $stmt->bindValue(2, $this->def->__get('id'));

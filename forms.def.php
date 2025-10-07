@@ -1,9 +1,10 @@
 <?php 
+echo $_GET['idd'];
     if(isset($_GET['metodo']))
     {
         $metodo = $_GET['metodo'];
         $idd = $_GET['idd'];
-        $acaop = 'recuperarDef'; 
+        $acaod = 'recuperarDef'; 
         require_once 'def.controller.php';
         foreach ($def as $key => $def) 
         {
@@ -92,7 +93,7 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="nome" class="form-label" style="text-align: center;">Tipo</label>
-                                <input type="text" id="nome" name="nome" class="form-input" value="<?php if(isset($nome)){echo $nome;}else{ echo '';}; ?>">
+                                <input type="text" id="nome" name="tipo" class="form-input" value="<?php if(isset($tipo)){echo $tipo;}else{ echo '';}; ?>">
                             </div>
                         </div>
                         <input type="hidden" name="idd" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >

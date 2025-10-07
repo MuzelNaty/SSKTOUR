@@ -12,11 +12,12 @@ class HotelService
 
     public function inserir()
     {
-        $query = "insert into hotel (nome, endereco) 
-            values (?);";
+        $query = "insert into hotel (nome, endereco, cidade_id) 
+            values (?,?,?);";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->hotel->__get('nome'));
         $stmt->bindValue(2, $this->hotel->__get('endereco'));
+        $stmt->bindValue(3, $this->hotel->__get('cidade_id'));
         $stmt->execute();
     }
 
@@ -48,11 +49,12 @@ class HotelService
 
     public function alterar()
     {
-        $query = "update hotel set nome=?, endereco=? where id = ?";
+        $query = "update hotel set nome=?, endereco=?, cidade_id=? where id = ?";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->hotel->__get('nome'));
         $stmt->bindValue(2, $this->hotel->__get('endereco'));
-        $stmt->bindValue(3, $this->hotel->__get('id'));
+        $stmt->bindValue(3, $this->hotel->__get('cidade_id'));
+        $stmt->bindValue(4, $this->hotel->__get('id'));
         $stmt->execute();
     }
 }

@@ -9,7 +9,8 @@
         {
             $nome = $hotel->nome;
             $endereco = $hotel->endereco;
-            $id= $hotel->id;
+            $id_cidade = $hotel->cidade_id;
+            $id = $hotel->id;
         }
     }
 ?>
@@ -89,7 +90,7 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="contact-form" action="hotel.controller.php?acaoc=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data">
+                    <form id="contactForm" class="contact-form" action="hotel.controller.php?acaoh=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nome" class="form-label">Nome</label>
@@ -98,6 +99,10 @@
                             <div class="form-group">
                                 <label for="endereco" class="form-label">Endereço</label>
                                 <input type="endereco" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{ echo '';}; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="idCidade" class="form-label">Cidade</label>
+                                <input type="idCidade" id="idCidade" name="idCidade" class="form-input" value="<?php if(isset($id_cidade)){echo $id_cidade;}else{ echo '';}; ?>">
                             </div>
                         </div>
                         <input type="hidden" name="idh" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >

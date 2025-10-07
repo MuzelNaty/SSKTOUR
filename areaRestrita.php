@@ -3,12 +3,12 @@
     require_once 'cidade.controller.php';
     $acaoh = 'recuperar';
     require_once 'hotel.controller.php';
-    //$acaop = 'recuperar';
-    //require_once 'pontoT.controller.php';
-    //$acaoa = 'recuperar';
-    //require_once 'aces.controller.php';
-    //$acaod = 'recuperar';
-    //require_once 'def.controller.php';
+    $acaop = 'recuperar';
+    require_once 'pontoT.controller.php';
+    $acaoa = 'recuperar';
+    require_once 'aces.controller.php';
+    $acaod = 'recuperar';
+    require_once 'def.controller.php';
 ?>
 
 <table class="table">
@@ -139,8 +139,8 @@
     <tbody>
         <tr>
             <td><?= $def->tipo?></td>
-            <td><a href="forms.def.php?metodo=alterar&idd=<?= $def->id?>"> Alterar</a></td>
-            <td><a href="forms.def.php?metodo=excluir&idd=<?= $def->id?>"> Excluir</a></td>
+            <td><a href="forms.def.php?metodo=alterar&idd=<?= $def->id ?>"> Alterar</a></td>
+            <td><a href="forms.def.php?metodo=excluir&idd=<?= $def->id ?>"> Excluir</a></td>
         </tr>
     </tbody>
     <?php }?>

@@ -1,3 +1,18 @@
+<?php 
+    if(isset($_GET['metodo']))
+    {
+        $metodo = $_GET['metodo'];
+        $ida = $_GET['ida'];
+        $acaoa = 'recuperarAces'; 
+        require_once 'aces.controller.php';
+        foreach ($aces as $key => $aces) 
+        {
+            $tipo = $aces->tipo;
+            $id= $aces->id;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -73,20 +88,17 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="aces.controller.php?acaoa=<?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>" method="post" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="tipo" class="form-label">Tipo de acessibilidade</label>
-                                <input type="text" id="tipo" name="tipo" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="endereco" class="form-label">Endereço</label>
-                                <input type="endereco" id="endereco" name="endereco" class="form-input">
+                                <input type="text" id="tipo" name="tipo" class="form-input" value="<?php if(isset($tipo)){echo $tipo;}else{ echo '';}; ?>">
                             </div>
                         </div>
+                        <input type="hidden" name="ida" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
                         <button type="submit" class="form-submit" id="submitBtn">
-                            Enviar
+                            <?php if(!isset($metodo)){echo 'inserir';}else if($metodo == 'alterar'){echo 'alterar';}else if($metodo == 'excluir'){echo 'excluir';}?>
                         </button>
                     </form>
                 </div>

@@ -10,6 +10,7 @@ if ($acaoh == 'inserir') {
 	$hotel = new Hotel();
 	$hotel->__set('nome', $_POST['nome']);
 	$hotel->__set('endereco', $_POST['endereco']);
+	$hotel->__set('cidade_id', $_POST['idCidade']);
 
 	$conexao = new Conexao();
 	$hotelService = new HotelService($hotel, $conexao);
@@ -45,6 +46,7 @@ if ($acaoh == 'alterar') {
 	$hotel = new Hotel();
 	$hotel->__set('nome', $_POST['nome']);
 	$hotel->__set('endereco', $_POST['endereco']);
+	$hotel->__set('cidade_id', $_POST['idCidade']);
 	$hotel->__set('id', $_POST['idh']);
 
 	$conexao = new Conexao();

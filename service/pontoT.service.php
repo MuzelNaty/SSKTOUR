@@ -12,18 +12,18 @@ class PontoTService
 
     public function inserir()
     {
-        $query = "insert into pontoT (nome, endereco, descricao) 
-            values (?);";
+        $query = "insert into pontoturistico (nome, endereco, cidade_id) 
+            values (?,?,?);";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->pontoT->__get('nome'));
         $stmt->bindValue(2, $this->pontoT->__get('endereco'));
-        $stmt->bindValue(3, $this->pontoT->__get('descricao'));
+        $stmt->bindValue(3, $this->pontoT->__get('cidade_id'));
         $stmt->execute();
     }
 
     public function recuperar()
     {
-        $query = 'select * from pontoT';
+        $query = 'select * from pontoturistico';
         $stmt = $this->conexao->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -31,7 +31,7 @@ class PontoTService
 
     public function recuperarPontoT($idp)
     {
-        $query = 'select * from pontoT where id = ?';
+        $query = 'select * from pontoturistico where id = ?';
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $idp);
         $stmt->execute();
@@ -40,7 +40,7 @@ class PontoTService
 
     public function excluir()
     {
-        $query = 'delete from pontoT where id = ?';
+        $query = 'delete from pontoturistico where id = ?';
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->pontoT->__get('id'));
         $stmt->execute();
@@ -48,11 +48,11 @@ class PontoTService
 
     public function alterar()
     {
-        $query = "update pontoT set nome=?, endereco=?, descricao=? where id = ?";
+        $query = "update pontoturistico set nome=?, endereco=?, cidade_id=? where id = ?";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(1, $this->pontoT->__get('nome'));
         $stmt->bindValue(2, $this->pontoT->__get('endereco'));
-        $stmt->bindValue(3, $this->pontoT->__get('descricao'));
+        $stmt->bindValue(3, $this->pontoT->__get('cidade_id'));
         $stmt->bindValue(4, $this->pontoT->__get('id'));
         $stmt->execute();
     }

@@ -10,6 +10,7 @@
             $nome = $pontoT->nome;
             $endereco = $pontoT->endereco;
             $descricao = $pontoT->descricao;
+            $id_cidade = $pontoT->cidade_id;
             $id= $pontoT->id;
         }
     }
@@ -100,12 +101,10 @@
                                 <label for="endereco" class="form-label">Endereço</label>
                                 <input type="text" id="endereco" name="endereco" class="form-input" value="<?php if(isset($endereco)){echo $endereco;}else{echo '';};?>">
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mensagem" class="form-label">Descrição</label>
-                            <textarea id="mensagem" name="mensagem" class="form-textarea" class="form-input" value="<?php if(isset($descricao)){echo $descricao;}else{echo '';};?>"
-                                placeholder="Descreva como é o ponto turístico..."></textarea>
+                            <div class="form-group">
+                                <label for="idCidade" class="form-label">Cidade</label>
+                                <input type="idCidade" id="idCidade" name="idCidade" class="form-input" value="<?php if(isset($id_cidade)){echo $id_cidade;}else{ echo '';}; ?>">
+                            </div>
                         </div>
                         <input type="hidden" name="idp" value="<?php if(isset($id)){echo $id;}else{ echo '';}; ?>" >
 
