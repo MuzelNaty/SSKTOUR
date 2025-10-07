@@ -80,12 +80,12 @@
         </tr>
     </thead>
     
-    <?php foreach($hotel as $key => $hotel){?>
+    <?php foreach($cidade as $key => $cidade){?>
     <tbody>
         <tr>
-            <td><?= $hotel->nome?></td>
-            <td><a href="forms.hotel.php?metodo=alterar&idc=<?= $hotel->id?>"> Alterar</a></td>
-            <td><a href="forms.hotel.php?metodo=excluir&idc=<?= $hotel->id?>"> Excluir</a></td>
+            <td><?= $cidade->nome?></td>
+            <td><a href="forms.cidade.php?metodo=alterar&idc=<?= $cidade->id?>"> Alterar</a></td>
+            <td><a href="forms.cidade.php?metodo=excluir&idc=<?= $cidade->id?>"> Excluir</a></td>
         </tr>
     </tbody>
     <?php }?>
