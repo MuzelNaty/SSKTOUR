@@ -107,7 +107,6 @@
                         </div>
                     </div>
 
-
                     <div class="form-wrapper">
                         <div class="form-header">
                             <h1 class="form-title">Hotéis</h1>
@@ -138,99 +137,97 @@
                             </table>
                         </div>
                     </div>
-                </div>
 
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h1 class="form-title">Ponto Turístico</h1>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Nome
+                                        </th>
+                                        <th scope="col">
+                                            Endereço
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <?php foreach($pontoT as $key => $pontoT){?>
+
+                                <tbody>
+                                    <tr>
+                                        <td><?= $pontoT->nome?></td>
+                                        <td><?= $pontoT->endereco?></td>
+                                        <td><a href="forms.pontoT.php?metodo=alterar&idp=<?= $pontoT->id?>"> Alterar</a></td>
+                                        <td><a href="forms.pontoT.php?metodo=excluir&idp=<?= $pontoT->id?>"> Excluir</a></td>
+                                    </tr>
+                                </tbody>
+                                <?php }?>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h1 class="form-title">Acessibilidade</h1>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Tipo
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <?php foreach($aces as $key => $aces){?>
+
+                                <tbody>
+                                    <tr>
+                                        <td><?= $aces->tipo?></td>
+                                        <td><a href="forms.aces.php?metodo=alterar&ida=<?= $aces->id?>"> Alterar</a></td>
+                                        <td><a href="forms.aces.php?metodo=excluir&ida=<?= $aces->id?>"> Excluir</a></td>
+                                    </tr>
+                                </tbody>
+                                <?php }?>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h1 class="form-title">Deficiência</h1>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Tipo
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <?php foreach($def as $key => $def){?>
+
+                                <tbody>
+                                    <tr>
+                                        <td><?= $def->tipo?></td>
+                                        <td><a href="forms.def.php?metodo=alterar&idd=<?= $def->id ?>"> Alterar</a></td>
+                                        <td><a href="forms.def.php?metodo=excluir&idd=<?= $def->id ?>"> Excluir</a></td>
+                                    </tr>
+                                </tbody>
+                                <?php }?>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
             </section>
         </main>
-
-
-
-
-
-
-
-
-
         
-
-
-        
-
-        <table class="table">
-            <h1>Ponto Turístico</h1>
-            <thead>
-                <tr>
-                    <th scope="col">
-                        Nome
-                    </th>
-                    <th scope="col">
-                        Endereço
-                    </th>
-                </tr>
-            </thead>
-            <?php foreach($pontoT as $key => $pontoT){?>
-
-            <tbody>
-                <tr>
-                    <td><?= $pontoT->nome?></td>
-                    <td><?= $pontoT->endereco?></td>
-                    <td><a href="forms.pontoT.php?metodo=alterar&idp=<?= $pontoT->id?>"> Alterar</a></td>
-                    <td><a href="forms.pontoT.php?metodo=excluir&idp=<?= $pontoT->id?>"> Excluir</a></td>
-                </tr>
-            </tbody>
-            <?php }?>
-        </table>
-
-
-        <table class="table">
-            <h1>Acessibilidade</h1>
-            <thead>
-                <tr>
-                    <th scope="col">
-                        Tipo
-                    </th>
-                    <th scope="col">
-                    </th>
-                    <th scope="col">
-                    </th>
-                </tr>
-            </thead>
-            <?php foreach($aces as $key => $aces){?>
-
-            <tbody>
-                <tr>
-                    <td><?= $aces->tipo?></td>
-                    <td><a href="forms.aces.php?metodo=alterar&ida=<?= $aces->id?>"> Alterar</a></td>
-                    <td><a href="forms.aces.php?metodo=excluir&ida=<?= $aces->id?>"> Excluir</a></td>
-                </tr>
-            </tbody>
-            <?php }?>
-        </table>
-
-
-        <table class="table">
-            <h1>Deficiência</h1>
-            <thead>
-                <tr>
-                    <th scope="col">
-                        Tipo
-                    </th>
-                    <th scope="col">
-                    </th>
-                    <th scope="col">
-                    </th>
-                </tr>
-            </thead>
-            <?php foreach($def as $key => $def){?>
-
-            <tbody>
-                <tr>
-                    <td><?= $def->tipo?></td>
-                    <td><a href="forms.def.php?metodo=alterar&idd=<?= $def->id ?>"> Alterar</a></td>
-                    <td><a href="forms.def.php?metodo=excluir&idd=<?= $def->id ?>"> Excluir</a></td>
-                </tr>
-            </tbody>
-            <?php }?>
-        </table>
     </body>
 </html>
