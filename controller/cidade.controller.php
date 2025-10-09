@@ -13,7 +13,6 @@ if ($acaoc == 'inserir') {
 	$conexao = new Conexao();
 	$cidadeService = new CidadeService($cidade, $conexao);
 	$cidadeService->inserir();
-
 }
 
 if ($acaoc == 'recuperar') {
@@ -25,7 +24,7 @@ if ($acaoc == 'recuperar') {
 }
 
 if ($acaoc == 'recuperarCidade') {
-	$cidade = new cidade();
+	$cidade = new Cidade();
 	$conexao = new Conexao();
 
 	$cidadeService = new CidadeService($cidade, $conexao);
