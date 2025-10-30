@@ -1,3 +1,7 @@
+
+  
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -76,24 +80,24 @@
             <!-- formulário -->
             <section class="tour-search">
                 <div class="container">
-                    <form action="" class="tour-search-form">
+                    <form action="pesquisa.php" method="get" class="tour-search-form">
                         <div class="input-wrapper">
                             <label for="cidade" class="input-label">Cidade</label>
-                            <input type="text" name="cidade" id="cidade" required placeholder="Cidade"
+                            <input type="text" name="cidade" id="cidade"  placeholder="Cidade"
                                 class="input-field">
                         </div>
                         <div class="input-wrapper">
                             <label for="hotel" class="input-label">Hotel</label>
-                            <input type="text" name="hotel" id="hotel" required placeholder="Hotel" class="input-field">
+                            <input type="text" name="hotel" id="hotel"  placeholder="Hotel" class="input-field">
                         </div>
                         <div class="input-wrapper">
                             <label for="deficiencia" class="input-label">Deficiência</label>
-                            <input type="text" name="deficiencia" id="deficiencia" required placeholder="Deficiência"
+                            <input type="text" name="deficiencia" id="deficiencia"  placeholder="Deficiência"
                                 class="input-field">
                         </div>
                         <div class="input-wrapper">
                             <label for="ponto-turistico" class="input-label">Ponto turístico</label>
-                            <input type="text" name="ponto-turistico" id="ponto-turistico" required
+                            <input type="text" name="ponto-turistico" id="ponto-turistico" 
                                 placeholder="Ponto turístico" class="input-field">
                         </div>
                         <button type="submit" class="btn btn-secondary">Pesquisar</button>
