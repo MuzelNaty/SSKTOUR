@@ -145,6 +145,19 @@ INSERT INTO Hotel (nome, endereco, cidade_id) VALUES
 
 -- Inserindo pontos turísticos
 INSERT INTO PontoTuristico (nome, endereco, cidade_id) VALUES 
+('Barretos Country Park', 'Rodovia Armando de Oliveira, Km 03', 1),
+('Catedral do Espírito Santo', 'Pr. Francisco Barreto, 107', 1),
+('Memorial do Peão', 'Av. 25 de Agosto, 178-244', 1),
+('Parque Amantikir', 'R. Simplício Ribeiro de Toledo Neto, 2200', 2),
+('Ducha de Prata', 'Av. Mariane Baungart, 2485', 2),
+('Museu Felícia Leirner', 'Av. Dr. Luis Arrobas Martins, 1880', 2),
+('Praia da Enseada', 'Avenida Dom Pedro I', 3),
+('Acqua Mundo', 'Av. Miguel Estefno, 2001', 3),
+('Praia Branca', 'Balsa de Bertioga', 3),
+
+
+('oooooooooooooooooooo', 'oooooooooooooooooooo', 3),
+
 ('Avenida Paulista', 'Av. Paulista, São Paulo', 1),
 ('Parque Ibirapuera', 'Av. Pedro Álvares Cabral, São Paulo', 1),
 ('Cristo Redentor', 'Parque Nacional da Tijuca, Rio de Janeiro', 2),
