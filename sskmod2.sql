@@ -154,39 +154,33 @@ INSERT INTO PontoTuristico (nome, endereco, cidade_id) VALUES
 ('Praia da Enseada', 'Avenida Dom Pedro I', 3),
 ('Acqua Mundo', 'Av. Miguel Estefno, 2001', 3),
 ('Praia Branca', 'Balsa de Bertioga', 3),
-('Baía de Castelhanos', 'Estrada Parque de Castelhanos - Reino', 4),
-('Praia do Bonete', 'Face Sul da ilha', 4),
-('Ilha das Cabras', 'Lado Sul de Ilhabela, frente à Praia das Pedras Miúdas', 4),
-('Hot Beach', 'Pereira de Barros - Via de Acesso Ademar P de Barros, 1700', 5),
-('Museu de Cera Dreamland', 'Av. Aurora Forti Neves, 116', 5),
-('Thermas dos Laranjais', 'Av. do Folclore, 1543', 5),
-('Vale dos Dinossauros', 'Av. Gov. Adhemar Pereira de Barros, 1702', 5),
-('Aquário Municipal', 'Avenida Bartolomeu de Gusmão', 6),
-('Basílica de Santo Antônio do Embaré', 'Av. Bartholomeu de Gusmão, 32', 6),
-('Museu do Café', 'Quinze de Novembro, 95', 6),
-('Praia do Gonzaga', 'Avenida Presidente Wilson, s/n', 6),
-('Allianz Parque', 'Avenida Francisco Matarazzo, 1705', 7),
-('Aquário de São Paulo', 'Huet Bacelar, 407', 7),
-('Bairro da Liberdade', 'Zona central', 7),
-('Galeria do Rock', 'Av. São João, 439', 7),
-('Jardim Botânico', 'Av. Miguel Estefno, 3031', 7),
-('Museu Catavento', 'Av. Mercúrio, Parque Dom Pedro II, s/n', 7),
-('Museu de Arte de São Paulo (MASP)', 'Av. Paulista, 1578', 7),
-('Parque Ibirapuera', 'Av. Pedro Álvares Cabral, s/n', 7),
-('Teatro Municipal', 'Praça Ramos de Azevedo, s/n', 7),
-('Praia das Toninhas', 'Rodovia Rio-Santos (BR-101)', 8),
-('Projeto Tamar', 'R. Antônio Atanázio, 273', 8),
-('Praia Domingas', 'Condomínio Pedra Verde', 8),
-('Adega Família Ferragut', 'Av. Rosa Zanetti Ferragut, 449', 9),
-('Hopi Hari', 'Rod. dos Bandeirantes, km 72', 9),
-('Mosteiro Beneditino de São Bento', 'R. do Observatório, 138', 9),
-('Parque municipal Jayme Ferragut', 'Av. Apparecida Tellau Seraphim, s/n', 9);
+
+
+('oooooooooooooooooooo', 'oooooooooooooooooooo', 3),
+
+('Avenida Paulista', 'Av. Paulista, São Paulo', 1),
+('Parque Ibirapuera', 'Av. Pedro Álvares Cabral, São Paulo', 1),
+('Cristo Redentor', 'Parque Nacional da Tijuca, Rio de Janeiro', 2),
+('Pão de Açúcar', 'Av. Pasteur, Rio de Janeiro', 2),
+('Praça da Liberdade', 'Praça da Liberdade, Belo Horizonte', 3);
 
 -- Inserindo tipos de acessibilidade
 INSERT INTO Acessibilidade (tipo) VALUES 
 ('Rampa de acesso'),
 ('Elevador adaptado'),
 ('Banheiro acessível'),
+('Piso tátil'),
+('Portas adaptadas'),
+('Cadeiras de rodas no local'),
+('Corrimãos nas escadas'),
+('Academia adaptada'),
+('Restaurante adaptado'),
+('Piscina acessível'),
+('Estacionamento acessível'),
+('Spa acessível'),
+('Orientacão auditiva'),
+('Animais de serviço permitidos'),
+('Sinalização em braile'),
 ('Quarto adaptado');
 
 -- Inserindo tipos de deficiência
