@@ -154,15 +154,14 @@ INSERT INTO PontoTuristico (nome, endereco, cidade_id) VALUES
 ('Praia da Enseada', 'Avenida Dom Pedro I', 3),
 ('Acqua Mundo', 'Av. Miguel Estefno, 2001', 3),
 ('Praia Branca', 'Balsa de Bertioga', 3),
+('Baía de Castelhanos', 'Estrada Parque de Castelhanos - Reino', 4),
+('Praia do Bonete', 'Face Sul da ilha', 4),
+('Ilha das Cabras', 'Lado Sul de Ilhabela, frente à Praia das Pedras Miúdas', 4),
+('Hot Beach', 'oooooooooooooooooooo', 5),
 
+('oooooooooooooooooooo', 'oooooooooooooooooooo', 5),
+('oooooooooooooooooooo', 'oooooooooooooooooooo', 5);
 
-('oooooooooooooooooooo', 'oooooooooooooooooooo', 3),
-
-('Avenida Paulista', 'Av. Paulista, São Paulo', 1),
-('Parque Ibirapuera', 'Av. Pedro Álvares Cabral, São Paulo', 1),
-('Cristo Redentor', 'Parque Nacional da Tijuca, Rio de Janeiro', 2),
-('Pão de Açúcar', 'Av. Pasteur, Rio de Janeiro', 2),
-('Praça da Liberdade', 'Praça da Liberdade, Belo Horizonte', 3);
 
 -- Inserindo tipos de acessibilidade
 INSERT INTO Acessibilidade (tipo) VALUES 
