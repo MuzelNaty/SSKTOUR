@@ -183,6 +183,7 @@ INSERT INTO Acessibilidade (tipo) VALUES
 ('Sinalização em braile'),
 ('Quarto adaptado');
 
+
 -- Inserindo tipos de deficiência
 INSERT INTO Deficiencia (tipo) VALUES 
 ('Visual'),
