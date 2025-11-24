@@ -83,22 +83,21 @@
                     <form action="pesquisa.php" method="get" class="tour-search-form">
                         <div class="input-wrapper">
                             <label for="cidade" class="input-label">Cidade</label>
-                            <input type="text" name="cidade" id="cidade"  placeholder="Cidade"
-                                class="input-field">
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="hotel" class="input-label">Hotel</label>
-                            <input type="text" name="hotel" id="hotel"  placeholder="Hotel" class="input-field">
+                            <select name="cidade" id="">
+                                <?php 
+                                $acaoc = 'recuperar';
+                                require_once 'cidade.controller.php';
+                                foreach($cidade as $key => $cidade){ ?>
+                                <option value="<?= $cidade->nome?>"> <?= $cidade->nome?></option>
+                                <?php } ?>
+                            </select>
+                            
+                           <!-- <input type="text" name="cidade" id="cidade"  placeholder="Cidade" class="input-field">-->
                         </div>
                         <div class="input-wrapper">
                             <label for="deficiencia" class="input-label">Deficiência</label>
                             <input type="text" name="deficiencia" id="deficiencia"  placeholder="Deficiência"
                                 class="input-field">
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="ponto-turistico" class="input-label">Ponto turístico</label>
-                            <input type="text" name="ponto-turistico" id="ponto-turistico" 
-                                placeholder="Ponto turístico" class="input-field">
                         </div>
                         <button type="submit" class="btn btn-secondary">Pesquisar</button>
                     </form>
@@ -395,6 +394,19 @@
     <script src="./assets/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
 </body>
 
 </html>

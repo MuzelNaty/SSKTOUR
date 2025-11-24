@@ -10,6 +10,7 @@ $sql = "
 SELECT
     h.id,
     h.nome AS hotel,
+    h.site,
     c.nome AS cidade,
     GROUP_CONCAT(DISTINCT d.tipo SEPARATOR ', ') AS deficiencias,
     GROUP_CONCAT(DISTINCT p.nome SEPARATOR ', ') AS pontos_turisticos
@@ -22,21 +23,21 @@ LEFT JOIN PontoTuristico p ON hp.ponto_turistico_id = p.id
 WHERE
     (:cidade IS NULL OR c.nome LIKE CONCAT('%', :cidade, '%'))
     AND (:hotel IS NULL OR h.nome LIKE CONCAT('%', :hotel, '%'))
--- filtros por deficiencia/ponto usando EXISTS para não quebrar os LEFT JOINs
     AND (:deficiencia IS NULL OR EXISTS (
         SELECT 1 FROM Hotel_Deficiencia hd2
         JOIN Deficiencia d2 ON hd2.deficiencia_id = d2.id
         WHERE hd2.hotel_id = h.id
           AND d2.tipo LIKE CONCAT('%', :deficiencia, '%')
     ))
-    AND (:ponto IS NULL OR EXISTS (
+    AND (:ponto_turistico IS NULL OR EXISTS (
         SELECT 1 FROM Hotel_PontoTuristico hp2
         JOIN PontoTuristico p2 ON hp2.ponto_turistico_id = p2.id
         WHERE hp2.hotel_id = h.id
-          AND p2.nome LIKE CONCAT('%', :ponto, '%')
+          AND p2.nome LIKE CONCAT('%', :ponto_turistico, '%')
     ))
-GROUP BY h.id, h.nome, c.nome
-ORDER BY h.nome
+GROUP BY h.id, h.nome, h.site, c.nome
+ORDER BY h.nome;
+
 ";
 
 $conexao = new Conexao();
@@ -47,8 +48,9 @@ $stmt->execute([
     'cidade' => $cidade ?: null,
     'hotel' => $hotel ?: null,
     'deficiencia' => $deficiencia ?: null,
-    'ponto' => $ponto ?: null,
+    'ponto_turistico' => $ponto ?: null,
 ]);
+
 
 $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -57,5 +59,9 @@ foreach ($resultados as $row) {
     echo "<strong>Cidade:</strong> {$row['cidade']}<br>";
     echo "<strong>Deficiências:</strong> " . ($row['deficiencias'] ?: '—') . "<br>";
     echo "<strong>Pontos turísticos:</strong> " . ($row['pontos_turisticos'] ?: '—') . "</p><hr>";
+    echo "<strong>Página:</strong> " . 
+     ($row['site'] ? "<a href='{$row['site']}' target='_blank'>Visitar</a>" : '—') 
+     . "</p><hr>";
+
 }
 ?>
