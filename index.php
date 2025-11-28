@@ -1,7 +1,3 @@
-
-  
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,6 +13,60 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+        <style>
+    /* SELECT estilizado como o antigo .input-field */
+.tour-search-form select {
+  width: 100%;
+  background: var(--white);
+  padding: 10px 15px;
+  font-size: var(--fs-5);
+  border-radius: 50px;
+  border: none;
+  appearance: none;        /* remove seta padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* seta personalizada */
+.tour-search-form .input-wrapper {
+  position: relative;
+}
+
+.tour-search-form .input-wrapper::after {
+  content: "▾";  /* seta */
+  position: absolute;
+  right: 20px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* label igual ao antigo */
+.tour-search-form .input-label {
+  color: var(--white);
+  font-size: var(--fs-4);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* manter margens */
+.tour-search-form .input-wrapper {
+  margin-bottom: 15px;
+}
+
+/* Versão responsiva (você tinha isso também no CSS antigo) */
+@media (min-width: 768px) {
+  .tour-search-form .input-wrapper {
+    margin-bottom: 0;
+  }
+  .tour-search-form select {
+    padding: 16px 20px;
+  }
+}
+
+  </style>
 </head>
 
 <body id="top">
@@ -96,8 +146,14 @@
                         </div>
                         <div class="input-wrapper">
                             <label for="deficiencia" class="input-label">Deficiência</label>
-                            <input type="text" name="deficiencia" id="deficiencia"  placeholder="Deficiência"
-                                class="input-field">
+                            <select name="deficiencia" id="">
+                                <?php 
+                                $acaod = 'recuperar';
+                                require_once 'def.controller.php';
+                                foreach($def as $key => $def){?>
+                                <option value="<?= $def->tipo?>"> <?= $def->tipo?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-secondary">Pesquisar</button>
                     </form>
@@ -394,18 +450,18 @@
     <script src="./assets/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    <!-- VLibras -->
     <div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
 
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
 </body>
 

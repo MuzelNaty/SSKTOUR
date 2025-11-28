@@ -21,15 +21,15 @@ LEFT JOIN Deficiencia d ON hd.deficiencia_id = d.id
 LEFT JOIN Hotel_PontoTuristico hp ON h.id = hp.hotel_id
 LEFT JOIN PontoTuristico p ON hp.ponto_turistico_id = p.id
 WHERE
-    (:cidade IS NULL OR c.nome LIKE CONCAT('%', :cidade, '%'))
-    AND (:hotel IS NULL OR h.nome LIKE CONCAT('%', :hotel, '%'))
-    AND (:deficiencia IS NULL OR EXISTS (
+    (COALESCE(:cidade, '') = '' OR c.nome LIKE CONCAT('%', :cidade, '%'))
+    AND (COALESCE(:hotel, '') = '' OR h.nome LIKE CONCAT('%', :hotel, '%'))
+    AND (COALESCE(:deficiencia, '') = '' OR EXISTS (
         SELECT 1 FROM Hotel_Deficiencia hd2
         JOIN Deficiencia d2 ON hd2.deficiencia_id = d2.id
         WHERE hd2.hotel_id = h.id
           AND d2.tipo LIKE CONCAT('%', :deficiencia, '%')
     ))
-    AND (:ponto_turistico IS NULL OR EXISTS (
+    AND (COALESCE(:ponto_turistico, '') = '' OR EXISTS (
         SELECT 1 FROM Hotel_PontoTuristico hp2
         JOIN PontoTuristico p2 ON hp2.ponto_turistico_id = p2.id
         WHERE hp2.hotel_id = h.id
