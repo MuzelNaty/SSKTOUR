@@ -58,6 +58,7 @@ CREATE TABLE Hotel_PontoTuristico (
     FOREIGN KEY (ponto_turistico_id) REFERENCES PontoTuristico(id)
 );
 
+
 CREATE TABLE Hotel_Deficiencia (
     hotel_id INT,
     deficiencia_id INT,
@@ -194,12 +195,81 @@ INSERT INTO Hotel_Acessibilidade (hotel_id, acessibilidade_id) VALUES
 (3, 2), (3, 3), (3, 4),
 (4, 1), (4, 3);
 
--- Relacionando hotéis e pontos turísticos
-INSERT INTO Hotel_PontoTuristico (hotel_id, ponto_turistico_id) VALUES 
-(1, 1), (1, 2),
-(2, 1), (2, 2),
-(3, 3), (3, 4),
-(4, 5);
+INSERT INTO Hotel_PontoTuristico (hotel_id, ponto_turistico_id) VALUES
+-- ================= BARRETOS =================
+(1, 1), (1, 2), (1, 3),
+(2, 1), (2, 2), (2, 3),
+
+-- ================= CAMPOS DO JORDÃO =================
+(3, 4), (3, 5), (3, 6),
+(4, 4), (4, 5), (4, 6),
+(5, 4), (5, 5), (5, 6),
+(6, 4), (6, 5), (6, 6),
+(7, 4), (7, 5), (7, 6),
+
+-- ================= GUARUJÁ =================
+(8, 7), (8, 8), (8, 9),
+(9, 7), (9, 8), (9, 9),
+(10, 7), (10, 8), (10, 9),
+(11, 7), (11, 8), (11, 9),
+(12, 7), (12, 8), (12, 9),
+(13, 7), (13, 8), (13, 9),
+(14, 7), (14, 8), (14, 9),
+(15, 7), (15, 8), (15, 9),
+
+-- ================= ILHABELA =================
+(16, 10), (16, 11), (16, 12), (16, 13), (16, 14),
+(17, 10), (17, 11), (17, 12), (17, 13), (17, 14),
+(18, 10), (18, 11), (18, 12), (18, 13), (18, 14),
+(19, 10), (19, 11), (19, 12), (19, 13), (19, 14),
+(20, 10), (20, 11), (20, 12), (20, 13), (20, 14),
+(21, 10), (21, 11), (21, 12), (21, 13), (21, 14),
+(22, 10), (22, 11), (22, 12), (22, 13), (22, 14),
+(23, 10), (23, 11), (23, 12), (23, 13), (23, 14),
+
+-- ================= OLÍMPIA =================
+(24, 15), (24, 16), (24, 17), (24, 18), (24, 19),
+(25, 15), (25, 16), (25, 17), (25, 18), (25, 19),
+(26, 15), (26, 16), (26, 17), (26, 18), (26, 19),
+(27, 15), (27, 16), (27, 17), (27, 18), (27, 19),
+(28, 15), (28, 16), (28, 17), (28, 18), (28, 19),
+(29, 15), (29, 16), (29, 17), (29, 18), (29, 19),
+(30, 15), (30, 16), (30, 17), (30, 18), (30, 19),
+(31, 15), (31, 16), (31, 17), (31, 18), (31, 19),
+
+-- ================= SÃO PAULO =================
+(32, 20), (32, 24),
+(33, 21),
+(34, 22),
+(35, 23),
+(36, 24),
+(37, 25),
+(38, 26),
+(39, 27),
+(40, 28),
+(41, 29),
+(42, 30),
+(43, 31),
+
+-- ================= UBATUBA =================
+(44, 32),
+(45, 33),
+(46, 34),
+(47, 35),
+(48, 36),
+
+-- ================= SANTOS =================
+(49, 37),
+(50, 38),
+(51, 39),
+(52, 40),
+
+-- ================= VINHEDO =================
+(53, 41), (53, 42), (53, 43),
+(54, 41), (54, 42), (54, 43),
+(55, 41), (55, 42), (55, 43);
+
+
 
 -- Relacionando hotéis e deficiências atendidas (corrigido)
 INSERT INTO Hotel_Deficiencia (hotel_id, deficiencia_id) VALUES
@@ -283,39 +353,3 @@ INSERT INTO Hotel_Deficiencia (hotel_id, deficiencia_id) VALUES
 (61, 3), (61, 1),
 (62, 3),
 (63, 3);
-
-
-SET @cidade = null;
-SET @hotel = NULL;
-SET @deficiencia = null;
-SET @ponto_turistico = NULL;
-
-SELECT 
-    h.nome AS hotel,
-    c.nome AS cidade,
-    d.tipo AS deficiencia,
-    p.nome AS ponto_turistico
-FROM 
-    Hotel h
-JOIN 
-    Cidade c ON h.cidade_id = c.id
-LEFT JOIN 
-    Hotel_Deficiencia hd ON h.id = hd.hotel_id
-LEFT JOIN 
-    Deficiencia d ON hd.deficiencia_id = d.id
-LEFT JOIN 
-    Hotel_PontoTuristico hp ON h.id = hp.hotel_id
-LEFT JOIN 
-    PontoTuristico p ON hp.ponto_turistico_id = p.id
-WHERE 
-    (@cidade IS NULL OR c.nome LIKE CONCAT('%', @cidade, '%'))
-    AND (@hotel IS NULL OR h.nome LIKE CONCAT('%', @hotel, '%'))
-    AND (@deficiencia IS NULL OR d.tipo LIKE CONCAT('%', @deficiencia, '%'))
-    AND (@ponto_turistico IS NULL OR p.nome LIKE CONCAT('%', @ponto_turistico, '%'));
-
-
-
-SELECT * FROM Hotel WHERE nome LIKE '%Bê Hotel%';
-
-SELECT * FROM Hotel_Deficiencia WHERE hotel_id = 1;
-SELECT * FROM Hotel_PontoTuristico WHERE hotel_id = 1;

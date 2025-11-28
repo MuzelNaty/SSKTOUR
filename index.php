@@ -66,6 +66,55 @@
   }
 }
 
+/* Centraliza a section inteira */
+.tour-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* Centraliza o conteúdo interno */
+.tour-search .container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Deixa inputs e botão lado a lado sem esmagar */
+.tour-search-form {
+  display: flex;
+  align-items: flex-end; /* alinha selects + botão na mesma base */
+  gap: 20px;
+}
+
+/* Ajuste: select não ocupa 100% no desktop */
+.tour-search-form .input-wrapper {
+  width: auto; /* impede stretch */
+}
+
+/* Mantém estilo antigo */
+.tour-search-form select {
+  width: 220px;  /* tamanho ideal, pode ajustar */
+}
+
+/* Responsivo: volta para 100% no celular */
+@media (max-width: 600px) {
+  .tour-search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tour-search-form .input-wrapper {
+    width: 100%;
+  }
+
+  .tour-search-form select {
+    width: 100%;
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -414,15 +463,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="footer-form">
-                    <p class="form-text">
-                        Fique por dentro de todas as novidades
-                    </p>
-                    <form action="" class="form-wrapper">
-                        <input type="email" name="email" class="input-field" placeholder="Digite seu e-mail" required>
-                        <button type="submit" class="btn btn-secondary">Cadastrar</button>
-                    </form>
-                </div>
+               
             </div>
         </div>
         <div class="footer-bottom">
