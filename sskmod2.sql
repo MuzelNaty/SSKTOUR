@@ -147,20 +147,59 @@ INSERT INTO Hotel (nome, endereco, cidade_id, site) VALUES
 
 -- Inserindo pontos turísticos
 INSERT INTO PontoTuristico (nome, endereco, cidade_id) VALUES 
+-- BARRETOS (1)
 ('Barretos Country Park', 'Rodovia Armando de Oliveira, Km 03', 1),
-('Catedral do Espírito Santo', 'Pr. Francisco Barreto, 107', 1),
-('Memorial do Peão', 'Av. 25 de Agosto, 178-244', 1),
+('Catedral do Divino Espírito Santo', 'Pr. Francisco Barreto, 107', 1),
+('Memorial do Peão de Boiadeiro', 'Av. 25 de Agosto, 178-244', 1),
+
+-- CAMPOS DO JORDÃO (2)
 ('Parque Amantikir', 'R. Simplício Ribeiro de Toledo Neto, 2200', 2),
 ('Ducha de Prata', 'Av. Mariane Baungart, 2485', 2),
 ('Museu Felícia Leirner', 'Av. Dr. Luis Arrobas Martins, 1880', 2),
-('Praia da Enseada', 'Avenida Dom Pedro I', 3),
+
+-- GUARUJÁ (3)
 ('Acqua Mundo', 'Av. Miguel Estefno, 2001', 3),
 ('Praia Branca', 'Balsa de Bertioga', 3),
-('Avenida Paulista', 'Av. Paulista, São Paulo', 1),
-('Parque Ibirapuera', 'Av. Pedro Álvares Cabral, São Paulo', 1),
-('Cristo Redentor', 'Parque Nacional da Tijuca, Rio de Janeiro', 2),
-('Pão de Açúcar', 'Av. Pasteur, Rio de Janeiro', 2),
-('Praça da Liberdade', 'Praça da Liberdade, Belo Horizonte', 3);
+('Praia da Enseada', 'Avenida Dom Pedro I', 3),
+
+-- ILHABELA (4)
+('Ilha das Cabras', 'Ilhabela, SP', 4),
+('Baía de Castelhanos', 'Ilhabela, SP', 4),
+('Praia do Bonete', 'Ilhabela, SP', 4),
+
+-- OLÍMPIA (5)
+('Thermas dos Laranjais', 'Av. Antônio Joaquim de Moura Andrade, s/n', 5),
+('Hot Beach Olímpia', 'Av. José Rodrigues da Silva, s/n', 5),
+('Vale dos Dinossauros Olímpia', 'R. José Leme do Prado, s/n', 5),
+('Museu de Cera Dreamland Olímpia', 'Av. dos Trabalhadores, 2455', 5),
+
+-- SÃO PAULO (6)
+('Parque Ibirapuera', 'Av. Pedro Álvares Cabral, São Paulo', 6),
+('Allianz Parque', 'Av. Francisco Matarazzo, 1705', 6),
+('Aquário de São Paulo', 'Av. Miguel Stéfano, 4242', 6),
+('Bairro da Liberdade', 'Liberdade, São Paulo', 6),
+('Galeria do Rock', 'Av. São João, 439', 6),
+('Jardim Botânico', 'Av. Miguel Stéfano, 3031', 6),
+('Museu Catavento', 'Praça Cívica Ulisses Guimarães, s/n', 6),
+('Museu de Arte de São Paulo - MASP', 'Av. Paulista, 1578', 6),
+('Teatro Municipal de São Paulo', 'Praça Ramos de Azevedo, s/n', 6),
+
+-- SANTOS (7)
+('Aquário Municipal de Santos', 'Praça Luiz La Scala, s/n', 7),
+('Basílica Santo Antônio do Embaré', 'R. Amador Bueno, 169', 7),
+('Museu do Café', 'Pça. do Comércio, 19', 7),
+('Praia do Gonzaga', 'Praia do Gonzaga, Santos', 7),
+
+-- UBATUBA (8)
+('Projeto Tamar', 'Praia do Cruzeiro, Ubatuba', 8),
+('Praia das Toninhas', 'Praia das Toninhas, Ubatuba', 8),
+('Praia Domingas Dias', 'Praia Domingas Dias, Ubatuba', 8),
+
+-- VINHEDO (9)
+('Hopi Hari', 'Rod. dos Bandeirantes, km 72', 9),
+('Mosteiro Beneditino de São Bento', 'Vinhedo, SP', 9),
+('Parque Municipal Jayme Ferragut', 'Vinhedo, SP', 9),
+('Adega Família Ferragut', 'Vinhedo, SP', 9);
 
 -- Inserindo tipos de acessibilidade
 INSERT INTO Acessibilidade (tipo) VALUES 
@@ -195,80 +234,26 @@ INSERT INTO Hotel_Acessibilidade (hotel_id, acessibilidade_id) VALUES
 (3, 2), (3, 3), (3, 4),
 (4, 1), (4, 3);
 
+
+
+-- Allianz Parque
 INSERT INTO Hotel_PontoTuristico (hotel_id, ponto_turistico_id) VALUES
--- ================= BARRETOS =================
-(1, 1), (1, 2), (1, 3),
-(2, 1), (2, 2), (2, 3),
-
--- ================= CAMPOS DO JORDÃO =================
-(3, 4), (3, 5), (3, 6),
-(4, 4), (4, 5), (4, 6),
-(5, 4), (5, 5), (5, 6),
-(6, 4), (6, 5), (6, 6),
-(7, 4), (7, 5), (7, 6),
-
--- ================= GUARUJÁ =================
-(8, 7), (8, 8), (8, 9),
-(9, 7), (9, 8), (9, 9),
-(10, 7), (10, 8), (10, 9),
-(11, 7), (11, 8), (11, 9),
-(12, 7), (12, 8), (12, 9),
-(13, 7), (13, 8), (13, 9),
-(14, 7), (14, 8), (14, 9),
-(15, 7), (15, 8), (15, 9),
-
--- ================= ILHABELA =================
-(16, 10), (16, 11), (16, 12), (16, 13), (16, 14),
-(17, 10), (17, 11), (17, 12), (17, 13), (17, 14),
-(18, 10), (18, 11), (18, 12), (18, 13), (18, 14),
-(19, 10), (19, 11), (19, 12), (19, 13), (19, 14),
-(20, 10), (20, 11), (20, 12), (20, 13), (20, 14),
-(21, 10), (21, 11), (21, 12), (21, 13), (21, 14),
-(22, 10), (22, 11), (22, 12), (22, 13), (22, 14),
-(23, 10), (23, 11), (23, 12), (23, 13), (23, 14),
-
--- ================= OLÍMPIA =================
-(24, 15), (24, 16), (24, 17), (24, 18), (24, 19),
-(25, 15), (25, 16), (25, 17), (25, 18), (25, 19),
-(26, 15), (26, 16), (26, 17), (26, 18), (26, 19),
-(27, 15), (27, 16), (27, 17), (27, 18), (27, 19),
-(28, 15), (28, 16), (28, 17), (28, 18), (28, 19),
-(29, 15), (29, 16), (29, 17), (29, 18), (29, 19),
-(30, 15), (30, 16), (30, 17), (30, 18), (30, 19),
-(31, 15), (31, 16), (31, 17), (31, 18), (31, 19),
-
--- ================= SÃO PAULO =================
-(32, 20), (32, 24),
-(33, 21),
-(34, 22),
-(35, 23),
-(36, 24),
-(37, 25),
-(38, 26),
-(39, 27),
-(40, 28),
-(41, 29),
-(42, 30),
-(43, 31),
-
--- ================= UBATUBA =================
-(44, 32),
-(45, 33),
-(46, 34),
-(47, 35),
-(48, 36),
-
--- ================= SANTOS =================
-(49, 37),
-(50, 38),
-(51, 39),
-(52, 40),
-
--- ================= VINHEDO =================
-(53, 41), (53, 42), (53, 43),
-(54, 41), (54, 42), (54, 43),
-(55, 41), (55, 42), (55, 43);
-
+(1, 1), 
+(2, 2), 
+(2, 3),
+(4, 4), (5,4),
+(7, 5), 
+(3, 6),
+(10, 7), (8,7),
+(14, 8), 
+(10, 9), (8,9),
+(19, 10), (18,10),
+(23, 11), (21,11),
+(22, 12), (17,12), (21,12),
+(29, 13),
+(26, 14), (28,14),
+(25,15), (31,15),
+(30,16), (27,16);
 
 
 -- Relacionando hotéis e deficiências atendidas (corrigido)
