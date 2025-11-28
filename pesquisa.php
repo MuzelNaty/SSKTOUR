@@ -215,7 +215,6 @@
                             <?php else: ?>
                                 <!-- Nenhum resultado -->
                                 <div style="text-align: center; padding: 60px 20px;">
-                                    <ion-icon name="search-outline" style="font-size: 80px; color: var(--spanish-gray); margin-bottom: 30px; display: block;"></ion-icon>
                                     <h2 class="h2 section-title" style="margin-bottom: 20px;">Nenhum resultado encontrado</h2>
                                     <p class="section-text" style="max-width: 600px; margin: 0 auto 40px;">
                                         Não encontramos hotéis que correspondam aos seus critérios de pesquisa. 
